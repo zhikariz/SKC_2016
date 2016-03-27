@@ -1,0 +1,275 @@
+#Note To this Solocup
+
+Kelas SOLOCUP 2016
+........................................................................................................
+1. kata perorangan pra usia dini putra
+2. kata perorangan pra usia dini putri
+3. kata perorangan usia dini putra
+4. kata perorangan usia dini putri
+5. kata beregu gabungan usia dini - pra pemula putra
+6. kata beregu gabungan usia dini - pra pemula putri
+7. kumite perorangan -30 kg usia dini putra
+8. kumite perorangan +30 kg usia dini putra
+9. kumite perorangan -25 kg usia dini putri
+10. kumite perorangan +25 kg usia dini putri
+11. kata perorangan pra pemula putra
+12. kata perorangan pra pemula putri
+13. kata beregu gabungan usia dini - pra pemula putra
+14. kata beregu gabungan usia dini - pra pemula putri
+15. kumite perorangan -30 kg pra pemula putra
+16. kumite perorangan -35 kg pra pemula putra
+17. kumite perorangan +35 kg pra pemula putra
+18. kumite perorangan -25 kg pra pemula putri
+19. kumite perorangan -30 kg pra pemula putri
+20. kumite perorangan +30 kg pra pemula putri
+21. kata perorangan pemula putra
+22. kata perorangan pemula putri
+23. kata beregu gabungan pemula - kadet putra
+24. kata beregu gabungan pemula - kadet putri
+25. kumite perorangan -35 kg pemula putra
+26. kumite perorangan -40 kg pemula putra
+27. kumite perorangan +40 kg pemula putra
+28. kumite perorangan -30 kg pemula putri
+29. kumite perorangan -35 kg pemula putri
+30. kumite perorangan +35 kg pemula putri
+31. kata perorangan kadet putra
+32. kata perorangan kadet putri
+33. kata beregu gabungan pemula - kadet putra
+34. kata beregu gabungan pemula - kadet putri
+35. kumite perorangan -52 kg kadet putra
+36. kumite perorangan -57 kg kadet putra
+37. kumite perorangan -63 kg kadet putra
+38. kumite perorangan -70 kg kadet putra
+39. kumite perorangan +70 kg kadet putra
+40. kumite perorangan -47 kg kadet putri
+41. kumite perorangan -54 kg kadet putri
+42. kumite perorangan +54 kadet putri
+43. kata perorangan junior putra
+44. kata perorangan junior putri
+45. kata beregu gabungan junior - senior putra
+46. kata beregu gabungan junior - senior putri
+47. kumite perorangan -55 kg junior putra
+48. kumite perorangan -61 kg junior putra
+49. kumite perorangan -68 kg junior putra
+50. kumite perorangan -76 kg junior putra
+51. kumite perorangan +76 kg junior putra
+52. kumite perorangan -48 kg junior putri
+53. kumite perorangan -53 kg junior putri
+54. kumite perorangan -59 kg junior putri
+55. kumite perorangan +59 junior putri
+56. kata perorangan senior putra
+57. kata perorangan senior putri
+58. kata beregu gabungan junior - senior putra
+59. kata beregu gabungan junior - senior putri
+60. kumite perorangan -55 kg senior putra
+61. kumite perorangan -60 kg senior putra
+62. kumite perorangan -67 kg senior putra
+63. kumite perorangan -75 kg senior putra
+64. kumite perorangan -84 kg senior putra
+65. kumite perorangan +84 kg senior putra
+66. kumite perorangan -50 kg senior putri
+67. kumite perorangan -55 kg senior putri
+68. kumite perorangan -61 kg senior putri
+69. kumite perorangan -68 kg senior putri
+70. kumite perorangan +68 kg senior putri
+71. kata perorangan veteran 35 - 40 th
+72. kumite perorangan veteran 35 - 40th
+73. kata perorangan veteran 40 - 45 th
+74. kumite perorangan veteran 40 - 45 th
+75. kata perorangan veteran 45 th keatas
+76. kumite perorangan veteran 45 th keatas
+
+........................................................................................................
+
+
+KEBUTUHAN CLIENT
+................
+> Download chrome terbaru untuk server
+> Konfigurasi di lib/config.php & login/login.php
+
+
+DB Explanation Backup
+......................
+[1] skc_solocup.sql > All DB termasuk kelas yang dipecah2 - Kelas_all, kelas_jk, Kelas_jb
+[6] drowing Old Deleted
+[7] 
+
+
+CALON BUG 
+.........
+Konversi id_peserta > nama _ dibagian drowing/drowing_table
+
+
+Github
+.......
+> https://github.com/vanisaputra
+> https://github.com/axquired24
+> https://github.com/tanyakenapa10
+
+Laporan Need
+............
+Simulasi data sebelum data asli > XLS > CSV (; -> ,) > SQL with sqlizer.io (online)
+Plugin used
+	> Bootstrap
+	> JS Data-Table Server Side - Wildantea
+	> Redisp
+	> AJAX
+
+3/3/16 Rabu
+............
+> Print dengan perintah biasa ctrl+p
+> class to hide element when print : .noprint
+> Print semua kolom
+> Database drowing_simple ada di MySQL
+> Error JsDataTable th/4
+> Saat Search Tabel Rusak
+> Logonya masih mobil
+# Form Layout sudah ada di bangkit
+# Pop Up Table Layout ada di Bangkit
+
+9/3/16 Rabu
+-----------
+# Using Bootstrap 3.3.0 Default
+# Encrypt URL Using AES
+# Navbar Added
+# Database Updated > Add Column on peserta > +kelas_all (Filled with joined all Kelas to Easier Grouping when Drowing)
+# ! Learn MPDF Tutorial 
+# ! Using Bootsnip to Create Form 
+# SQL Syntax (View Count perKelas) SELECT COUNT(*), Kontingen FROM drowing_simple GROUP BY Kelas
+# Data_overall , It's Only possible when included file data_overall outside, inside = nothing
+# It's Possible to use: SELECT CONCAT_WS(' ',Kontingen, Perguruan) AS Gabung, COUNT(*) FROM drowing_simple GROUP BY Gabung
+	SELECT Another columns too, to make it can dropdown-able information.
+	SELECT Nama, Kontingen WHERE Kelas_a=, Kelas_b=, Kelas_c=
+
+12/3/16 Sabtu
+-----------
+# Data Perkelas dan Perkontingen READY BUT Non-Searchable	
+
+13/3/16 Minggu
+------------
+# Login dihalaman awal
+# ! Drowing : Jumlah peserta dibagi 2, yang terbanyak dibawah
+# ! Buat Tabel Drowing JPG
+# ! Format Surat Balasan
+# ! Halaman Admin Kelas
+# Change DB - Jenis Kelamin & Kelas_All Concept (JK : Putra(Pa) ^ Putri(Pi))
+
+14/3/16 Minggu
+------------
+# ALTER TABLE drowing_simple MODIFY COLUMN ID INT auto_increment // Bisa buat auto_increment dari table terisi
+# Bug dihalaman depan > lib/config tanpa ../
+# JS Datatable autoload onChange
+
+15/3/16 Senin
+-------------
+# File Edited
+	* assets/js/dataTables.bootstrap.min.js
+	* index.php
+	* modul/view/overall.php
+# overall > include_once issue, autocomplet READY
+
+19/3/16 Sabtu
+-------------
+# AutoComplete array READY
+# ! Peserta Edit, Add dll > Jenis Kelamin UNSET
+# Database UPDATE > Ganti semua Coloumn di DB, Cek dengan delete drowing_simple
+# Kelas Edit + Delete READY
+# ! Kasih footer copyright !!
+# Auto Capital when insert Class ?
+# ! Drowing Simulator
+# ! BUG Data Perkelas dan Perkontingen READY BUT Non-Searchable
+	> GROUP BY and COUNT(*) Issue
+# Added Pool to Col DROWING
+
+22/3/16 Selasa
+--------------
+# Database Edit
+	> Add Column : type in admin
+	> Add Table admin_type untuk foreign_key 
+	> Add Table  : kontingen_all
+	> 
+# Drowing > Switch
+	> Css Table inline-block
+
+24/3/16 Kamis
+-------------
+DATABASE EDIT
+	> Edit Column : peserta.kontingen -> peserta.id_kontingen (Cek semua input dan output);
+	> Add Column : kontingen_all (id_kelas, isi_kelas)
+	> Edit Column : kelas_all (id_kelas, isi_kelas)
+
+	> Edit Peserta :  (input_by -> Session)
+
+25/3/16 Jumat
+--------------
+	modul drowing FIX - kurang warna
+			drowing kelola - jml peserta merahin										   (OK)
+			data peserta / kontingen yang pake ' ga terbaca, pakein id_peserta -> convert  (OK)
+	modul peserta > perkontingen
+			klik link langsung bisa ke detail 											   (OK)
+
+	[minta pei] > Inputin kelas2 yang baru
+
+	Format Kelas
+	............
+	Kata Beregu Kategori_umur putra/putri
+	Kata Perorangan Kategori_umur putra/putri
+	Kumite Berat_Badan Kategori_umur putra/putri
+
+	Pembagian Drowing
+	.................
+	Perhalaman Saja
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\\\\\  [Konsul SKC]  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+21 Maret 2015 [Konsul Pei Paul]
+.......tanyaan.........
+Bagan ada tempat skor ?
+Tampilan Tambah Data ? ?
+Kontingen Sragen n Min-Ngijo Sragen
+Pemkot Sragen, Lemkari Sragen, FORKI Sragen
+......tambahan.........
+[BUGS] W7 & W10 - Gamau Ke load (Error Reporting Bugs);
+View Perkontingen > JUmlah kata perorangan dan beregu, Kumite	(Bangkit) - Masih Belum bisa yang onClick Set (OK) > GET ke Halaman lain
+
+*********************
+25 Maret 2015
+Tambahi Notifikasi Sebelum Hapus data
+	Hapus Peringatan 
+		Peserta	> List Peserta
+		Drowing	> Lihat Hasil Drowing
+		Manage 	> Kontingen
+				> Kelas
+		
+Tambahi Jumlah Regu (OK)
+*********************
+Tambahin AutoComplete Kontingen (ID Kontingen) Manage Kontingen	(Vani) - OK
+	> Tampilan di depan join ID_Kontingen 						(OK)
+	> Update Table Belum kontingen(id_kontingen, isi)			- (OK)
+Tambahin Datepicker												(Ax) - OK
+Berat Badan Default "-"; 										(Ax) - OK
+ADMIN PRIVILEDGE (admin, user, drowing) - 						(Vani) - OK Bug dikit
+	User cuma bisa lihat - input (input kontingen juga bisa, tapi edit sama hapus cuma server)
+	Admin Full control
+	Drowing sama kayak user + cuma bisa drowing
+
+Drowing Semi Manual + Excel 									(Ax)
+
+\\\\\  [Konsul SKC]  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
