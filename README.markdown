@@ -13,8 +13,8 @@ Step :
 
 #### Preview
 ------------
-![SKC Solocup 2016 System](https://raw.githubusercontent.com/axquired24/solocup_skc_2016/master/preview/frontpage.jpg "Front Page")
-![SKC Solocup 2016 Drowing System](https://raw.githubusercontent.com/axquired24/solocup_skc_2016/master/preview/drowingpage.jpg "Drowing Page")
+![SKC Solocup 2016 System](https://raw.githubusercontent.com/axquired24/SKC_2016/master/preview/frontpage.jpg "Front Page")
+![SKC Solocup 2016 Drowing System](https://raw.githubusercontent.com/axquired24/SKC_2016/master/preview/drowingpage.jpg "Drowing Page")
 
 #### Fitur :
 ------------
