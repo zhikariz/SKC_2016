@@ -44,8 +44,10 @@ $isi	= $q->isi_kontingen;
 <?php
 if(isset($_POST[submit])){
 	$table_up	= "kontingen_all";
+    $isi = str_replace('"', '``', $_POST[isi]);
+    $isi = str_replace("'", "`", $isi);  
 	$data_up	= array(
-                   'isi_kontingen'          => htmlentities($_POST[isi])
+                   'isi_kontingen'          => $isi
                          );
 	$prim_col	= "id_kontingen";
 	// $id didefinisikan diatas;

@@ -57,10 +57,12 @@
 
   if($_POST[submit])
   {
-    $kontingen    = new Database;
+    $kontingen    = new Database;    
     $table    = 'kontingen_all';
+    $isi = str_replace('"', '``', $_POST[isi_kontingen]);
+    $isi = str_replace("'", "`", $isi);
     $kontingen_isi  = array(
-              'isi_kontingen'=>htmlentities($_POST[isi_kontingen])
+              'isi_kontingen'=>$isi              
                );
 
     $exec     = $kontingen->insert($table,$kontingen_isi);

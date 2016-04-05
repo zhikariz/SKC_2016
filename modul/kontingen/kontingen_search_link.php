@@ -1,7 +1,6 @@
 <?php
 
 include_once "lib/config.php";
-// include "modul/enkripsi/function.php";
 
 	$cari=$uriget[id_kontingen];
 
@@ -64,7 +63,7 @@ include_once "lib/config.php";
     <div class="row row-centered">
         <h1><span class="label label-danger"><?php echo "Kontingen ".$kont_val_conv[$cari]; ?></span></a><br></h1><br>
         <div class="col-md-12">
-            <table id="overall" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <table id="overall" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -77,8 +76,14 @@ include_once "lib/config.php";
                 </thead>
                <tbody> 
 					<?php
-
 						foreach ($query	as $value) {
+							$edit = paramEncrypt("uri=peserta/peserta_edit&id_peserta=".$value->id_peserta);
+							$del = paramEncrypt("uri=peserta/peserta_delete&id_peserta=".$value->id_peserta);
+							$detail = paramEncrypt("uri=peserta/peserta_detail&id_peserta=".$value->id_peserta);
+							$crud_uri = array(	"edit" 		=> $edit,
+												"delete"	=> $del,
+												"detail"	=> $detail
+												);
 							//array sementara data
 							echo "
 								<tr>
@@ -87,7 +92,13 @@ include_once "lib/config.php";
 									<td>".$value->tgl_lahir."</td>
 									<td>".$value->berat_badan."</td>
 									<td>".$value->perguruan."</td>
-									<td>".$value->isi_kelas."</td>
+									<td>".$value->isi_kelas."
+										<span class='pull-right hide-print'>
+										<a title='Ubah Data' href='./?".$crud_uri[edit]."' class='link pr-admin'><span class='glyphicon glyphicon-pencil btn btn-xs btn-default'></span></a>
+										<a title='Hapus Data' onclick=confirmHapus('./?".$crud_uri[delete]."') href='#' class='link pr-admin'><span class='glyphicon glyphicon-trash btn btn-xs btn-danger'></span></a>
+										<a title='Detail Data' href='./?".$crud_uri[detail]."' class='link'><span class='glyphicon glyphicon-list-alt btn btn-xs btn-success'></span></a>
+										</span>
+									</td>
 								</tr>
 							";
 						  } // CLOSE foreach ($query	as $value)
@@ -96,7 +107,7 @@ include_once "lib/config.php";
                </tbody>
             </table></br>
 
-			<h3>Keterangan Jumlah Peserta</h3>
+			<h3><?php echo "Kontingen ".$kont_val_conv[$cari]; ?></h3>
             <table id="overall" class="table table-striped table-bordered" cellspacing="0" width="100%">
             	<thead>
                     <tr>
