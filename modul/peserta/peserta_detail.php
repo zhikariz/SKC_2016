@@ -168,7 +168,7 @@ $q 	    = $peserta->fetch_single_row($table,$col,$val);
   <div class="form-group">
     <label class="col-md-4 control-label" for="submit"></label>
     <div class="col-md-6">
-      <button onclick="history.back()" id="reset" type="reset" name="reset" class="btn btn-default">Kembali</button>
+      <button onclick="history.back()" type="button" class="btn btn-default">Kembali</button>
     </div>
   </div>        
 </form>  

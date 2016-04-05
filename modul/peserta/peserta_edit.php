@@ -170,7 +170,7 @@ $q 	    = $peserta->fetch_single_row($table,$col,$val);
     <div class="col-md-6">
       <input type="submit" name="submit" class="btn btn-primary" value="Simpan">
       <button id="reset" type="reset" name="reset" class="btn btn-danger">Reset</button>
-      <button onclick="history.back()" id="reset" type="reset" name="reset" class="btn btn-default">Batal</button>
+      <button onclick="history.back()" type="button" class="btn btn-default">Batal</button>
     </div>
   </div>        
 </form>  
