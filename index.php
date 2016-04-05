@@ -84,7 +84,16 @@
     <script>
         function confirmHapus(message)
         {
-          window.confirm('Hapus Data ini?');
+          var x;
+          var r = confirm('Hapus Data ini?');
+          if(r == true)
+          {
+            window.location = message;            
+          }
+          else
+          {
+            //Pass
+          }          
         }
     </script>
 
@@ -134,9 +143,9 @@
         <br>
         <p class="text-muted">&copy; 2016 Sistem Informasi Persiapan Pertandingan Karate. <br>
           <small>Create By : 
-                  <a href="#">AxQuired24 (Albert S)</a> - 
-                  <a href="#">Bangkit S</a> - 
-                  <a href="#">Vani A.D.S</a>
+                  <a href="https://github.com/axquired24">AxQuired24 (Albert S)</a> - 
+                  <a href="https://github.com/tanyakenapa10">Bangkit S</a> - 
+                  <a href="https://github.com/vanisaputra">Vani A.D.S</a>
           </small>
         </p>        
       </div>

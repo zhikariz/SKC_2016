@@ -38,7 +38,7 @@ $columns = array(
 	$ResultData[] = "
 		<span class='hide-print'>
 		<a title='Lihat Drowing' href='./?".$crud_uri[view]."' class=' btn btn-xs btn-success'><span class='glyphicon glyphicon-th-list'></span> Lihat Tabel</a>
-		<a title='Hapus Drowing' href='./?".$crud_uri[del]."' class=' btn btn-xs btn-danger' onclick='confirmHapus()'><span class='glyphicon glyphicon-trash'></span> Hapus</a>
+		<a title='Hapus Drowing ".$value->isi_kelas."' href='#' class=' btn btn-xs btn-danger' onclick=confirmHapus('./?".$crud_uri[del]."')> <span class='glyphicon glyphicon-trash'></span> Hapus</a>
 		</span>
 	";
 	//memasukan array ke variable $data

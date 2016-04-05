@@ -34,7 +34,7 @@ $columns = array(
 					);
 	$ResultData[] = "
 		<a title='Ubah Data' href='./?".$crud_uri[edit]."' class='link'><span class='glyphicon glyphicon-pencil btn btn-xs btn-default'></span></a>
-		<a title='Hapus Data' onClick='".$crud_uri[del_msg]."' href='./?".$crud_uri[delete]."' class='link'><span class='glyphicon glyphicon-trash btn btn-xs btn-danger'></span></a>
+		<a title='Hapus Data' onclick=confirmHapus('./?".$crud_uri[delete]."') href='#' class='link'><span class='glyphicon glyphicon-trash btn btn-xs btn-danger'></span></a>
 	";
 
 	//memasukan array ke variable $data

@@ -79,6 +79,82 @@ Kelas SOLOCUP 2016
 75. kata perorangan veteran 45 th keatas
 76. kumite perorangan veteran 45 th keatas
 
+...........................................
+Edited No Duplicate ##############
+
+Kata Beregu Gabungan Junior - Senior Putra
+Kata Beregu Gabungan Junior - Senior Putri
+Kata Beregu Gabungan Pemula - Kadet Putra
+Kata Beregu Gabungan Pemula - Kadet Putri
+Kata Beregu Gabungan Usia Dini - Pra Pemula Putra
+Kata Beregu Gabungan Usia Dini - Pra Pemula Putri
+Kata Perorangan Junior Putra
+Kata Perorangan Junior Putri
+Kata Perorangan Kadet Putra
+Kata Perorangan Kadet Putri
+Kata Perorangan Pemula Putra
+Kata Perorangan Pemula Putri
+Kata Perorangan Pra Pemula Putra
+Kata Perorangan Pra Pemula Putri
+Kata Perorangan Pra Usia Dini Putra
+Kata Perorangan Pra Usia Dini Putri
+Kata Perorangan Senior Putra
+Kata Perorangan Senior Putri
+Kata Perorangan Usia Dini Putra
+Kata Perorangan Usia Dini Putri
+Kata Perorangan Veteran 35 - 40 Th
+Kata Perorangan Veteran 40 - 45 Th
+Kata Perorangan Veteran 45 Th Keatas
+Kumite Perorangan +25 Kg Usia Dini Putri
+Kumite Perorangan +30 Kg Pra Pemula Putri
+Kumite Perorangan +30 Kg Usia Dini Putra
+Kumite Perorangan +35 Kg Pemula Putri
+Kumite Perorangan +35 Kg Pra Pemula Putra
+Kumite Perorangan +40 Kg Pemula Putra
+Kumite Perorangan +54 Kadet Putri
+Kumite Perorangan +59 Junior Putri
+Kumite Perorangan +68 Kg Senior Putri
+Kumite Perorangan +70 Kg Kadet Putra
+Kumite Perorangan +76 Kg Junior Putra
+Kumite Perorangan +84 Kg Senior Putra
+Kumite Perorangan -25 Kg Pra Pemula Putri
+Kumite Perorangan -25 Kg Usia Dini Putri
+Kumite Perorangan -30 Kg Pemula Putri
+Kumite Perorangan -30 Kg Pra Pemula Putra
+Kumite Perorangan -30 Kg Pra Pemula Putri
+Kumite Perorangan -30 Kg Usia Dini Putra
+Kumite Perorangan -35 Kg Pemula Putra
+Kumite Perorangan -35 Kg Pemula Putri
+Kumite Perorangan -35 Kg Pra Pemula Putra
+Kumite Perorangan -40 Kg Pemula Putra
+Kumite Perorangan -47 Kg Kadet Putri
+Kumite Perorangan -48 Kg Junior Putri
+Kumite Perorangan -50 Kg Senior Putri
+Kumite Perorangan -52 Kg Kadet Putra
+Kumite Perorangan -53 Kg Junior Putri
+Kumite Perorangan -54 Kg Kadet Putri
+Kumite Perorangan -55 Kg Junior Putra
+Kumite Perorangan -55 Kg Senior Putra
+Kumite Perorangan -55 Kg Senior Putri
+Kumite Perorangan -57 Kg Kadet Putra
+Kumite Perorangan -59 Kg Junior Putri
+Kumite Perorangan -60 Kg Senior Putra
+Kumite Perorangan -61 Kg Junior Putra
+Kumite Perorangan -61 Kg Senior Putri
+Kumite Perorangan -63 Kg Kadet Putra
+Kumite Perorangan -67 Kg Senior Putra
+Kumite Perorangan -68 Kg Junior Putra
+Kumite Perorangan -68 Kg Senior Putri
+Kumite Perorangan -70 Kg Kadet Putra
+Kumite Perorangan -75 Kg Senior Putra
+Kumite Perorangan -76 Kg Junior Putra
+Kumite Perorangan -84 Kg Senior Putra
+Kumite Perorangan Veteran 35 - 40th
+Kumite Perorangan Veteran 40 - 45 Th
+Kumite Perorangan Veteran 45 Th Keatas
+
+.........................................
+
 ........................................................................................................
 
 
@@ -92,8 +168,10 @@ DB Explanation Backup
 ......................
 [1] skc_solocup.sql > All DB termasuk kelas yang dipecah2 - Kelas_all, kelas_jk, Kelas_jb
 [6] drowing Old Deleted
-[7] 
+[7] DATABASE RESET - Auto Increment SET To 0 (NOT Changed 'Official_kontak' Table kontingen_all); Not Include _kelas All from mas Helmi
 
+...
+[1] kelas_all - 70 Newest Kelas from Helmi SKC
 
 CALON BUG 
 .........
@@ -220,6 +298,45 @@ DATABASE EDIT
 	.................
 	Perhalaman Saja
 
+4/4/16 Senin
+--------------
+	# DB Update 
+	# str_replace ' & " 			(OK)
+	# SUM Total Peserta Kelas 		(OK)
+	# Konfirmasi hapus data 		(OK)
+	# Bagan Kata Beregu 
+
+	File Must Update @ Github
+		modul/
+			kontingen/
+					kontingen_edit
+					kontingen_view
+					kontingen_search
+					kontingen_search_link
+		db_backup/
+				[7] skc_solocup
+				[1] kelas_all
+		view/
+			count_perkelas
+			count_perkontingen
+		peserta/
+				peserta_edit
+				peserta_detail
+		index
+		data_hasil_drowing
+		data_overall
+		data_perkelas
+		data_perkontingen
+		data_kelas_view
+		data_kontingen_view
+		#developer_note
+
+
+
+
+
+
+
 
 
 
@@ -238,8 +355,10 @@ DATABASE EDIT
 
 
 \\\\\  [Konsul SKC]  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+27 Feb 2016 - 21 April 2016
+Awal Konsul
 
-21 Maret 2015 [Konsul Pei Paul]
+21 Maret 2016 [Konsul Pei Paul]
 .......tanyaan.........
 Bagan ada tempat skor ?
 Tampilan Tambah Data ? ?
@@ -271,5 +390,16 @@ ADMIN PRIVILEDGE (admin, user, drowing) - 						(Vani) - OK Bug dikit
 	Drowing sama kayak user + cuma bisa drowing
 
 Drowing Semi Manual + Excel 									(Ax)
+
+*********************
+02 April 2015
+-------------
+Tambahi Attribut Kontingen (Nama Official + Kontak)
+Tambahi Jumlah Total Peserta Kelas Pertandingan
+[BUGS] : ' dan " , di str_replace `/`` dibagian input kontingen / kelas
+[BUGS] : Error blank Database
+
+[Request] : Form Daftar Online ?
+[Request] : MPDF klik Print ?
 
 \\\\\  [Konsul SKC]  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

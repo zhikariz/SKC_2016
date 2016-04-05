@@ -18,17 +18,27 @@ $columns = array(
 	//buat inisialisasi array data
 	$data = array();
 
-	foreach ($query	as $value) {
-
+	foreach ($query	as $value) {		
 	//array sementara data
-	$ResultData = array();
-	//masukan data ke array sesuai kolom table
-	$ResultData[] = $value->isi_kelas;
-	$ResultData[] = $value->Jumlah;
+		$ResultData = array();
+		//masukan data ke array sesuai kolom table
+		$jumlah = $value->Jumlah;
+
+		$pecah_kelas = explode(" ", $value->isi_kelas);		
+		// Cek jika beregu, maka jumlah regu = jumlah peserta / 3
+		if(in_array("Beregu", $pecah_kelas))
+		{
+			$jumlah_regu 	= $jumlah / 3;
+			$jumlah 		= $jumlah . " (" . $jumlah_regu . " Regu)";
+		}
 
 
-	$data[] = $ResultData;
-}
+		$ResultData[] = $value->isi_kelas;
+		$ResultData[] = $jumlah;
+
+
+		$data[] = $ResultData;
+	}
 
 //set data
 $datatable->set_data($data);
