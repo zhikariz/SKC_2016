@@ -9,6 +9,8 @@
                     <tr>
                         <th>ID Drowing</th>
                         <th>Kelas Drowing</th>
+                        <th>Jumlah Peserta</th>
+                        <th>Jumlah Pool</th>
                         <th>Opsi</th>
                     </tr>
                 </thead>
@@ -28,7 +30,7 @@
             //disable order dan searching pada tombol aksi
                  "columnDefs": [ {
 	                 	
-	              "targets": [2],
+	              "targets": [2,3,4],
 	              "orderable": false,
 	              "searchable": false
 	            } ],
