@@ -9,11 +9,11 @@ $columns = array(
 	);
 
 //lakukan query data dari 3 table dengan inner join
-	$query = $datatable->get_custom("SELECT drowing.*, kelas_all.*
+	$query = $datatable->get_custom("SELECT drowing.*, kelas_all.isi_kelas
 									FROM drowing INNER JOIN kelas_all 
 									ON kelas_all.id_kelas=drowing.id_kelas"
 									,$columns); // Kalo dikasih GROUP BY, Lag
-									// WHERE kelas_all.isi LIKE 'Kumite%'
+									// WHERE kelas_all.isi LIKE 'Kumite%'	
 
 	//buat inisialisasi array data
 	$data = array();
@@ -23,8 +23,17 @@ $columns = array(
 	//array sementara data
 	$ResultData = array();
 	//masukan data ke array sesuai kolom table
+	$arr_peserta  = unserialize($value->list_peserta);
+	$query_kelas = $db->custom_query("SELECT COUNT(id_peserta) AS Jml_peserta FROM peserta WHERE id_kelas='".$value->id_kelas."'");
+	foreach ($query_kelas as $value_kelas) {
+		$jml_peserta = $value_kelas->Jml_peserta;
+	}
+
 	$ResultData[] = $value->id_drowing;
 	$ResultData[] = $value->isi_kelas;
+
+	$ResultData[] = $jml_peserta;
+	$ResultData[] = count($arr_peserta);
 
 	//bisa juga pake logic misal jika value tertentu maka outputnya
 
