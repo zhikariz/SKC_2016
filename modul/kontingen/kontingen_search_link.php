@@ -63,6 +63,51 @@ include_once "lib/config.php";
     <div class="row row-centered">
         <h1><span class="label label-danger"><?php echo "Kontingen ".$kont_val_conv[$cari]; ?></span></a><br></h1><br>
         <div class="col-md-12">
+
+			<!-- Table Detail Jumlah -->
+			<table id="overall" class="table table-striped table-bordered" cellspacing="0" width="100%">
+				<thead>
+			        <tr>
+			            <th>Jumlah Kata Beregu</th>
+			            <th>Jumlah Kata Perorangan</th>
+			            <th>Jumlah Kumite</th>
+			            <th>Total Jumlah Peserta</th>
+			        </tr>
+			    </thead>
+
+					<?php
+						foreach ($query1 as $value) {
+							//array sementara data
+							$jml_ang_regu  	= $value->Beregu;
+							$jml_regu 		= $jml_ang_regu / 3;
+							echo "<tr>
+									<td>".$value->Beregu." Peserta (".$jml_regu." Regu)</td>
+								   "; 
+								}
+						foreach ($query2 as $value) {
+							//array sementara data
+							echo "
+									<td>".$value->Perorangan."</td>
+								   "; 
+								}
+						foreach ($query3 as $value) {
+							//array sementara data
+							echo "
+									<td>".$value->Kumite."</td>
+								 "; 
+								}
+						foreach ($query4 as $value) {
+							//array sementara data
+							echo "
+									<td>".$value->Total."</td>
+								 </tr> "; 
+								}
+						?>
+
+			</table>        
+
+			<!-- Table Peserta All -->
+			<h3>Semua Peserta dari <?php echo "Kontingen ".$kont_val_conv[$cari]; ?></h3>			
             <table id="overall" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
                 <thead>
                     <tr>
@@ -106,48 +151,7 @@ include_once "lib/config.php";
 						?>
                </tbody>
             </table></br>
-
-			<h3><?php echo "Kontingen ".$kont_val_conv[$cari]; ?></h3>
-            <table id="overall" class="table table-striped table-bordered" cellspacing="0" width="100%">
-            	<thead>
-                    <tr>
-                        <th>Jumlah Kata Beregu</th>
-                        <th>Jumlah Kata Perorangan</th>
-                        <th>Jumlah Kumite</th>
-                        <th>Total Jumlah Peserta</th>
-                    </tr>
-                </thead>
-
-					<?php
-						foreach ($query1 as $value) {
-							//array sementara data
-							$jml_ang_regu  	= $value->Beregu;
-							$jml_regu 		= $jml_ang_regu / 3;
-							echo "<tr>
-									<td>".$value->Beregu." Peserta (".$jml_regu." Regu)</td>
-								   "; 
-								}
-						foreach ($query2 as $value) {
-							//array sementara data
-							echo "
-									<td>".$value->Perorangan."</td>
-								   "; 
-								}
-						foreach ($query3 as $value) {
-							//array sementara data
-							echo "
-									<td>".$value->Kumite."</td>
-								 "; 
-								}
-						foreach ($query4 as $value) {
-							//array sementara data
-							echo "
-									<td>".$value->Total."</td>
-								 </tr> "; 
-								}
-						?>
-
-            </table>
+			
         </div> <!-- col-md-12 -->
     </div> <!-- row row-centered -->
 </div> <!-- container -->
