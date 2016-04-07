@@ -4,7 +4,7 @@ SISTEM INFOMRASI PERTANDINGAN *v1.2*
 Step :
 ------
 1. Import The Newest Database : db_backup/[bigger_number]skc_solocup.sql
-2. Edit the Config file (lib/config.php)
+2. Edit the Config files (lib/config.php) & (login.php) & (modul/drowing/drowing_print.php)
   * Default :
   * username : root
   * password : root
