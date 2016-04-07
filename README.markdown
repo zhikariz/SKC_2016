@@ -4,10 +4,13 @@ SISTEM INFOMRASI PERTANDINGAN *v1.2*
 Step :
 ------
 1. Import The Newest Database : db_backup/[bigger_number]skc_solocup.sql
-2. Edit the Config files (lib/config.php) & (login.php) & (modul/drowing/drowing_print.php)
+  * [6] Full Data
+  * [7] Clean Data - Hanya Struktur DB
+2. Edit the Config files (lib/aio_config.php)
   * Default :
   * username : root
   * password : root
+  * dbname   : skc_solocup
 3. Place it on web server
 4. Launch!
 
@@ -18,7 +21,15 @@ Step :
 
 #### Fitur :
 ------------
-Semi Manual Drowing + Color Change
+* Semi Manual Drowing + Color Change
+* Cetak Bagan Pertandingan via Browser
+* Cetak Peserta Perkontingen
+* URL dengan Enkripsi
+* Live Search
+* Auto Complete Form Pendaftaran Peserta
+* Date Picker dalam Form
+* Custom Kelas Pertandingan
+* Multi login level (admin, drower, user)
 
 Credits :
 ---------
