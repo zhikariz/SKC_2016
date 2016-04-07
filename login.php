@@ -27,9 +27,8 @@
 <?php
 error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED );
 
-// koneksi
-$koneksi=mysql_connect('localhost','root','root'); 
-$db = mysql_select_db("skc_solocup"); 
+// koneksi all in one
+include "lib/aio_config.php";
 
 //mengamil data dari input
     $user=$_POST['user'];
