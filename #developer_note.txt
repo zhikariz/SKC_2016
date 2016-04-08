@@ -169,6 +169,7 @@ DB Explanation Backup
 [1] skc_solocup.sql > All DB termasuk kelas yang dipecah2 - Kelas_all, kelas_jk, Kelas_jb
 [6] drowing Old Deleted
 [7] DATABASE RESET - Auto Increment SET To 0 (NOT Changed 'Official_kontak' Table kontingen_all); Not Include _kelas All from mas Helmi
+[6] Data Lama + Kolom baru di kontingen_all
 
 ...
 [1] kelas_all - 70 Newest Kelas from Helmi SKC
@@ -304,7 +305,7 @@ DATABASE EDIT
 	# str_replace ' & " 			(OK)
 	# SUM Total Peserta Kelas 		(OK)
 	# Konfirmasi hapus data 		(OK)
-	# Bagan Kata Beregu 
+	# Opsi Action di Tiap Kontingen (OK)	
 
 	File Must Update @ Github
 		modul/
@@ -331,12 +332,21 @@ DATABASE EDIT
 		data_kontingen_view
 		#developer_note
 
+7/4/16 Kamis
+--------------
+	# Chrome Print Document (Ready)
+	# Drowing List (Added Detail Column : Jumlah Peserta & Jumlah Pool)
+	# All In One Config (Ready) lib/aio_config.php
+	# Github Updated !
+
+	! Missing - Kontak Official 
+	! Missing - Kata Beregu Issue
+	! Experiment - peserta_val_conv = live_search
 
 
-
-
-
-
+8/4/16 Jumat
+--------------
+	# Updated DB kontingen_all column(+nama, +kontak)
 
 
 
@@ -401,5 +411,13 @@ Tambahi Jumlah Total Peserta Kelas Pertandingan
 
 [Request] : Form Daftar Online ?
 [Request] : MPDF klik Print ?
+
+06 April 2015
+-------------
+[Request] : Nama Anggota Kata Beregu Tampil di Laporan Untuk Tiap Kontingen
+[Request] : Bagan Beda2 , Kata Perorangan + Kata Beregu (Nama pendek aja) + Kumite 
+[Request] : Pas input data peserta - tambahi Notes
+[Request] : Bagan untuk peserta < 16 ga usah dikasih tulisan pool
+[Request] : 1 pool , 2 pool, 4 pool (> 32 pool), 8 pool 
 
 \\\\\  [Konsul SKC]  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
