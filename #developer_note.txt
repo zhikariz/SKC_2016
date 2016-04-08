@@ -344,14 +344,12 @@ DATABASE EDIT
 	! Experiment - peserta_val_conv = live_search
 
 
+
 8/4/16 Jumat
 --------------
 	# Updated DB kontingen_all column(+nama, +kontak)
-
-
-
-
-
+	# Update Perkontingen Ada Kontak Official
+	! Tambahi 
 
 
 
