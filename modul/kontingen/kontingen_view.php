@@ -8,7 +8,9 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nama kontingen</th>
+                        <th>Nama Kontingen</th>
+                        <th>Nama Official</th>
+                        <th>Kontak Official</th>
                         <th>Opsi</th>
                     </tr>
                 </thead>
@@ -31,12 +33,29 @@
         <form method="post" action="#">
           <!-- Text input-->
           <div class="form-group row">
-            <label class="col-md-4 control-label" for="isi_kontingen">kontingen Pertandingan</label>  
+            <label class="col-md-4 control-label" for="isi_kontingen">Kontingen Pertandingan</label>  
             <div class="col-md-4">
             <input id="isi_kontingen" name="isi_kontingen" type="text" placeholder="kontingen" class="form-control input-md" required="">
               
             </div>
           </div>
+          
+          <div class="form-group row">
+            <label class="col-md-4 control-label" for="kontak">Nama Official</label>  
+            <div class="col-md-4">
+            <input id="nama" name="nama" type="text" placeholder="Nama Official yang dapat dihubungi" class="form-control input-md" required="">
+              
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-4 control-label" for="kontak">Kontak Official</label>  
+            <div class="col-md-4">
+            <input id="kontak" name="kontak" type="text" placeholder="Kontak Official yang dapat dihubungi" class="form-control input-md" required="">
+              
+            </div>
+          </div>
+
           
           <!-- Button (Double) -->
           <div class="form-group row">
@@ -54,18 +73,20 @@
 
 <?php
   include "lib/config.php";
-
   if($_POST[submit])
   {
-    $kontingen    = new Database;    
-    $table    = 'kontingen_all';
-    $isi = str_replace('"', '``', $_POST[isi_kontingen]);
-    $isi = str_replace("'", "`", $isi);
-    $kontingen_isi  = array(
-              'isi_kontingen'=>$isi              
-               );
-
-    $exec     = $kontingen->insert($table,$kontingen_isi);
+    $kontingen     = new Database;    
+    $table         = 'kontingen_all';
+    $isi           = str_replace('"', '``', $_POST[isi_kontingen]);
+    $isi           = str_replace("'", "`", $isi);
+    $nama          = $_POST[nama];
+    $kontak        = $_POST[kontak];
+    $kontingen_isi = array(
+                          'isi_kontingen'          => $isi,
+                          'nama_official'          => $nama,
+                          'kontak_official'        => $kontak             
+                            );
+    $exec          = $kontingen->insert($table,$kontingen_isi);
   } 
 ?>
 <!-- END Modal kontingen_add -->
@@ -75,13 +96,11 @@
      $("#kontingen_view").dataTable({
            'bProcessing': true,
             'bServerSide': true,
-
             //disable order dan searching pada tombol aksi
                  "columnDefs": [ {
-              "targets": [2],
+              "targets": [4],
               "orderable": false,
               "searchable": false
-
             } ],
             "ajax":{
               url :"data_kontingen_view.php",
@@ -93,10 +112,8 @@
                   },*/
           error: function (xhr, error, thrown) {
             console.log(xhr);
-
             }
           },
-
         });
     </script>
 
