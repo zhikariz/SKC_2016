@@ -1,17 +1,6 @@
 <?php 
-		// Kudu dibuat 
-		// nama kelas
-		// get pool 
-		// penomoran bagan (OK)
-		// nama peserta potong
-
 		//Koneksi Database & PHP PDO
-		error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
-		ini_set( "display_errors", true );
-		define( "DB_DSN", "mysql:host=localhost;dbname=skc_solocup" );
-		define( "DB_USERNAME", "root" );
-		define( "DB_PASSWORD", "root" );
-		define('DB_CHARACSET', 'utf8');
+    require_once ('../../lib/aio_config.php');
 
 		require_once ('../../lib/Database.php');
 		require_once ('../../lib/Dtable.php');
