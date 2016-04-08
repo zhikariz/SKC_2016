@@ -169,7 +169,8 @@ DB Explanation Backup
 [1] skc_solocup.sql > All DB termasuk kelas yang dipecah2 - Kelas_all, kelas_jk, Kelas_jb
 [6] drowing Old Deleted
 [7] DATABASE RESET - Auto Increment SET To 0 (NOT Changed 'Official_kontak' Table kontingen_all); Not Include _kelas All from mas Helmi
-[6] Data Lama + Kolom baru di kontingen_all
+[8] Data Lama + Kolom baru di kontingen_all
+[9] DB Baru Clean + SET Kelas 70 SOLOCUP 
 
 ...
 [1] kelas_all - 70 Newest Kelas from Helmi SKC
