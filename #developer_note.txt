@@ -350,8 +350,17 @@ DATABASE EDIT
 --------------
 	# Updated DB kontingen_all column(+nama, +kontak)
 	# Update Perkontingen Ada Kontak Official
-	! Tambahi 
 
+9/4/16 Sabtu
+--------------
+	# Update DB (Peserta->notes) 	(OK)
+	# Fitur Add : 
+		> Nama Official & Kontak di Perkontingen 				(NOT)
+		> Notes in Add, Edit, View Peserta 						(NOT)
+		> View Perkontingen > Perlihatkan Notes Peserta Beregu 	(NOT)
+	# Bug Fix 	:
+		> Jumlah Beregu di Jumlah Kelas & Jumlah Kontingen 		(NOT)
+		> Bagan Per Pool Kudu 1,2,4, dsb 						(NOT)
 
 
 
