@@ -121,7 +121,7 @@ include_once "lib/config.php";
                     </tr>
                 </thead>
                <tbody> 
-					<?php
+					<?php						
 						foreach ($query	as $value) {
 							$edit = paramEncrypt("uri=peserta/peserta_edit&id_peserta=".$value->id_peserta);
 							$del = paramEncrypt("uri=peserta/peserta_delete&id_peserta=".$value->id_peserta);
@@ -130,12 +130,35 @@ include_once "lib/config.php";
 												"delete"	=> $del,
 												"detail"	=> $detail
 												);
-							//array sementara data
+							
+							//Tampilkan Nama Lengkap Bila Beregu
+							$info_beregu = unserialize($value->info_beregu);
+							$pecah_kelas = explode(" ", $value->isi_kelas);
+
 							echo "
 								<tr>
 									<td>".$value->id_peserta."</td>
-									<td>".$value->nama."</td>
-									<td>".$value->tgl_lahir."</td>
+
+									<td>";
+										//Potong untuk logika (Jika Beregu maka Tampilkan Semua Nama)
+										if(in_array("Beregu", $pecah_kelas) and in_array("Kata", $pecah_kelas))
+										{
+											foreach ($info_beregu as $key => $regu) {
+												echo $regu[nama]."<br>";
+											}
+											echo "</td><td>";
+											foreach ($info_beregu as $key => $regu) {
+												echo $regu[tgl_lahir]."<br>";
+											}											
+										}								
+										else
+										{
+											echo $value->nama;
+											echo "</td><td>";
+											echo $value->tgl_lahir;
+										}									
+							echo "
+									</td>
 									<td>".$value->berat_badan."</td>
 									<td>".$value->perguruan."</td>
 									<td>".$value->isi_kelas."

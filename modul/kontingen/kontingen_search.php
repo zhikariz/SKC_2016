@@ -100,7 +100,6 @@ include_once "lib/config.php";
 								}
 						foreach ($query4 as $value) {
 							// Total Peserta Di Kontingen Ini
-							echo "Total = $value->Total - Jml Regu = $jml_regu + Jml Anggota Regu = $jml_ang_regu";
 							echo "
 									<td>".$total_pes."</td>
 								 </tr> "; 
