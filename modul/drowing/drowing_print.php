@@ -52,7 +52,7 @@
 	    $arr_peserta 	  	= unserialize($list_peserta);
 
 		//Pool yang akan di print
-		$pool_get 				= $_GET[pool];
+		$pool_get 				= $_GET[pool];    
 		$kelas 					= $kelas_val_conv[$id_kelas];
 		
 		
@@ -102,6 +102,9 @@
 			// Maksimal 25 Karakter
 
 			// Nomor 9 tapi di letak di 17, 17 itu urutan ke 9
+
+      // Hilangkan Nama Pool Saat di Print
+      $pool_get         = str_replace("A-", " ", $pool_get);
 		}
 
 ?>

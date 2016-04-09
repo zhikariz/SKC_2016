@@ -74,10 +74,15 @@
 			//Array yang akan masuk ke database
 			$arr_inp	= []; 
 
-			$pool_name  = [0,'A','B','C','D','E','F','G','H','I','J'];
+			// Lib Nama Pool 
+			$pool_name1 = [0,'A-'];
+			$pool_name2 = [0,'A','B'];
+			$pool_name4 = [0,'A1','A2','B1','B2'];
+			$pool_name8  = [0,'A1','A2','A3','A4','B1','B2','B3','B4'];
 
 			// Jika hanya 1 pool
 			if($bagi < 1){
+				$pool_name 			= $pool_name1; // Langsung inisialisasi 1 pool tanpa nama
 				$jml_pool			= 1;
 				$tiap_pool 			= $jml_peserta;
 				$opo 				= $jml_pool * $tiap_pool;
@@ -96,7 +101,18 @@
 			// Jika Lebih dari satu pool
 			else {		
 				$jml_pool 	= ceil($bagi);					  // Bulatkan kebawah - Jumlah Pool 
-				$tiap_pool	= ceil($jml_peserta / $jml_pool); // Bulatkan kebawah - Banyak Peserta tiap pool
+				if($jml_pool == 3)
+				{
+					$jml_pool = 4;
+				}
+				else if(($jml_pool > 4) and ($jml_pool < 8))
+				{
+					$jml_pool = 8;
+				}
+
+				$pool_name 	= ${pool_name.$jml_pool};
+
+				$tiap_pool	= ceil($jml_peserta / $jml_pool)-1; // Bulatkan kebawah - Banyak Peserta tiap pool
 				$opo 		= $jml_pool * $tiap_pool;         // Total Maksimal Peserta yang ditampung di semua pool				
 
 				// Urutan awal untuk memasukkan tiap id_dan_data
@@ -113,8 +129,12 @@
 
 					${pre_data_peserta.$i}	= [];	
 
-					// Masukkan data ke array ini, ketika sudah max dari hasil bagi dua maka masukkan ke variable selanjutnya
-					// Diolah dulu !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!					
+					// Fungsi Bagi Rata Sisa modulusnya ke tiap pool
+					if ($i+1 <= $modulus){
+						$tiap_pool += 1;
+					}	
+
+					// Masukkan data ke array ini, ketika sudah max dari hasil bagi dua maka masukkan ke variable selanjutnya				
 					for($ij=1; $ij<=$tiap_pool; $ij++)
 					{
 						${pre_data_peserta.$i}[$ij]	= $id_dan_data[$urutan_data];
@@ -122,7 +142,11 @@
 					}
 					
 					$pre_pool_no[$pool_name[${pool_no.$i}]] = ${pre_data_peserta.$i};
-					
+
+					// Fungsi Bagi Rata Sisa modulusnya ke tiap pool
+					if ($i+1 <= $modulus){
+						$tiap_pool -= 1;
+					}					
 				} // Close for
 
 				// Keluaran array dijadikan serial untuk dapat masuk ke DB
@@ -283,25 +307,26 @@
 					$arr_identitas['id_peserta'] 		= $pecah[0];
 					$arr_identitas['id_kontingen'] 		= $pecah[1];
 
-					// if($pecah[0] == "")
-					// {
-					// 	//pass
-					// }
-					// else
-					// {
-						$arr_identitas_tampung[$no]			= $arr_identitas;					
-					// }					
+					$arr_identitas_tampung[$no]			= $arr_identitas;										
+					print_r($arr_identitas_tampung[$no]);
+					echo " $no <br><br>";	
 				} // foreach 2
-				$arr_pool[$pool] 						= $arr_identitas_tampung;		
-			} // foreach 1
+				
+				$arr_pool[$pool] 						= $arr_identitas_tampung;	
 
+				print_r($arr_pool[$pool]);
+				echo " $pool <br><br>";					
+			} // foreach 1
+			print_r($arr_pool);
+
+			exit();
 			$dat = array(
 						'id_kelas'		=> $id_kelas_get,
 						'list_peserta'	=> serialize($arr_pool)
 					);
 			$table = 'drowing';
 			$masukan = $db->insert($table,$dat);
-			echo "<meta http-equiv='refresh' content='0;url=./?".paramEncrypt("uri=drowing/drowing_hasil")."' />";
+			// echo "<meta http-equiv='refresh' content='0;url=./?".paramEncrypt("uri=drowing/drowing_hasil")."' />";
 
 		} // if(in_array($id_kelas_get))
 	} // CLose if($submit);

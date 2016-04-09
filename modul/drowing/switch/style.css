@@ -15,7 +15,7 @@ body {
 
 .disp-input {
 	/*display: inline-block;*/
-	display: none;
+	/*display: none;*/
 	padding: 2px;
 	width: 250px;
 }
