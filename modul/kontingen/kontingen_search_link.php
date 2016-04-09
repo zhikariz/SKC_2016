@@ -32,14 +32,14 @@ include_once "lib/config.php";
 											ON peserta.id_kelas=kelas_all.id_kelas
 											INNER JOIN kontingen_all 
 											ON peserta.id_kontingen=kontingen_all.id_kontingen 
-											WHERE peserta.id_kontingen='$cari' and kelas_all.isi_kelas LIKE '%Beregu%' ");
+											WHERE peserta.id_kontingen='$cari' and kelas_all.isi_kelas LIKE '%Kata Beregu%' ");
 
 	$query2		= $db->custom_query("SELECT COUNT(peserta.id_peserta) AS Perorangan
 											FROM peserta INNER JOIN kelas_all
 											ON peserta.id_kelas=kelas_all.id_kelas
 											INNER JOIN kontingen_all 
 											ON peserta.id_kontingen=kontingen_all.id_kontingen 
-											WHERE peserta.id_kontingen='$cari' and kelas_all.isi_kelas LIKE '%Perorangan%' ");
+											WHERE peserta.id_kontingen='$cari' and kelas_all.isi_kelas LIKE '%Kata Perorangan%' ");
 
 	$query3		= $db->custom_query("SELECT COUNT(peserta.id_peserta) AS Kumite
 											FROM peserta INNER JOIN kelas_all
@@ -78,10 +78,10 @@ include_once "lib/config.php";
 					<?php
 						foreach ($query1 as $value) {
 							//array sementara data
-							$jml_ang_regu  	= $value->Beregu;
-							$jml_regu 		= $jml_ang_regu / 3;
+							$jml_regu 		= $value->Beregu;
+							$jml_ang_regu  	= $jml_regu * 3;	
 							echo "<tr>
-									<td>".$value->Beregu." Peserta (".$jml_regu." Regu)</td>
+									<td>".$jml_regu." Regu (".$jml_ang_regu." Peserta)</td>
 								   "; 
 								}
 						foreach ($query2 as $value) {
@@ -97,9 +97,10 @@ include_once "lib/config.php";
 								 "; 
 								}
 						foreach ($query4 as $value) {
-							//array sementara data
+							// Total Peserta Di Kontingen Ini
+							$total_pes = ($value->Total - $jml_regu) + $jml_ang_regu;
 							echo "
-									<td>".$value->Total."</td>
+									<td>".$total_pes."</td>
 								 </tr> "; 
 								}
 						?>

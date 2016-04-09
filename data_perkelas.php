@@ -28,8 +28,8 @@ $columns = array(
 		// Cek jika beregu, maka jumlah regu = jumlah peserta / 3
 		if(in_array("Beregu", $pecah_kelas))
 		{
-			$jumlah_regu 	= $jumlah / 3;
-			$jumlah 		= $jumlah . " (" . $jumlah_regu . " Regu)";
+			$jumlah_asli 	= $jumlah * 3;
+			$jumlah 		= $jumlah_asli . " (" . $jumlah . " Regu)";
 		}
 
 
