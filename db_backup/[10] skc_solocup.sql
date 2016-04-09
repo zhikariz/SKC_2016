@@ -21,10 +21,16 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
+-- DROP Any Existed Table
+DROP TABLE IF EXISTS `admin`;
+DROP TABLE IF EXISTS `peserta`;
+DROP TABLE IF EXISTS `kelas_all`;
+DROP TABLE IF EXISTS `kontingen_all`;
+DROP TABLE IF EXISTS `drowing`;
 --
 -- Table structure for table `admin`
 --
+
 
 CREATE TABLE IF NOT EXISTS `admin` (
   `id_admin` int(5) NOT NULL,
