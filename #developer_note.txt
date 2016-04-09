@@ -361,6 +361,7 @@ DATABASE EDIT
 	# Bug Fix 	:
 		> Jumlah Beregu di Jumlah Kelas & Jumlah Kontingen 		(NOT)
 		> Bagan Per Pool Kudu 1,2,4, dsb 						(NOT)
+		> Bagan Baru yang Kumite, Yang Beregu Belum
 
 
 
