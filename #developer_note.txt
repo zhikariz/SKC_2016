@@ -353,7 +353,8 @@ DATABASE EDIT
 
 9/4/16 Sabtu
 --------------
-	# Update DB (Peserta->notes) 	(OK)
+	# Update DB (Peserta->info_beregu) 	(OK)
+	! DB Not Backed Up
 	# Fitur Add : 
 		> Nama Official & Kontak di Perkontingen 				(OK)
 		> Notes in Add, Edit, View Peserta 						(OK) 
