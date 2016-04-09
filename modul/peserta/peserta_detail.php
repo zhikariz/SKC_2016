@@ -17,6 +17,9 @@ $q 	    = $peserta->fetch_single_row($table,$col,$val);
   $Berat_Badan	  = $q->berat_badan;
   $JK             = $q->jk;
   $Input_By       = $q->input_by;
+  if(! empty($q->info_beregu)){
+    $beregu_view    = unserialize($q->info_beregu);
+  }    
 
   // Konversi id_kelas > isi dansebaliknya
   $kelas_id_conv    = array();
@@ -155,6 +158,32 @@ $q 	    = $peserta->fetch_single_row($table,$col,$val);
     </div>
   </div>
 
+  <!-- Notes For Kata Beregu -->
+  <fieldset>
+    <legend class="text-center"><br>Form* Tambahan untuk Kata Beregu <br>
+    <code style="font-size:0.5em">* Selain Kata Beregu, KOSONGi Field Ini</code>
+    </legend>  
+
+    <?php 
+      foreach ($beregu_view as $key => $val_regu) {
+        # Tampilkan Data Beregu
+    ?>
+      <!-- Anggota Regu <?php echo $key; ?> -->            
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="beregu<?php echo $key; ?>">Anggota Regu <?php echo $key; ?></label>  
+        <div class="col-md-3">
+        <input readonly="" name="beregu<?php echo $key; ?>" type="text" placeholder="Nama Lengkap" class="form-control input-md" value="<?php echo $val_regu[nama]; ?>">              
+        </div>
+
+        <div class="col-md-3">
+        <input readonly id="tgl_beregu<?php echo $key; ?>" name="tgl_beregu<?php echo $key; ?>" type="text" placeholder="Tanggal Lahir" class="form-control input-md" value="<?php echo $val_regu[tgl_lahir]; ?>">
+        </div>                
+      </div>    
+    <?php
+      } // CLOSE foreach ($beregu_view as
+    ?>
+      <hr>                                    
+  </fieldset>    
   <!-- Text input-->
   <div class="form-group">
     <label class="col-md-4 control-label" for="kelas_pilih">Di Input Oleh</label>  

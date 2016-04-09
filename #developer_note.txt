@@ -356,7 +356,7 @@ DATABASE EDIT
 	# Update DB (Peserta->notes) 	(OK)
 	# Fitur Add : 
 		> Nama Official & Kontak di Perkontingen 				(NOT)
-		> Notes in Add, Edit, View Peserta 						(NOT)
+		> Notes in Add, Edit, View Peserta 						(OK) 
 		> View Perkontingen > Perlihatkan Notes Peserta Beregu 	(NOT)
 	# Bug Fix 	:
 		> Jumlah Beregu di Jumlah Kelas & Jumlah Kontingen 		(NOT)

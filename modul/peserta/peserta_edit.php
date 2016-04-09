@@ -17,6 +17,9 @@ $q 	    = $peserta->fetch_single_row($table,$col,$val);
   $Berat_Badan	  = $q->berat_badan;
   $JK             = $q->jk;
   $Input_By       = $q->input_by;
+  if(! empty($q->info_beregu)){
+    $beregu_view    = unserialize($q->info_beregu);
+  }  
 
   // Konversi id_kelas > isi dansebaliknya
   $kelas_id_conv    = array();
@@ -76,22 +79,17 @@ $q 	    = $peserta->fetch_single_row($table,$col,$val);
   <div class="form-group">
     <label class="col-md-4 control-label" for="nama">Nama Peserta</label>  
     <div class="col-md-6">
-    <input id="nama" name="nama" type="text" placeholder="Data Tersimpan: <?php echo $Nama; ?>" class="form-control input-md" required="" value="<?php echo $Nama; ?>">
-      
-    </div>
+      <input id="nama" name="nama" type="text" placeholder="Data Tersimpan: <?php echo $Nama; ?>" class="form-control input-md" value="<?php echo $Nama; ?>" required="">
+      <span class="help-block">* Untuk Kata Beregu, isi dengan nama panggilan anggota dipisah koma (contoh: Albert,Bangkit,Vani)</span>
+    </div> 
   </div>
 
   <!-- Text input-->
   <div class="form-group">
     <label class="col-md-4 control-label" for="tgl_lahir">Tanggal Lahir</label>  
     <div class="col-md-6">
-      <div class='input-group date' id='datetimepicker10'>
-          <input name="tgl_lahir" type='text' class="form-control" placeholder="Data Tersimpan: <?php echo $Tanggal_Lahir; ?>" value="<?php echo $Tanggal_Lahir; ?>" />
-          <span class="input-group-addon">
-              <span class="glyphicon glyphicon-calendar">
-              </span>
-          </span>
-      </div>               
+      <input id="tgl_lahir" name="tgl_lahir" type="text" placeholder="Data Tersimpan: <?php echo $Tanggal_Lahir; ?>" class="form-control input-md" value="<?php echo $Tanggal_Lahir; ?>" required="" />
+      <span class="help-block">* Untuk Kata Beregu, Isi sembarang Tanggal Lahir</span>                     
     </div>         
   </div>
 
@@ -155,11 +153,38 @@ $q 	    = $peserta->fetch_single_row($table,$col,$val);
     </div>
   </div>
 
+  <!-- Notes For Kata Beregu -->
+  <fieldset>
+    <legend class="text-center"><br>Form* Tambahan untuk Kata Beregu <br>
+    <code style="font-size:0.5em">* Selain Kata Beregu, KOSONGi Field Ini</code>
+    </legend>  
+
+    <?php 
+      foreach ($beregu_view as $key => $val_regu) {
+        # Tampilkan Data Beregu
+    ?>
+      <!-- Anggota Regu <?php echo $key; ?> -->            
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="beregu<?php echo $key; ?>">Anggota Regu <?php echo $key; ?></label>  
+        <div class="col-md-3">
+        <input name="beregu<?php echo $key; ?>" type="text" placeholder="Nama Lengkap" class="form-control input-md" value="<?php echo $val_regu[nama]; ?>">              
+        </div>
+
+        <div class="col-md-3">
+        <input id="tgl_beregu<?php echo $key; ?>" name="tgl_beregu<?php echo $key; ?>" type="text" placeholder="Tanggal Lahir" class="form-control input-md" value="<?php echo $val_regu[tgl_lahir]; ?>">
+        </div>                
+      </div>    
+    <?php
+      } // CLOSE foreach ($beregu_view as
+    ?>
+      <hr>                                    
+  </fieldset>          
+
   <!-- Text input-->
   <div class="form-group">
     <label class="col-md-4 control-label" for="kelas_pilih">Di Input Oleh</label>  
     <div class="col-md-6">
-    <input id="input_by" readonly class="form-control input-md" required="" value="<?php echo $Input_By; ?>">
+    <input id="input_by" readonly class="form-control input-md" value="<?php echo $Input_By; ?>">
       
     </div>
   </div>
@@ -168,9 +193,9 @@ $q 	    = $peserta->fetch_single_row($table,$col,$val);
   <div class="form-group">
     <label class="col-md-4 control-label" for="submit"></label>
     <div class="col-md-6">
-      <input type="submit" name="submit" class="btn btn-primary" value="Simpan">
-      <button id="reset" type="reset" name="reset" class="btn btn-danger">Reset</button>
-      <button onclick="history.back()" type="button" class="btn btn-default">Batal</button>
+      <input type="submit" name="submit" class="btn btn-lg btn-primary" value="Simpan Data">
+      <button id="reset" type="reset" name="reset" class="btn btn-lg btn-default">Reset</button>      
+      <button onclick="history.back()" type="button" class="btn btn-lg btn-default">Batal</button>
     </div>
   </div>        
 </form>  
@@ -218,10 +243,25 @@ $q 	    = $peserta->fetch_single_row($table,$col,$val);
       });     
 
   // Datepicker BS 3
-  $('#datetimepicker10').datetimepicker({
+  $('#tgl_lahir').datetimepicker({
     viewMode: 'days',
     format: 'YYYY-MM-DD'
   });  
+
+  $('#tgl_beregu1').datetimepicker({
+    viewMode: 'days',
+    format: 'YYYY-MM-DD'
+  });          
+
+  $('#tgl_beregu2').datetimepicker({
+    viewMode: 'days',
+    format: 'YYYY-MM-DD'
+  });          
+
+  $('#tgl_beregu3').datetimepicker({
+    viewMode: 'days',
+    format: 'YYYY-MM-DD'
+  });     
 
 </script>
 
@@ -229,6 +269,16 @@ $q 	    = $peserta->fetch_single_row($table,$col,$val);
 <?php
 if(isset($_POST[submit])){
 	$table_up	= "peserta";
+
+  // Serialkan data beregu dalam array(nama,tgl_lahir)
+  $beregu     = array();
+  for($i=1; $i<=3; $i++)
+  {
+    $beregu[$i]['nama'] = $_POST['beregu'.$i];
+    $beregu[$i]['tgl_lahir'] = $_POST['tgl_beregu'.$i];
+  }
+  $info_beregu = serialize($beregu);
+
 	$data_up	= array(
 
                         'nama'          => htmlentities($_POST[nama]),
@@ -237,6 +287,7 @@ if(isset($_POST[submit])){
                         'tgl_lahir'     => $_POST[tgl_lahir],
                         'perguruan'     => $_POST[perguruan],
                         'jk'            => $_POST[jk],
+                        'info_beregu'   => $info_beregu,
                         'id_kelas'      => $kelas_id_conv[$_POST[kelas_pilih]]
                          );
 	$prim_col	= "id_peserta";
