@@ -154,6 +154,11 @@ Kumite Perorangan Veteran 40 - 45 Th
 Kumite Perorangan Veteran 45 Th Keatas
 
 .........................................
+Reset MySQL Data Command
+DELETE FROM peserta;
+DELETE FROM kontingen_all;
+DELETE FROM kelas_all;
+DELETE FROM drowing;
 
 ........................................................................................................
 
@@ -171,6 +176,7 @@ DB Explanation Backup
 [7] DATABASE RESET - Auto Increment SET To 0 (NOT Changed 'Official_kontak' Table kontingen_all); Not Include _kelas All from mas Helmi
 [8] Data Lama + Kolom baru di kontingen_all
 [9] DB Baru Clean + SET Kelas 70 SOLOCUP 
+[9] DB Baru Clean + Updated Column Peserta + SET Kelas 70 SOLOCUP 
 
 ...
 [1] kelas_all - 70 Newest Kelas from Helmi SKC
