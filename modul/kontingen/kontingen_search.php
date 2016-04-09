@@ -20,7 +20,7 @@ include_once "lib/config.php";
 	// Konversi
 	$cari = $kont_id_conv[$cari_get];
 
-	$query 		= $db->custom_query("SELECT peserta.*,kelas_all.isi_kelas, kontingen_all.isi_kontingen
+	$query 		= $db->custom_query("SELECT peserta.*,kelas_all.isi_kelas, kontingen_all.*
 											FROM peserta INNER JOIN kontingen_all 
 											ON peserta.id_kontingen=kontingen_all.id_kontingen 
 											INNER JOIN kelas_all
@@ -29,6 +29,10 @@ include_once "lib/config.php";
 											ORDER BY peserta.nama ASC
 											");
 
+	$query0 	= $db->custom_query("SELECT kontingen_all.*	FROM kontingen_all, peserta										
+											WHERE peserta.id_kontingen='$cari'
+											");
+	
 	$query1 		= $db->custom_query("SELECT COUNT(peserta.id_peserta) AS Beregu
 											FROM peserta INNER JOIN kelas_all
 											ON peserta.id_kelas=kelas_all.id_kelas
@@ -55,6 +59,10 @@ include_once "lib/config.php";
 											INNER JOIN kontingen_all 
 											ON peserta.id_kontingen=kontingen_all.id_kontingen 
 											WHERE peserta.id_kontingen='$cari' ");
+	foreach ($query0	as $value) {
+		$nama_of 	= $value->nama_official;
+		$kontak_of 	= $value->kontak_official;
+	}		
 	//buat inisialisasi array data
 	$data = array();
 	?>
@@ -63,7 +71,8 @@ include_once "lib/config.php";
 <div class="container">
     <!-- Heading Row -->
     <div class="row row-centered">
-        <h1><span class="label label-danger"><?php echo "Kontingen ".$cari=$_POST['cari'] ; ?></span></a> </br></h1><br>                
+        <h1><span class="label label-danger"><?php echo "Kontingen ".$cari=$_POST['cari'] ; ?></span></h1>     
+        <h4 class="page-header text-right">Official : <?php echo $nama_of; ?> - <strong><?php echo $kontak_of; ?></strong></h4>           
         <div class="col-md-12">
 			
 			<!-- Table Detail Jumlah -->
@@ -108,7 +117,7 @@ include_once "lib/config.php";
 			</table>
 
 			<!-- Table Peserta All -->
-			<h3>Semua Peserta dari <?php echo "Kontingen ".$cari=$_POST['cari'] ; ?></h3>
+			<h3>Semua Peserta dari <?php echo "Kontingen ".$cari=$_POST['cari'] ; ?></h3>			
             <table id="overall" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
                 <thead>
                     <tr>

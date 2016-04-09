@@ -27,7 +27,8 @@
                 <thead>
                     <tr>
                         <th>Kontingen</th>
-                        <th>Jumlah</th>
+                        <th>Jumlah Tanding</th>
+                        <th>Keterangan</th>
                     </tr>
                 </thead>
                <tbody>                 
@@ -45,11 +46,14 @@
 
             //disable order dan searching pada tombol aksi
                  "columnDefs": [ {
-              "targets": [1],
-              "orderable": true,
-              "searchable": false
-
-            } ],
+                    "targets": [1],
+                    "orderable": true,
+                    "searchable": false
+                  }, {
+                    "targets": [2],
+                    "orderable": false,
+                    "searchable": false
+                  }],
             "ajax":{
               url :"data_perkontingen.php",
             type: "post",  // method  , by default get

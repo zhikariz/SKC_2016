@@ -18,13 +18,17 @@ include_once "lib/config.php";
 	  $kont_val_conv[$val->id_kontingen]  = $val->isi_kontingen;
 	}
 
-	$query 		= $db->custom_query("SELECT peserta.*,kelas_all.isi_kelas, kontingen_all.isi_kontingen
+	$query 		= $db->custom_query("SELECT peserta.*,kelas_all.isi_kelas, kontingen_all.*
 											FROM peserta INNER JOIN kontingen_all 
 											ON peserta.id_kontingen=kontingen_all.id_kontingen 
 											INNER JOIN kelas_all
 											ON kelas_all.id_kelas=peserta.id_kelas
 											WHERE peserta.id_kontingen='$cari'
 											ORDER BY peserta.nama ASC
+											");
+
+	$query0 	= $db->custom_query("SELECT kontingen_all.*	FROM kontingen_all, peserta										
+											WHERE peserta.id_kontingen='$cari'
 											");
 
 	$query1 		= $db->custom_query("SELECT COUNT(peserta.id_peserta) AS Beregu
@@ -53,6 +57,10 @@ include_once "lib/config.php";
 											INNER JOIN kontingen_all 
 											ON peserta.id_kontingen=kontingen_all.id_kontingen 
 											WHERE peserta.id_kontingen='$cari' ");
+	foreach ($query0	as $value) {
+		$nama_of 	= $value->nama_official;
+		$kontak_of 	= $value->kontak_official;
+	}	
 	//buat inisialisasi array data
 	$data = array();
 	?>
@@ -61,7 +69,8 @@ include_once "lib/config.php";
 <div class="container">
     <!-- Heading Row -->
     <div class="row row-centered">
-        <h1><span class="label label-danger"><?php echo "Kontingen ".$kont_val_conv[$cari]; ?></span></a><br></h1><br>
+        <h1><span class="label label-danger"><?php echo "Kontingen ".$kont_val_conv[$cari]; ?></span</span></h1>     
+        <h4 class="page-header text-right">Official : <?php echo $nama_of; ?> - <strong><?php echo $kontak_of; ?></strong></h4> 
         <div class="col-md-12">
 
 			<!-- Table Detail Jumlah -->

@@ -355,13 +355,13 @@ DATABASE EDIT
 --------------
 	# Update DB (Peserta->notes) 	(OK)
 	# Fitur Add : 
-		> Nama Official & Kontak di Perkontingen 				(NOT)
+		> Nama Official & Kontak di Perkontingen 				(OK)
 		> Notes in Add, Edit, View Peserta 						(OK) 
-		> View Perkontingen > Perlihatkan Notes Peserta Beregu 	(NOT)
+		> View Perkontingen > Perlihatkan Notes Peserta Beregu 	(OK)
 	# Bug Fix 	:
-		> Jumlah Beregu di Jumlah Kelas & Jumlah Kontingen 		(NOT)
+		> Jumlah Beregu di Jumlah Kelas & Jumlah Kontingen 		(OK)
 		> Bagan Per Pool Kudu 1,2,4, dsb 						(NOT)
-		> Bagan Baru yang Kumite, Yang Beregu Belum
+		> Bagan Baru yang Kumite, Yang Beregu Belum 			(NOT)
 
 
 
