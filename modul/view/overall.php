@@ -47,23 +47,18 @@
           <div class="form-group">
             <label class="col-md-4 control-label" for="nama">Nama Peserta</label>  
             <div class="col-md-6">
-            <input id="nama" name="nama" type="text" placeholder="Nama" class="form-control input-md" required="">
-              
-            </div>
+            <input id="nama" name="nama" type="text" placeholder="Nama Lengkap" class="form-control input-md" required="">
+            <span class="help-block">* Untuk Kata Beregu, isi dengan nama panggilan anggota dipisah koma (contoh: Albert,Bangkit,Vani)</span>
+            </div>            
           </div>
 
           <!-- Text input-->
           <div class="form-group">
             <label class="col-md-4 control-label" for="tgl_lahir">Tanggal Lahir</label>  
             <div class="col-md-6">
-              <div class='input-group date' id='datetimepicker10'>
-                  <input name="tgl_lahir" type='text' class="form-control" placeholder="1995-09-24 (Contoh Untuk Format 24 September 1995)" />
-                  <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-calendar">
-                      </span>
-                  </span>
-              </div>               
-            </div>         
+                  <input id="tgl_lahir" name="tgl_lahir" type="text" placeholder="1995-09-24 (Contoh Untuk Format 24 September 1995)" class="form-control input-md" required="" />
+                  <span class="help-block">* Untuk Kata Beregu, Isi sembarang Tanggal Lahir</span>
+            </div>               
           </div>
 
           <!-- Appended Input-->
@@ -110,12 +105,56 @@
             </div>
           </div>
 
+          <!-- Notes For Kata Beregu -->
+          <fieldset>
+            <legend class="text-center"><br>Form* Tambahan untuk Kata Beregu <br>
+            <code style="font-size:0.5em">* Selain Kata Beregu, KOSONGi Field Ini</code>
+            </legend>  
+
+              <!-- Anggota Regu 1 -->            
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="beregu1">Anggota Regu 1</label>  
+                <div class="col-md-3">
+                <input name="beregu1" type="text" placeholder="Nama Lengkap" class="form-control input-md">              
+                </div>
+
+                <div class="col-md-3">
+                <input id="tgl_beregu1" name="tgl_beregu1" type="text" placeholder="Tanggal Lahir" class="form-control input-md">
+                </div>                
+              </div>          
+
+              <!-- Anggota Regu 2 -->            
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="beregu2">Anggota Regu 2</label>  
+                <div class="col-md-3">
+                <input name="beregu2" type="text" placeholder="Nama Lengkap" class="form-control input-md">              
+                </div>
+
+                <div class="col-md-3">
+                <input id="tgl_beregu2" name="tgl_beregu2" type="text" placeholder="Tanggal Lahir" class="form-control input-md">
+                </div>                
+              </div>          
+
+              <!-- Anggota Regu 3 -->            
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="beregu3">Anggota Regu 3</label>  
+                <div class="col-md-3">
+                <input name="beregu3" type="text" placeholder="Nama Lengkap" class="form-control input-md">              
+                </div>
+
+                <div class="col-md-3">
+                <input id="tgl_beregu3" name="tgl_beregu3" type="text" placeholder="Tanggal Lahir" class="form-control input-md">
+                </div>                
+              </div>  
+              <hr>                                    
+          </fieldset>          
+
           <!-- Button (Double) -->
           <div class="form-group">
             <label class="col-md-4 control-label" for="submit"></label>
             <div class="col-md-6">
-              <input type="submit" name="submit" class="btn btn-primary" value="Simpan">
-              <button id="reset" type="reset" name="reset" class="btn btn-default">Reset</button>
+              <input type="submit" name="submit" class="btn btn-lg btn-primary" value="Simpan Data">
+              <button id="reset" type="reset" name="reset" class="btn btn-lg btn-default">Reset</button>
             </div>
           </div>        
         </form>              
@@ -147,6 +186,16 @@
     // Proses Input data Peserta
     $peserta    = new Database;
     $table      = 'peserta';
+
+    // Serialkan data beregu dalam array(nama,tgl_lahir)
+    $beregu     = array();
+    for($i=1; $i<=3; $i++)
+    {
+      $beregu[$i]['nama'] = $_POST['beregu'.$i];
+      $beregu[$i]['tgl_lahir'] = $_POST['tgl_beregu'.$i];
+    }
+    $info_beregu = serialize($beregu);
+
     $val_psrta  = array(
                         'nama'          => htmlentities($_POST[nama]),
                         'id_kontingen'     => $kont_id_conv[$_POST[kontingen]],                        
@@ -156,6 +205,7 @@
                         'perguruan'     => $_POST[perguruan],
                         'jk'            => $_POST[jk],
                         'id_kelas'      => $kelas_id_conv[$_POST[kelas_pilih]],
+                        'info_beregu'   => $info_beregu,
                         'input_by'      => $_SESSION[nama]
                          );
     $exec     = $peserta->insert($table,$val_psrta);
@@ -207,10 +257,25 @@
       });     
 
       // Datepicker BS 3
-      $('#datetimepicker10').datetimepicker({
+      $('#tgl_lahir').datetimepicker({
         viewMode: 'days',
         format: 'YYYY-MM-DD'
-      });     
+      }); 
+
+      $('#tgl_beregu1').datetimepicker({
+        viewMode: 'days',
+        format: 'YYYY-MM-DD'
+      });          
+
+      $('#tgl_beregu2').datetimepicker({
+        viewMode: 'days',
+        format: 'YYYY-MM-DD'
+      });          
+
+      $('#tgl_beregu3').datetimepicker({
+        viewMode: 'days',
+        format: 'YYYY-MM-DD'
+      });          
 
      // Data table
      $("#overall").dataTable({
