@@ -10,8 +10,6 @@
     // echo $list_peserta;
 
     $arr_peserta = unserialize($list_peserta);
-    print_r($arr_peserta);
-
 
     // Buat Array dengan id=isi kontingen dan value id kontingen, untuk konversi saat POST
     $kont_val_conv    = array();
