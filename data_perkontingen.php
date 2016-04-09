@@ -35,10 +35,16 @@ $columns = array(
 		foreach ($q_perorangan as $perorangan) {
 			$count_perorangan += $perorangan->Jml;
 		}
-
+		if($count_perorangan < 1) {
+			$count_perorangan = 0;
+		}
 		foreach ($q_beregu as $beregu) {
 			$count_beregu += $beregu->Jml_Regu;			
 		}
+		if($count_beregu < 1) {
+			$count_beregu = 0;
+		}
+		
 		$count_ang_regu = $count_beregu * 3;
 
 		// Jumlah Semua
