@@ -14,7 +14,7 @@
                                             WHERE kelas_all.isi_kelas NOT LIKE '%Kata Beregu%'
                                             GROUP BY peserta.id_kelas");
 
-  $q_beregu         = $kelas->custom_query("SELECT COUNT(peserta.id_peserta) AS Jml, COUNT(peserta.id_peserta)/3 AS Jml_Regu, kelas_all.* 
+  $q_beregu         = $kelas->custom_query("SELECT COUNT(peserta.id_peserta) AS Jml, COUNT(peserta.id_peserta) AS Jml_Regu, kelas_all.* 
                                             FROM peserta INNER JOIN kelas_all 
                                             ON peserta.id_kelas=kelas_all.id_kelas 
                                             WHERE kelas_all.isi_kelas LIKE '%Kata Beregu%'
