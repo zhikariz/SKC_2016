@@ -295,6 +295,8 @@
 
 		else
 		{
+			// Reverse urutan array (Karena jumlah terkecil berada dibelakang, untuk menghindari BUG, Trash Value saat Jumlah terbesar di awal)
+			$decode_arr = array_reverse($decode_arr);
 
 			foreach ($decode_arr as $pool => $data_peserta) {
 				$no = 0;						
@@ -307,26 +309,24 @@
 					$arr_identitas['id_peserta'] 		= $pecah[0];
 					$arr_identitas['id_kontingen'] 		= $pecah[1];
 
-					$arr_identitas_tampung[$no]			= $arr_identitas;										
-					print_r($arr_identitas_tampung[$no]);
-					echo " $no <br><br>";	
+					$arr_identitas_tampung[$no]			= $arr_identitas;
+
 				} // foreach 2
 				
-				$arr_pool[$pool] 						= $arr_identitas_tampung;	
+				$arr_pool[$pool] 						= $arr_identitas_tampung;					
 
-				print_r($arr_pool[$pool]);
-				echo " $pool <br><br>";					
 			} // foreach 1
-			print_r($arr_pool);
 
-			exit();
+			//Reverse lagi urutannya
+			$arr_pool 	= array_reverse($arr_pool);
+
 			$dat = array(
 						'id_kelas'		=> $id_kelas_get,
 						'list_peserta'	=> serialize($arr_pool)
 					);
 			$table = 'drowing';
 			$masukan = $db->insert($table,$dat);
-			// echo "<meta http-equiv='refresh' content='0;url=./?".paramEncrypt("uri=drowing/drowing_hasil")."' />";
+			echo "<meta http-equiv='refresh' content='0;url=./?".paramEncrypt("uri=drowing/drowing_hasil")."' />";
 
 		} // if(in_array($id_kelas_get))
 	} // CLose if($submit);
