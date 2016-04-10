@@ -17,8 +17,18 @@ $q 	    = $peserta->fetch_single_row($table,$col,$val);
   $Berat_Badan	  = $q->berat_badan;
   $JK             = $q->jk;
   $Input_By       = $q->input_by;
-  if(! empty($q->info_beregu)){
-    $beregu_view    = unserialize($q->info_beregu);
+  if(empty($q->info_beregu)){
+    // Buat Array Kosong untuk hindari error
+    $beregu     = array();
+    for($i=1; $i<=3; $i++)
+    {
+      $beregu[$i]['nama'] = "";
+      $beregu[$i]['tgl_lahir'] = "";
+    }
+    $beregu_view = $beregu;     
+  }  
+  else {
+    $beregu_view    = unserialize($q->info_beregu);    
   }  
 
   // Konversi id_kelas > isi dansebaliknya

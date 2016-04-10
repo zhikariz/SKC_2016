@@ -1,0 +1,44 @@
+Requirement
+...........
+	> Maksimal Program ini adalah 8 Pool Per Drowing
+	> Untuk Kelas, Format Memasukkan Namanya dengan TitleCase dan Mengandung Tiga Kata Ini
+		- Kumite
+		- Kata Perorangan
+		- Kata Beregu
+	> Require PHP 5.5 Or Xampp 3.2.1 Or Newer
+
+...........................................................................................................
+Fitur Tambahan Versi 1.7
+SKC Solocup 2016
+.................
+	db_backup
+	# [8v2] skc_sql (Untuk Sampling):
+		Data Sample dengan Struktur DB Terbaru 
+		Peserta di Kelas Kumite -52 Kg Kadet Putra : ada 38, bisa ditambah untuk data sample kelola drowing
+		Tidak ada data peserta Kelas Kata Beregu
+		Bisa Import tanpa harus hapus DB, Langsung Otomatis Replace Data	
+	# [10] skc_sql : 
+		Struktur Data Kosong Terbaru (Kolom Peserta terUpdate) + 70 Kelas Sudah include
+		Bisa Import tanpa harus hapus DB, Langsung Otomatis Replace Data
+
+	# Tambah, Edit Peserta dilengkapi Form Tambahan untuk Kata Beregu
+	# Pembagian Pool, Jumlah Pool hanya bisa 1,2,4,8
+	# Jumlah Per Pool Stabil
+	# Nama Pool
+		> Jika 1 Pool : Kosong
+		> Jika 2 Pool : A1, B1
+		> Jika 4 Pool : A1, A2, B1, B2
+		> Jika 8 Pool : A1, A2, A3, A4, B1, B2, B3, B4
+	# Auto Crop Nama yang lebih dari kotak dalam bagan
+	# Auto Config Margin saat print bagan di chrome
+	# Tampilan Jumlah Perkelas
+		> Jumlah Pertandingan diatas
+		> Jumlah Pertandingan (Peserta Perorangan dan Regu) tiap kelas
+		> Tidak ada angka desimal (koma)
+	# Tampilan Jumlah Perkontingen
+		> Jumlah Tanding (Jumlah Regu + Jumlah Perorangan)
+			- Jumlah 1 Regu adalah 3 Peserta
+			- Jumlah Total Peserta = (Jumlah Regu * 3) + Jumlah Perorangan
+		> Keterangan (Keterangan Detail dari Jumlah Tanding)
+		> Nama Official dan Kontak di detail tiap kontingen
+		> Nama Lengkap dan Tanggal Lahir anggota kelas "Kata Beregu" di detail tiap kontingen

@@ -82,3 +82,15 @@
 					echo "Peserta Pool $ec_pool : $di_pool_ini <br>";
 				} // Close for
 			}
+
+		    $beregu     = array();
+		    for($i=1; $i<=3; $i++)
+		    {
+		      $beregu[$i]['nama'] = "a";
+		      $beregu[$i]['tgl_lahir'] = "a";
+		    }	
+			print_r($beregu_arr);
+
+			echo "<br>".serialize($beregu);
+			
+?>
