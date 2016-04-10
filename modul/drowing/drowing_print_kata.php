@@ -1,13 +1,13 @@
 <?php
 	for($i=1; $i<=31; $i++)
 	{
-		${no_tanding_.$i} = $i;
-		${nama_ke_.$i} = "Nama Peserta ".$i;
-		${kontingen_ke_.$i} = "Kontingen No ".$i;
+		// ${no_tanding_.$i} = $i; Sudah di Set
+		${nama_ke_.$i} = substr(${nama_ke_.$i},0,15); 			 // 15 CharMax
+		${kontingen_ke_.$i} = substr(${kontingen_ke_.$i},0,24); //22 CharMax
+
+		${nama_ke_.$i} = ucwords(strtolower(${nama_ke_.$i})); 	// Ubah jadi lower lalu title Case
+		${kontingen_ke_.$i} = ucwords(strtolower(${kontingen_ke_.$i})); 	// Ubah jadi lower lalu title Case		
 	}
-	$kelas 		= "Kata / Kumite Beregu";
-	$pool_get 	= "A2";
-	
 ?>
 
 <html>
