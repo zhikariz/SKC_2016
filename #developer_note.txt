@@ -176,6 +176,7 @@ DB Explanation Backup
 [7] DATABASE RESET - Auto Increment SET To 0 (NOT Changed 'Official_kontak' Table kontingen_all); Not Include _kelas All from mas Helmi
 [8] Data Lama + Kolom baru di kontingen_all
 [9] DB Baru Clean + SET Kelas 70 SOLOCUP 
+[8v2] DB Baru Filled(terisi) + Updated Column Peserta (Untuk Sampling):
 [10] DB Baru Clean + Updated Column Peserta + SET Kelas 70 SOLOCUP 
 
 ...
@@ -369,6 +370,17 @@ DATABASE EDIT
 		> Jumlah Beregu di Jumlah Kelas & Jumlah Kontingen 		(OK)
 		> Bagan Per Pool Kudu 1,2,4, dsb 						(NOT)
 		> Bagan Baru yang Kumite, Yang Beregu Belum 			(NOT)
+
+10/4/16 Minggu
+--------------
+	# Bug Fix 	:
+		> Bagan Per Pool Kudu 1,2,4, dsb 						(OK)
+		> Bagan Baru yang Kumite, Yang Beregu Belum 			(OK)
+		> Pool Name : A,B , A1,A2, B1, B2 , dst 				(OK)
+
+
+
+
 
 
 
