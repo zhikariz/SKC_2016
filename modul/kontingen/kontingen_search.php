@@ -29,8 +29,8 @@ include_once "lib/config.php";
 											ORDER BY peserta.nama ASC
 											");
 
-	$query0 	= $db->custom_query("SELECT kontingen_all.*	FROM kontingen_all, peserta										
-											WHERE peserta.id_kontingen='$cari'
+	$query0 	= $db->custom_query("SELECT * FROM kontingen_all										
+											WHERE id_kontingen='$cari'
 											");
 	
 	$query1 		= $db->custom_query("SELECT COUNT(peserta.id_peserta) AS Beregu
@@ -59,9 +59,9 @@ include_once "lib/config.php";
 											INNER JOIN kontingen_all 
 											ON peserta.id_kontingen=kontingen_all.id_kontingen 
 											WHERE peserta.id_kontingen='$cari' ");
-	foreach ($query0	as $value) {
-		$nama_of 	= $value->nama_official;
-		$kontak_of 	= $value->kontak_official;
+	foreach ($query0 as $values) {
+		$nama_of 	= $values->nama_official;
+		$kontak_of 	= $values->kontak_official;
 	}		
 	//buat inisialisasi array data
 	$data = array();
@@ -109,6 +109,7 @@ include_once "lib/config.php";
 								}
 						foreach ($query4 as $value) {
 							// Total Peserta Di Kontingen Ini
+							$total_pes = ($value->Total - $jml_regu) + $jml_ang_regu;
 							echo "
 									<td>".$total_pes."</td>
 								 </tr> "; 
