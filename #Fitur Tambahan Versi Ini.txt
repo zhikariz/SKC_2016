@@ -16,7 +16,8 @@ SKC Solocup 2016
 		Data Sample dengan Struktur DB Terbaru 
 		Peserta di Kelas Kumite -52 Kg Kadet Putra : ada 38, bisa ditambah untuk data sample kelola drowing
 		Tidak ada data peserta Kelas Kata Beregu
-		Bisa Import tanpa harus hapus DB, Langsung Otomatis Replace Data	
+		Bisa Import tanpa harus hapus DB, Langsung Otomatis Replace Data
+		Masih Pake Data Kelas Lama (Bukan 70 Kelas Baru)	
 	# [10] skc_sql : 
 		Struktur Data Kosong Terbaru (Kolom Peserta terUpdate) + 70 Kelas Sudah include
 		Bisa Import tanpa harus hapus DB, Langsung Otomatis Replace Data
