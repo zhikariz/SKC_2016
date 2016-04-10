@@ -27,7 +27,7 @@ SKC Solocup 2016
 	# Jumlah Per Pool Stabil
 	# Nama Pool
 		> Jika 1 Pool : Kosong
-		> Jika 2 Pool : A1, B1
+		> Jika 2 Pool : A, B
 		> Jika 4 Pool : A1, A2, B1, B2
 		> Jika 8 Pool : A1, A2, A3, A4, B1, B2, B3, B4
 	# Auto Crop Nama yang lebih dari kotak dalam bagan
