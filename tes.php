@@ -15,11 +15,7 @@
 			// Stored Array = array(pool_name => array(id_peserta,nama, kontingen));
 			//Array yang akan masuk ke database
 			$arr_inp		= []; 
-			$pool_name1  	= [NULL, "A"];
-			$pool_name2		= [NULL, "A", "B"];
-			$pool_name4 	= [NULL, "A1", "A2", "B1", "B2"];
-			$pool_name8 	= [NULL, "A1", "A2", "B1", "B2", "A3", "A4", "B3", "B4"];
-			$pool_name  	= [NULL, "A1", "A2", "B1", "B2", "A3", "A4", "B3", "B4"];
+			$pool_name  	= [0,'B4','A4','B3','A3','B2','A2','B1','A1'];
 
 			echo "Jumlah Peserta: $jml_peserta<br>";
 			// Jika hanya 1 pool
@@ -66,6 +62,7 @@
 
 					// Fungsi Bagi Rata Sisanya ke tiap pool
 					echo ${pool_no.$i} . "-" . $modulus . " ";
+
 					if ($i+1 <= $modulus_a){
 						$tiap_pool += 1;
 					}				
@@ -90,7 +87,7 @@
 					}					
 
 					$ec_pool 	 = $pool_name[${pool_no.$i}];
-					echo "Peserta Pool $ec_pool : $di_pool_ini <br>";
+					echo "Pool $ec_pool : $di_pool_ini <br>";
 				} // Close for
 			}
 ?>
