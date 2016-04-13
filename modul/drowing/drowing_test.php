@@ -77,8 +77,8 @@
 			// Lib Nama Pool 
 			$pool_name1 = [0,'A-'];
 			$pool_name2 = [0,'A','B'];
-			$pool_name4 = [0,'A1','A2','B1','B2'];
-			$pool_name8  = [0,'A1','A2','A3','A4','B1','B2','B3','B4'];
+			$pool_name4 = [0,'B2','A2','B1','A1'];
+			$pool_name8  = [0,'B4','A4','B3','A3','B2','A2','B1','A1'];
 
 			// Jika hanya 1 pool
 			if($bagi < 1){
@@ -129,8 +129,10 @@
 
 					${pre_data_peserta.$i}	= [];	
 
+					$modulus_a 				= $jml_peserta % ($jml_pool * $tiap_pool);
+
 					// Fungsi Bagi Rata Sisa modulusnya ke tiap pool
-					if ($i+1 <= $modulus){
+					if ($i+1 <= $modulus_a){
 						$tiap_pool += 1;
 					}	
 
@@ -144,7 +146,7 @@
 					$pre_pool_no[$pool_name[${pool_no.$i}]] = ${pre_data_peserta.$i};
 
 					// Fungsi Bagi Rata Sisa modulusnya ke tiap pool
-					if ($i+1 <= $modulus){
+					if ($i+1 <= $modulus_a){
 						$tiap_pool -= 1;
 					}					
 				} // Close for
