@@ -1,5 +1,5 @@
 <?php
-			$jml_peserta 		= 41;
+			//$jml_peserta 		= 99;
 			$dat_pes 		= array();
 			for($i=0; $i<$jml_peserta; $i++)
 			{
@@ -14,8 +14,12 @@
 
 			// Stored Array = array(pool_name => array(id_peserta,nama, kontingen));
 			//Array yang akan masuk ke database
-			$arr_inp	= []; 
-			$pool_name  = [0,'A','B','C','D','E','F','G','H','I','J'];
+			$arr_inp		= []; 
+			$pool_name1  	= [NULL, "A"];
+			$pool_name2		= [NULL, "A", "B"];
+			$pool_name4 	= [NULL, "A1", "A2", "B1", "B2"];
+			$pool_name8 	= [NULL, "A1", "A2", "B1", "B2", "A3", "A4", "B3", "B4"];
+			$pool_name  	= [NULL, "A1", "A2", "B1", "B2", "A3", "A4", "B3", "B4"];
 
 			echo "Jumlah Peserta: $jml_peserta<br>";
 			// Jika hanya 1 pool
@@ -58,8 +62,11 @@
 					${pool_no.$i} 			= $i+1;
 					${pre_data_peserta.$i}	= [];
 
+					$modulus_a 				= $jml_peserta % ($jml_pool * $tiap_pool);
+
 					// Fungsi Bagi Rata Sisanya ke tiap pool
-					if ($i+1 <= $modulus){
+					echo ${pool_no.$i} . "-" . $modulus . " ";
+					if ($i+1 <= $modulus_a){
 						$tiap_pool += 1;
 					}				
 					for($ij=1; $ij<=$tiap_pool; $ij++)						
@@ -78,7 +85,7 @@
 					}
 
 					// Perulangan tiap pool
-					if ($i+1 <= $modulus){
+					if ($i+1 <= $modulus_a){
 						$tiap_pool -= 1;
 					}					
 
