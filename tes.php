@@ -1,6 +1,10 @@
 <?php
-			// $dat_pes 		= array({"a",}*33);
-			$dat_pes 		= array("a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a");
+			$jml_peserta 		= 41;
+			$dat_pes 		= array();
+			for($i=0; $i<$jml_peserta; $i++)
+			{
+				$dat_pes[$i] = "a";
+			}
 
 			$jml_peserta 	= count($dat_pes);
 			$max_perpool	= 16;
@@ -82,15 +86,4 @@
 					echo "Peserta Pool $ec_pool : $di_pool_ini <br>";
 				} // Close for
 			}
-
-		    $beregu     = array();
-		    for($i=1; $i<=3; $i++)
-		    {
-		      $beregu[$i]['nama'] = "a";
-		      $beregu[$i]['tgl_lahir'] = "a";
-		    }	
-			print_r($beregu_arr);
-
-			echo "<br>".serialize($beregu);
-			
 ?>
