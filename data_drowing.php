@@ -35,9 +35,11 @@ $columns = array(
 	$ResultData[] = $value->Jumlah;
 
 	// Link view
-	$view = paramEncrypt("uri=drowing/drowing_test&id_kelas=".$value->id_kelas);
+	$view = paramEncrypt("uri=drowing/drowing_test2&id_kelas=".$value->id_kelas);
+	$view_acak = paramEncrypt("uri=drowing/drowing_test&id_kelas=".$value->id_kelas);
 	$crud_uri = array(
-						"view" 		=> $view						
+						"view" 				=> $view,						
+						"view_acak" 		=> $view_acak
 					);
 
 	//kita bisa buat tombol untuk keperluan edit, delete, dll, 
@@ -47,7 +49,10 @@ $columns = array(
 		} // Close if(in_array($id_kelas_get))	
 		else
 		{
-			$labelnya = "<a title='Lihat Drowing' href='./?".$crud_uri[view]."' class='btn btn-xs btn-success'><span class='glyphicon glyphicon-pencil'></span> Kelola Drowing</a>";
+			$labelnya = "
+			<a title='Kelola Drowing Secara Urut Kontingen' href='./?".$crud_uri[view]."' class='btn btn-xs btn-success'><span class='glyphicon glyphicon-pencil'></span> Kelola Kontingen Diurutkan</a>
+			<a title='Kelola Drowing Secara Acak' href='./?".$crud_uri[view_acak]."' class='btn btn-xs btn-success'><span class='glyphicon glyphicon-pencil'></span> Kelola Kontingen Diacak</a>
+			";			
 		}
 
 	$ResultData[] = "

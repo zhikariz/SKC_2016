@@ -379,7 +379,15 @@ DATABASE EDIT
 		> Pool Name : A,B , A1,A2, B1, B2 , dst 				(OK)
 
 
-
+14/4/16 Kamis
+--------------
+	#Added Feature
+		- Manage Kontingen bisa dilihat user biasa
+		- Drowing dengan urutan yang sama dengan di excel
+		- Drowing bisa memilih dengan kontingen diurutkan atau diacak
+		- Melakuakn Edit Drowing
+		- SQL Query Note : Menampilkan jumlah peserta (Tanpa Double nama) serta jenis Putra dan Putri terpisah
+		- Print Bagan : Perbesar tulisan kelas, Perbesar margin atas kertas
 
 
 

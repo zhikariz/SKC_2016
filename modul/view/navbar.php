@@ -33,7 +33,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="pr-admin"><a href="./?<?php echo $link_manage_kontingen; ?>"><span class="glyphicon glyphicon-cog"></span> Manage kontingen</a></li> 
-        <li class="pr-admin"><a href="./?<?php echo $link_manage_kelas; ?>"><span class="glyphicon glyphicon-cog"></span> Manage Kelas</a></li>      
+        <li class="pr-user"><a href="./?<?php echo $link_manage_kelas; ?>"><span class="glyphicon glyphicon-cog"></span> Manage Kelas</a></li>      
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-success"><?php echo $_SESSION['nama']; ?></span> <b class="caret"></b></a>
           <ul class="dropdown-menu">

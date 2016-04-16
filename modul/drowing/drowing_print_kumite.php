@@ -134,7 +134,7 @@
   <td class="xl6614518">&nbsp;</td>
   <td class="xl6614518">&nbsp;</td>
   <td class="xl6614518">&nbsp;</td>
-  <td colspan="4" rowspan="2" class="xl8614518"><?php echo $kelas; ?></td>
+  <td colspan="4" rowspan="2" class="xl8614518" style="font:bold 2.2em arial;"><?php echo $kelas; ?></td>
   <td class="xl6614518">&nbsp;</td>
   <td class="xl6614518">&nbsp;</td>
   <td class="xl6614518">&nbsp;</td>

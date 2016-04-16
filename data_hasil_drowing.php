@@ -9,7 +9,7 @@ $columns = array(
 	);
 
 //lakukan query data dari 3 table dengan inner join
-	$query = $datatable->get_custom("SELECT drowing.*, kelas_all.isi_kelas
+	$query = $datatable->get_custom("SELECT drowing.*, kelas_all.*
 									FROM drowing INNER JOIN kelas_all 
 									ON kelas_all.id_kelas=drowing.id_kelas"
 									,$columns); // Kalo dikasih GROUP BY, Lag
@@ -39,14 +39,17 @@ $columns = array(
 
 	//kita bisa buat tombol untuk keperluan edit, delete, dll, 
 	$view = paramEncrypt("uri=drowing/drowing_table&id_drowing=".$value->id_drowing);
+	$edit = paramEncrypt("uri=drowing/drowing_test_edit&id_drowing=".$value->id_drowing."&id_kelas=".$value->id_kelas);	
 	$del = paramEncrypt("uri=drowing/drowing_hapus&id_drowing=".$value->id_drowing);
 	$crud_uri = array(
-						"view" 		=> $view,						
-						"del" 		=> $del,
+						"view" 		=> $view,		
+						"edit"		=> $edit,
+						"del" 		=> $del
 					);
 	$ResultData[] = "
 		<span class='hide-print'>
-		<a title='Lihat Drowing' href='./?".$crud_uri[view]."' class=' btn btn-xs btn-success'><span class='glyphicon glyphicon-th-list'></span> Lihat Tabel</a>
+		<a title='Lihat Drowing' href='./?".$crud_uri[view]."' class=' btn btn-xs btn-success'><span class='glyphicon glyphicon-th-list'></span> Lihat Tabel</a>		
+		<a title='Edit Drowing' href='./?".$crud_uri[edit]."' class=' btn btn-xs btn-warning'><span class='glyphicon glyphicon-pencil'></span> Edit</a>
 		<a title='Hapus Drowing ".$value->isi_kelas."' href='#' class=' btn btn-xs btn-danger' onclick=confirmHapus('./?".$crud_uri[del]."')> <span class='glyphicon glyphicon-trash'></span> Hapus</a>
 		</span>
 	";

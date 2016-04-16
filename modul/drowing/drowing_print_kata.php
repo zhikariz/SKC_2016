@@ -159,7 +159,7 @@
   <td class=xl672673>&nbsp;</td>
   <td class=xl672673>&nbsp;</td>
   <td class=xl672673>&nbsp;</td>
-  <td colspan=6 rowspan=2 class=xl672673><?php echo $kelas; ?></td>
+  <td colspan=6 rowspan=2 class=xl672673 style='font:bold 2.2em arial;'><?php echo $kelas; ?></td>
   <td class=xl682673>&nbsp;</td>
   <td class=xl682673>&nbsp;</td>
   <td class=xl692673>&nbsp;</td>
