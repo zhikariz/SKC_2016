@@ -382,12 +382,14 @@ DATABASE EDIT
 14/4/16 Kamis
 --------------
 	#Added Feature
-		- Manage Kontingen bisa dilihat user biasa
-		- Drowing dengan urutan yang sama dengan di excel
-		- Drowing bisa memilih dengan kontingen diurutkan atau diacak
-		- Melakuakn Edit Drowing
-		- SQL Query Note : Menampilkan jumlah peserta (Tanpa Double nama) serta jenis Putra dan Putri terpisah
-		- Print Bagan : Perbesar tulisan kelas, Perbesar margin atas kertas
+		> Manage Kontingen bisa dilihat user biasa
+		> Drowing dengan urutan yang sama dengan di excel
+		> Drowing bisa memilih dengan kontingen diurutkan atau diacak
+		> Melakuakn Edit Drowing
+		> SQL Query Note : Menampilkan jumlah peserta (Tanpa Double nama) serta jenis Putra dan Putri terpisah
+		> Print Bagan : Perbesar tulisan kelas, Perbesar margin atas kertas	
+		> Tampilkan Kelas yang Kosong di perKelas   (Fixed Request)
+		> Keterangan Jumlah Peserta di perKontingen (Fixed Bug)
 
 
 
@@ -456,4 +458,11 @@ Tambahi Jumlah Total Peserta Kelas Pertandingan
 [Request] : Bagan untuk peserta < 16 ga usah dikasih tulisan pool
 [Request] : 1 pool , 2 pool, 4 pool (> 32 pool), 8 pool 
 
+
+14 April 2015
+-------------
+[Request] : Jumlah Semua Nama Peserta (Disctinct)
+[Request] : Jumlah Peserta Putra dan Putri Total
+[Request] : Jumlah Peserta Putra dan Putri Per Kontingen
+[Request] : Tampilkan Kelas yang Kosong
 \\\\\  [Konsul SKC]  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

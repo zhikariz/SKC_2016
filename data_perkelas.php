@@ -12,7 +12,7 @@ $columns = array(
 	$query = $datatable->get_custom("SELECT kelas_all.*, COUNT(peserta.nama) AS Jumlah 
 									FROM kelas_all INNER JOIN peserta 
 									ON kelas_all.id_kelas=peserta.id_kelas 									 
-									GROUP BY isi_kelas",$columns); // Kalo dikasih GROUP BY, Lag
+									GROUP BY kelas_all.id_kelas",$columns); // Kalo dikasih GROUP BY, Lag
 									// WHERE kelas_all.isi LIKE 'Kumite%'
 
 	//buat inisialisasi array data

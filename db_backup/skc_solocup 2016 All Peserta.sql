@@ -21,7 +21,12 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
+-- DROP Any Existed Table
+DROP TABLE IF EXISTS `admin`;
+DROP TABLE IF EXISTS `peserta`;
+DROP TABLE IF EXISTS `kelas_all`;
+DROP TABLE IF EXISTS `kontingen_all`;
+DROP TABLE IF EXISTS `drowing`;
 --
 -- Struktur dari tabel `admin`
 --

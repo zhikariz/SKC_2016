@@ -4,7 +4,7 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
 $host 		= "localhost";
 $user_sql	= "root";
 $pass_sql 	= "root";
-$dbn  		= "skc_bak";
+$dbn  		= "skc_solocup";
 
 //PDO Method Connection
 ini_set( "display_errors", true );

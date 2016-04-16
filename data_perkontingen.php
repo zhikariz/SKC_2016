@@ -31,7 +31,9 @@ $columns = array(
 		                                        WHERE peserta.id_kontingen='$value->id_kontingen' 
 		                                        AND kelas_all.isi_kelas LIKE '%Kata Beregu%'
 		                                        GROUP BY peserta.id_kelas");
-
+		//Reset Jumlah disetiap Perulangan
+		$count_perorangan 	= 0;
+		$count_beregu 		= 0;
 		foreach ($q_perorangan as $perorangan) {
 			$count_perorangan += $perorangan->Jml;
 		}
