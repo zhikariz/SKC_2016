@@ -1,8 +1,15 @@
+<?php 
+    include "lib/config.php";
+?>   
    <!-- Page Content -->
 <div class="container">
     <!-- Heading Row -->
     <div class="row row-centered">
         <h1> <span class="label label-danger">Semua Data</span> <a href="#" data-toggle="modal" data-target=".modal-peserta-add" title="Tambah Data" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>  </a><br> <small>Peserta Pertandingan</small> <br></h1>        
+        <div class="col-md-12">
+          <?php include "jml_peserta.php"; ?>
+        </div>
+
         <div class="col-md-12">
             <table id="overall" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
@@ -10,7 +17,7 @@
                         <th>ID</th>
                         <th>Kontingen</th>
                         <th>Nama</th>
-                        <th>Tgl Lahir</th>
+                        <th>Lahir</th>
                         <th>Berat</th>
                         <th>Perguruan</th>
                         <th>Kelas</th>
@@ -165,7 +172,6 @@
 
 <?php
   // Input data Peserta
-  include "lib/config.php";
 
   if($_POST[submit])    
   {

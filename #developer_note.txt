@@ -391,6 +391,11 @@ DATABASE EDIT
 		> Tampilkan Kelas yang Kosong di perKelas   (Fixed Request)
 		> Keterangan Jumlah Peserta di perKontingen (Fixed Bug)
 
+16/4/16 Sabtu
+--------------
+	#Added Feature 	:
+		> Pretty Button - Tidak rusak susunan setelah print preview
+
 
 
 
