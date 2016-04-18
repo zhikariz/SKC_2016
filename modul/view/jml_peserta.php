@@ -7,7 +7,7 @@
 
 	//Keluarkan masing2 Value
 	$jml_perorangan 	= array();
-	foreach ($perorangan as $key) 
+	foreach ($perorangan as $key)
 	{
 		array_push($jml_perorangan, $key->nama);
 	}
@@ -24,7 +24,7 @@
 			$nama_at 	= substr($nama_at, 0, -2);
 			//cari 		dari table peserta ketika kolom nama=$nama_at			
 			$cari_nama 	= $db->custom_query("SELECT DISTINCT peserta.nama FROM peserta INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas WHERE kelas_all.isi_kelas NOT LIKE '%Kata Beregu%' AND nama LIKE '%$nama_at%'");
-			foreach ($cari_nama as $carikey) {			
+			foreach ($cari_nama as $carikey) {
 				echo $carikey->nama."<br>";
 				$no += 1;
 			}

@@ -14,5 +14,7 @@
 
 	// Konversi
 	$cari = $kont_id_conv[$cari_get];
+
+	//Include detail report
 	include "kontingen_detail.php";	
 ?>
