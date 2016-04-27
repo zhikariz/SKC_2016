@@ -186,6 +186,11 @@ HAVING ( COUNT(JudulBuku) > 1 )
 
 ---------------------------------------------------------
 auto required 
+make a input field required if radio is checked
+-------------
+<input type="text" name="ladder-meters" id="ladder-meters">
+and should like this at the onchange event on the radio
+<input type="text" name="ladder-meters" id="ladder-meters" required>
 -------------
 $('#ladder').change(function () {
     if($(this).is(':checked') {
@@ -194,3 +199,38 @@ $('#ladder').change(function () {
         $('#ladder-meters').removeAttr('required');
     }
 });
+
+
+
+--------------------------------------------------------
+How to detect a textbox's content has changed
+
+jQuery('#some_text_box').on('input', function() {
+    // do your stuff
+});
+
+--------------------
+...which is nice and clean, but may be extended further to:
+
+jQuery('#some_text_box').on('input propertychange paste', function() {
+    // do your stuff
+});
+
+------------------------------------------------------------
+Secret Password JQUERY
+-----------------------
+<div style="display: none" class="secret">Correct password!</div>
+var pass="password";
+var typed="";
+
+$(document).keypress(
+    function (e) {
+       typed += String.fromCharCode(e.which);
+
+       if (typed===pass) {
+           $('.secret').show();
+       }
+    }
+);
+
+---------------------------------------------------------
