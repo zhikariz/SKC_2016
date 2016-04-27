@@ -470,4 +470,18 @@ Tambahi Jumlah Total Peserta Kelas Pertandingan
 [Request] : Jumlah Peserta Putra dan Putri Total
 [Request] : Jumlah Peserta Putra dan Putri Per Kontingen
 [Request] : Tampilkan Kelas yang Kosong
+
+26 April 2015
+-------------
+[Request] : Jumlah Peserta Putra Putri + Perkontingen
+[Request] : Perguruan Auto Complete
+[Request] : User Management
+[Request] : Event Name & Icon
+[Recomme] : Error Tampilkan jika ada beregu yang belum diisi
+
 \\\\\  [Konsul SKC]  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+Laporan
+12/03 
+Identifikasi Kebutuhan & Pemberian Bahan
+

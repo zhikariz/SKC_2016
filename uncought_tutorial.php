@@ -171,3 +171,26 @@ foreach($array_id as $key_id => $val){
     echo $val.", ";
 }
 ?>
+
+
+
+
+---------------------------------------------------------
+CARI Duplikat Data SQL
+----------------------
+SELECT JudulBuku, COUNT(*)
+FROM tblBuku
+GROUP BY JudulBuku
+HAVING ( COUNT(JudulBuku) > 1 )
+
+
+---------------------------------------------------------
+auto required 
+-------------
+$('#ladder').change(function () {
+    if($(this).is(':checked') {
+        $('#ladder-meters').attr('required');
+    } else {
+        $('#ladder-meters').removeAttr('required');
+    }
+});
