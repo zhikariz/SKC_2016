@@ -117,6 +117,9 @@
       // Modul Kelas
       $link_manage_kelas    = paramEncrypt("uri=kelas/kelas_view"); // Jumlah Peserta Per Kontingen
 
+      // Modul User
+      $link_manage_user    = paramEncrypt("uri=user/user_view"); // Jumlah Peserta Per Kontingen
+
       // Modul Drowing
       $link_drowing         = paramEncrypt("uri=drowing/drowing_kelas"); // Drowing Per kelas > Manage
       $link_drowing_hasil    = paramEncrypt("uri=drowing/drowing_hasil"); // Drowing yang sudah jadi

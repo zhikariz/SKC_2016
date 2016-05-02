@@ -36,7 +36,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> Manage <b class="caret"></b></a>
           <ul class="dropdown-menu"> 
-            <li class="pr-admin"><a href="#"><span class="glyphicon glyphicon-user"></span> Manage User</a></li>
+            <li class="pr-admin"><a href="./?<?php echo $link_manage_user; ?>"><span class="glyphicon glyphicon-user"></span> Manage User</a></li>
             <li class="divider"></li>
             <li class="pr-admin"><a href="./?<?php echo $link_manage_kontingen; ?>"><span class="glyphicon glyphicon-globe"> </span> Manage kontingen</a></li> 
             <li class="divider"></li>
