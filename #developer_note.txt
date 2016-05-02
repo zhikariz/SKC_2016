@@ -474,10 +474,10 @@ Tambahi Jumlah Total Peserta Kelas Pertandingan
 26 April 2015
 -------------
 [Request] : Jumlah Peserta Putra Putri + Perkontingen 			(OK)
-[Request] : Perguruan Auto Complete
-[Request] : User Management
+[Request] : Perguruan Auto Complete 					
+[Request] : User Management 									 (OK)
 [Request] : Event Name & Icon
-[Recomme] : Error Tampilkan jika ada beregu yang belum diisi
+[Recomme] : Error Tampilkan jika ada beregu yang belum diisi 		(OK)
 			Step > Kasih radio button required
 				 > Bila Kumite / Kata Perorangan maka tetap
 				 > Bila klik beregu, maka keluarkan field tambahan dan tambah attr required di tiap field tambahan
