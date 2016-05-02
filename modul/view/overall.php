@@ -102,18 +102,32 @@
             <label class="col-md-4 control-label" for="jk">Jenis Kelamin</label>
             <div class="col-md-4"> 
               <label class="radio-inline" for="jk-0">
-                <input type="radio" name="jk" id="jk-0" value="Putra">
+                <input type="radio" name="jk" id="jk-0" value="Putra" required>
                 Putra (Pa)
               </label> 
               <label class="radio-inline" for="jk-1">
-                <input type="radio" name="jk" id="jk-1" value="Putri">
+                <input type="radio" name="jk" id="jk-1" value="Putri" required>
                 Putri (Pi)
               </label>
             </div>
           </div>
 
+
+          <!-- Multiple Radios (inline) -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="req_kelas">Jenis Kelas</label>
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-danger">
+                  <input type="radio" name="req_kelas" class="req_kelas" id="req_sendiri" required> Kumite / Kata Perorangan
+                </label>
+                <label class="btn btn-danger">
+                  <input type="radio" name="req_kelas" class="req_kelas" id="req_beregu" required> Kata Beregu
+                </label>
+              </div>            
+          </div>          
+
           <!-- Notes For Kata Beregu -->
-          <fieldset>
+          <fieldset style="display:none;" id="field_beregu">
             <legend class="text-center"><br>Form* Tambahan untuk Kata Beregu <br>
             <code style="font-size:0.5em">* Selain Kata Beregu, KOSONGi Field Ini</code>
             </legend>  
@@ -122,7 +136,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="beregu1">Anggota Regu 1</label>  
                 <div class="col-md-3">
-                <input name="beregu1" type="text" placeholder="Nama Lengkap" class="form-control input-md">              
+                <input id="beregu1" name="beregu1" type="text" placeholder="Nama Lengkap" class="form-control input-md">              
                 </div>
 
                 <div class="col-md-3">
@@ -134,7 +148,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="beregu2">Anggota Regu 2</label>  
                 <div class="col-md-3">
-                <input name="beregu2" type="text" placeholder="Nama Lengkap" class="form-control input-md">              
+                <input id="beregu2" name="beregu2" type="text" placeholder="Nama Lengkap" class="form-control input-md">              
                 </div>
 
                 <div class="col-md-3">
@@ -146,7 +160,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="beregu3">Anggota Regu 3</label>  
                 <div class="col-md-3">
-                <input name="beregu3" type="text" placeholder="Nama Lengkap" class="form-control input-md">              
+                <input id="beregu3" name="beregu3" type="text" placeholder="Nama Lengkap" class="form-control input-md">              
                 </div>
 
                 <div class="col-md-3">
@@ -281,7 +295,7 @@
       $('#tgl_beregu3').datetimepicker({
         viewMode: 'days',
         format: 'YYYY-MM-DD'
-      });          
+      });               
 
      // Data table
      $("#overall").dataTable({
@@ -311,5 +325,26 @@
 
         });
 
+
+      // Munculkan Beregu Field bila di klik
+      $('.req_kelas').change(function () {
+          if($('#req_beregu').is(':checked')) {
+              $('#field_beregu').show();
+              $('#beregu1').attr('required','');
+              $('#beregu2').attr('required','');
+              $('#beregu3').attr('required','');
+              $('#tgl_beregu1').attr('required','');
+              $('#tgl_beregu2').attr('required','');
+              $('#tgl_beregu3').attr('required','');
+          } else {
+              $('#field_beregu').hide();
+              $('#beregu1').removeAttr('required','');
+              $('#beregu2').removeAttr('required','');
+              $('#beregu3').removeAttr('required','');
+              $('#tgl_beregu1').removeAttr('required','');
+              $('#tgl_beregu2').removeAttr('required','');
+              $('#tgl_beregu3').removeAttr('required','');
+          }
+      }); 
     </script>
 
