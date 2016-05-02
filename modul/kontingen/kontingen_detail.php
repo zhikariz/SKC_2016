@@ -59,7 +59,122 @@
 		$kontak_of 	= $value->kontak_official;
 	}	
 	//buat inisialisasi array data
-	$data = array();
+	// $data = array();
+
+	//Hitung Jumlah Putra Dan Putri di Kontingen
+			$perorangan 		= $db->custom_query("SELECT DISTINCT peserta.nama, kelas_all.isi_kelas FROM peserta 
+													INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas 
+													WHERE kelas_all.isi_kelas NOT LIKE '%Kata Beregu%'
+													AND peserta.id_kontingen='$cari'
+													");
+
+			$perorangan_cwo		= $db->custom_query("SELECT DISTINCT peserta.jk, peserta.nama, kelas_all.isi_kelas 
+													FROM peserta INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas 
+													WHERE peserta.jk='Putra' AND kelas_all.isi_kelas NOT LIKE '%Kata Beregu%'
+													AND peserta.id_kontingen='$cari'
+													");
+
+			$beregu 			= $db->custom_query("SELECT peserta.info_beregu, kelas_all.isi_kelas FROM peserta 
+													INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas 
+													WHERE kelas_all.isi_kelas LIKE '%Kata Beregu%'
+													AND peserta.id_kontingen='$cari'
+													");
+
+			$jml_beregu_cwo 	= $db->custom_query("SELECT COUNT(*) AS jumlah FROM peserta 
+													INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas 
+													WHERE kelas_all.isi_kelas LIKE '%Kata Beregu%' 
+													AND peserta.id_kontingen='$cari'
+													AND peserta.jk='Putra'");
+			foreach ($jml_beregu_cwo as $jcwo) {
+				$jml_beregu_cwo = $jcwo->jumlah;
+			}	 		
+
+			//Jumlah Perorangan Tanpa double
+			$jml_perorangan 	= array();
+			$jml_perorangan_cwo = array();
+
+			//Jumlah Perorangan All
+			foreach ($perorangan as $key)
+			{
+				array_push($jml_perorangan, $key->nama);
+			}	
+			$jml_perorangan 	= count($jml_perorangan);	
+
+			//Jumlah Perorangan Cowo
+			foreach ($perorangan_cwo as $key)
+			{
+				array_push($jml_perorangan_cwo, $key->nama);
+			}	
+			$jml_perorangan_cwo = count($jml_perorangan_cwo);
+
+			// Cari Nama yang sama di beregu
+			$nama_sama_diberegu 		= array();
+			$nama_sama_diberegu_cwo		= array();
+			$jml_beregu					= 0; 		// Jumlah Beregu All J.Kelamin
+			foreach ($beregu as $beregukey) 
+			{
+				$jml_beregu 	+= 1;
+				$nama 			= unserialize($beregukey->info_beregu);
+				foreach ($nama as $namakey => $namavalue) 
+				{
+					$nama_at 		= $namavalue[nama];
+					$nama_at 		= addslashes($nama_at);	// Hindari error SQL
+					$cari_nama 		= $db->custom_query("SELECT DISTINCT peserta.nama FROM peserta 
+														INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas 
+														WHERE kelas_all.isi_kelas NOT LIKE '%Kata Beregu%' 
+														AND peserta.id_kontingen='$cari'
+														AND peserta.nama ='$nama_at'");
+					$cari_nama_cwo 	= $db->custom_query("SELECT DISTINCT peserta.jk, peserta.nama FROM peserta 
+														INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas 
+														WHERE kelas_all.isi_kelas NOT LIKE '%Kata Beregu%'
+														AND peserta.id_kontingen='$cari' 
+														AND peserta.nama ='$nama_at' 
+														AND peserta.jk='Putra'");
+
+					//Masukkan Ke array -> Beregu All J.Kelamin
+					foreach ($cari_nama as $carikey) 				
+					{
+						// echo $carikey->nama."<br>";					
+						array_push($nama_sama_diberegu, $carikey->nama);
+					}
+
+					//Masukkan Ke array -> Beregu All J.Kelamin
+					foreach ($cari_nama_cwo as $carikey) 				
+					{
+						// echo $carikey->nama."<br>";					
+						array_push($nama_sama_diberegu_cwo, $carikey->nama);
+					}					
+				}
+				
+			}
+
+			$jml_beregu 		*= 3; // Tiap Regu ada 3 orang, maka dikali 3
+			$jml_beregu_cwo 	*= 3; // Regu yang J.Kelamain = cowo
+
+			$jml_perorangan 	-= count($nama_sama_diberegu);
+			$jml_perorangan_cwo -= count($nama_sama_diberegu_cwo);
+
+			// Jumlah Peserta
+			$jml_peserta 		= $jml_perorangan 		+ $jml_beregu;
+			$jml_peserta_cwo 	= $jml_perorangan_cwo 	+ $jml_beregu_cwo;
+			$jml_peserta_cwe 	= $jml_peserta 			- $jml_peserta_cwo;	
+
+	// END //Hitung Jumlah Putra Dan Putri di Kontingen
+
+			// Detail Data All
+			foreach ($query1 as $value) 
+			{					
+				$det_jml_regu 		= $value->Beregu;
+				$det_jml_ang_regu  	= $det_jml_regu * 3;	
+			}
+			foreach ($query2 as $value) 
+			{			
+				$det_jml_kata1 = $value->Perorangan;
+			}
+			foreach ($query3 as $value) 
+			{
+				$det_jml_kumite = $value->Kumite;						
+			}
 	?>
 
 	   <!-- Page Content -->
@@ -69,49 +184,16 @@
         <h1><span class="label label-danger"><?php echo "Kontingen ".$kont_val_conv[$cari]; ?></span</span></h1>     
         <h4 class="page-header text-right">Official : <?php echo $nama_of; ?> - <strong><?php echo $kontak_of; ?></strong></h4> 
         <div class="col-md-12">
-
-			<!-- Table Detail Jumlah -->
-			<table id="overall" class="table table-striped table-bordered" cellspacing="0" width="100%">
-				<thead>
-			        <tr>
-			            <th>Jumlah Kata Beregu</th>
-			            <th>Jumlah Kata Perorangan</th>
-			            <th>Jumlah Kumite</th>
-			            <th>Total Jumlah Peserta</th>
-			        </tr>
-			    </thead>
-
-					<?php
-						foreach ($query1 as $value) {
-							//array sementara data
-							$jml_regu 		= $value->Beregu;
-							$jml_ang_regu  	= $jml_regu * 3;	
-							echo "<tr>
-									<td>".$jml_regu." Regu (".$jml_ang_regu." Peserta)</td>
-								   "; 
-								}
-						foreach ($query2 as $value) {
-							//array sementara data
-							echo "
-									<td>".$value->Perorangan."</td>
-								   "; 
-								}
-						foreach ($query3 as $value) {
-							//array sementara data
-							echo "
-									<td>".$value->Kumite."</td>
-								 "; 
-								}
-						foreach ($query4 as $value) {
-							// Total Peserta Di Kontingen Ini
-							$total_pes = ($value->Total - $jml_regu) + $jml_ang_regu;
-							echo "
-									<td>".$total_pes."</td>
-								 </tr> "; 
-								}
-						?>
-
-			</table>        
+        <p class="text-left">
+        	<strong>Detail Kontingen <?php echo $kont_val_conv[$cari]; ?> :</strong> <br>
+        	Jumlah Kata Beregu : <?php echo $det_jml_ang_regu." Peserta (".$det_jml_regu." Regu)"; ?><br>
+        	Jumlah Kata Perorangan : <?php echo $det_jml_kata1; ?> Peserta<br>
+        	Jumlah Kumite : <?php echo $det_jml_kumite; ?> Peserta<br><br>
+        	Jumlah Putra : <?php echo $jml_peserta_cwo; ?><br>
+        	Jumlah Putri : <?php echo $jml_peserta_cwe; ?><br>
+        	Jumlah Peserta* : <?php echo $jml_peserta; ?><br>
+        	*<small>tanpa double nama</small>
+        </p>     
 
 			<!-- Table Peserta All -->
 			<h3>Semua Peserta dari <?php echo "Kontingen ".$kont_val_conv[$cari]; ?></h3>			

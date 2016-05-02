@@ -9,8 +9,7 @@
 	$jml_beregu_cwo 	= $db->custom_query("SELECT COUNT(*) AS jumlah FROM peserta INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas WHERE kelas_all.isi_kelas LIKE '%Kata Beregu%' AND peserta.jk='Putra'");
 	foreach ($jml_beregu_cwo as $jcwo) {
 		$jml_beregu_cwo = $jcwo->jumlah;
-	}	 	
-	// $beregu 			= $db->custom_query("SELECT peserta.info_beregu, kelas_all.isi_kelas FROM peserta INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas WHERE peserta.id_peserta IN ('103','107')");
+	}	 		
 
 	//Jumlah Perorangan Tanpa double
 	$jml_perorangan 	= array();
