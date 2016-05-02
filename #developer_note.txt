@@ -473,7 +473,7 @@ Tambahi Jumlah Total Peserta Kelas Pertandingan
 
 26 April 2015
 -------------
-[Request] : Jumlah Peserta Putra Putri + Perkontingen
+[Request] : Jumlah Peserta Putra Putri + Perkontingen 			(OK)
 [Request] : Perguruan Auto Complete
 [Request] : User Management
 [Request] : Event Name & Icon
