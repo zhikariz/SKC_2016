@@ -1224,10 +1224,6 @@
   <td class=xl692673>&nbsp;</td>
  </tr>
 </table>
-<script>
-		//print document
-		window.print();
-</script>
 </body>
 
 </html>
