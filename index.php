@@ -29,39 +29,6 @@
     <link href="assets/css/dataTables.bootstrap.css" rel="stylesheet">
     <link href="assets/css/twitter-typeahead.css" rel="stylesheet">
     <link href="assets/css/bootstrap-datetimepicker.css" rel="stylesheet">
-    <style>
-      <?php 
-      if ( $_SESSION['status']=="admin") {
-        echo "
-           .pr-admin, .pr-drower, .pr-user
-            {
-              visibility: visible 
-            }";
-      }elseif ($_SESSION['status']=="drower") {
-        echo "
-            .pr-admin, .pr-user
-            {
-              visibility: hidden
-            }
-
-            .pr-drower
-            {
-              visibility: visible
-            } ";
-      }else{
-        echo "
-          .pr-admin, .pr-drower
-          {
-            visibility: hidden
-          }
-          .pr-user
-          {
-            visibility: visible
-          } ";
-        }
-       ?>
-      }
-    </style>
 
   </head>
   <body>
@@ -96,6 +63,30 @@
             //Pass
           }          
         }
+
+        $( document ).ready(function() {
+          <?php 
+            if ( $_SESSION['status']=="admin") 
+            {
+              echo "";
+            }
+            elseif ($_SESSION['status']=="drower") 
+            {
+              echo "
+                  $('.pr-admin').remove();
+                  $('.pr-user').remove();
+                  ";
+            }
+            else
+            {
+              echo "
+                $('.pr-admin').remove();
+                $('.pr-drower').remove();
+                ";
+            }
+         ?>        
+        }); // Close ready function
+
     </script>
 
     <?php
