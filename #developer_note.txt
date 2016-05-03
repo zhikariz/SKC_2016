@@ -481,6 +481,7 @@ Tambahi Jumlah Total Peserta Kelas Pertandingan
 			Step > Kasih radio button required
 				 > Bila Kumite / Kata Perorangan maka tetap
 				 > Bila klik beregu, maka keluarkan field tambahan dan tambah attr required di tiap field tambahan
+CSS Priviledge BUGS 															(OK)
 
 \\\\\  [Konsul SKC]  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
