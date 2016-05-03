@@ -15,29 +15,38 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="./?<?php echo $link_overall; ?>">Semua Data</a></li>
+        <li><a href="./?<?php echo $link_overall; ?>"><span class="glyphicon glyphicon-th"></span> Semua Data</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lihat Detail<b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="./?<?php echo $link_count_peserta; ?>">Jumlah Per Kelas</a></li>
-            <li><a href="./?<?php echo $link_count_kontingen; ?>">Jumlah Per Kontingen</a></li>            
+            <li><a href="./?<?php echo $link_count_peserta; ?>"><span class="glyphicon glyphicon-folder-open"> </span> Jumlah Per Kelas</a></li>
+            <li class="divider"></li>
+            <li><a href="./?<?php echo $link_count_kontingen; ?>"><span class="glyphicon glyphicon-globe"> </span> Jumlah Per Kontingen</a></li>            
           </ul>
         </li>
         <li class="dropdown pr-drower">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Drowing <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li class="pr-drower"><a href="./?<?php echo $link_drowing; ?>">Kelola Drowing</a></li>        
-            <li class="pr-drower"><a href="./?<?php echo $link_drowing_hasil; ?>">Lihat Hasil Drowing</a></li>             
+            <li class="pr-drower"><a href="./?<?php echo $link_drowing; ?>"><span class="glyphicon glyphicon-move"></span> Kelola Drowing</a></li>        
+            <li class="divider"></li>
+            <li class="pr-drower"><a href="./?<?php echo $link_drowing_hasil; ?>"><span class="glyphicon glyphicon-resize-full"></span> Lihat Hasil Drowing</a></li>             
           </ul>
         </li>        
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="pr-admin"><a href="./?<?php echo $link_manage_kontingen; ?>"><span class="glyphicon glyphicon-cog"></span> Manage kontingen</a></li> 
-        <li class="pr-user"><a href="./?<?php echo $link_manage_kelas; ?>"><span class="glyphicon glyphicon-cog"></span> Manage Kelas</a></li>      
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> Manage <b class="caret"></b></a>
+          <ul class="dropdown-menu"> 
+            <li class="pr-admin"><a href="./?<?php echo $link_manage_user; ?>"><span class="glyphicon glyphicon-user"></span> Manage User</a></li>
+            <li class="divider"></li>
+            <li class="pr-admin"><a href="./?<?php echo $link_manage_kontingen; ?>"><span class="glyphicon glyphicon-globe"> </span> Manage kontingen</a></li> 
+            <li class="divider"></li>
+            <li class="pr-user"><a href="./?<?php echo $link_manage_kelas; ?>"><span class="glyphicon glyphicon-folder-open"> </span> Manage Kelas</a></li>            
+          </ul>
+        </li>      
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-success"><?php echo $_SESSION['nama']; ?></span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="./login/logout.php">Logout</a></li>
+            <li><a href="./login/logout.php"><span class="glyphicon glyphicon-log-out"> </span> Logout</a></li>
             <!-- <li class="divider"></li> -->
             <!-- <li><a href="#">Petunjuk</a></li> -->
           </ul>

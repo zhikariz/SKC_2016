@@ -969,8 +969,4 @@
 </tbody></table>
 </div>
 <!-- <script type="text/javascript" src="../assets/js/jquery-1.12.0.min.js"></script> -->
-<script>
-		//print document
-		window.print();
-</script>
 </body></html>
