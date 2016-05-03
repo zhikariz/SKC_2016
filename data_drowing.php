@@ -50,8 +50,8 @@ $columns = array(
 		else
 		{
 			$labelnya = "
-			<a title='Kelola Drowing Secara Urut Kontingen' href='./?".$crud_uri[view]."' class='btn btn-xs btn-success'><span class='glyphicon glyphicon-pencil'></span> Kelola Kontingen Diurutkan</a>
-			<a title='Kelola Drowing Secara Acak' href='./?".$crud_uri[view_acak]."' class='btn btn-xs btn-success'><span class='glyphicon glyphicon-pencil'></span> Kelola Kontingen Diacak</a>
+			<a title='Kontingen Secara Urut' href='./?".$crud_uri[view]."' class='btn btn-xs btn-success'><span class='glyphicon glyphicon-sort-by-attributes'></span> Kontingen Urut</a>
+			<a title='Kontingen Secara Random' href='./?".$crud_uri[view_acak]."' class='btn btn-xs btn-success'><span class='glyphicon glyphicon-align-center'></span> Kontingen Random</a>
 			";			
 		}
 

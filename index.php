@@ -2,6 +2,7 @@
   // Login Cek
   error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);  
   include "lib/config.php";
+  include "eventinfo.php";
   session_start();
   if(empty ($_SESSION['user']) and empty($_SESSION['password']))
   {
@@ -144,7 +145,7 @@
     <div id="footer">
       <div class="container">
         <br>
-        <p class="text-muted">&copy; 2016 Sistem Informasi Persiapan Pertandingan Karate. <br>
+        <p class="text-muted">&copy; 2016 <?php echo $glob_system_name ?>. <br>
           <small>Create By : 
                   <a href="https://github.com/axquired24">AxQuired24 (Albert S)</a> - 
                   <a href="https://github.com/tanyakenapa10">Bangkit S</a> - 

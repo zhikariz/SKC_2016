@@ -62,7 +62,10 @@ $q 	    = $peserta->fetch_single_row($table,$col,$val);
 <div class="container">
     <!-- Heading Row -->
     <div class="row row-centered">
-        <h1> <span class="label label-success">Detail Data Peserta</span> </a><br><br></h1>
+        <h1 class="page-header text-center text-primary">
+        <span class="pull-right"> <span class="glyphicon glyphicon-user"></span></span>
+        Detail Data<small> Peserta</small>
+        </h1>
     </div>
 </div>
 

@@ -2,7 +2,10 @@
 <div class="container">
     <!-- Heading Row -->
     <div class="row row-centered">
-        <h1>Hasil Drowing > Kelas</h1>
+        <h1 class="page-header text-center text-primary">
+        <span class="pull-right"> <span class="glyphicon glyphicon-fullscreen"></span></span>
+        Hasil Drowing<small> Klik untuk melihat bagan</small>
+        </h1>    
         <div class="col-md-12">
             <table id="contoh3" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>

@@ -7,7 +7,10 @@
 <div class="container">
     <!-- Heading Row -->
     <div class="row row-centered">
-        <h1> Peserta > Kontingen <br><small>Detail data perkontingen</small></h1>
+        <h1 class="page-header text-center text-primary">
+        <span class="pull-right"> <span class="glyphicon glyphicon-globe"></span></span>
+        Jumlah Peserta<small> Tiap Kontingen</small>
+        </h1>
         <div class="col-md-12">
           <form action="./?<?php echo $link_search_kontingen; ?>" method="post" role="form">
             <div align="row center">            

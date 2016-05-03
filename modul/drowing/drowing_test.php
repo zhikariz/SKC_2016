@@ -162,7 +162,7 @@
 			?>
 
 			<div class="row">
-				<h1 align="center">Kelola Drowing <br><small><?php echo $kelas_val_conv[$id_kelas_get]; ?></small>
+				<h1 align="center" class="text-primary">Kelola Drowing <br><small><?php echo $kelas_val_conv[$id_kelas_get]; ?></small>
 				</h1>
 				<h4 class="page-header text-center">
 					Jumlah Peserta : <?php echo $jml_peserta; ?> 
