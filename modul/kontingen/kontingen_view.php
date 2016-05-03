@@ -2,7 +2,11 @@
 <div class="container">
     <!-- Heading Row -->
     <div class="row row-centered">
-        <h1> <span class="label label-danger">Manage Kontingen</span> <a href="#" data-toggle="modal" data-target=".modal-kontingen-add" title="Tambah Data" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>  </a><br> <small>Solocup 2016 Database</small> <br></h1>
+        <h1 class="page-header text-center text-primary">        
+        <span class="pull-right"> <span class="glyphicon glyphicon-globe"></span></span>
+          Manage Kontingen   
+          <a href="#" data-toggle="modal" data-target=".modal-kontingen-add" title="Tambah Data" class="btn btn-danger"><span class="glyphicon glyphicon-plus"></span>  </a>    
+        </h1>        
         <div class="col-md-12">
             <table id="kontingen_view" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>

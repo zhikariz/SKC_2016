@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Sistem Informasi Pertandingan</a>
+      <a class="navbar-brand" href="#"><?php echo $glob_event_name; ?></a>
     </div>
     <!-- <p class="navbar-text visible-lg">SOLOCUP 2016</p> -->
 
@@ -29,7 +29,7 @@
           <ul class="dropdown-menu">
             <li class="pr-drower"><a href="./?<?php echo $link_drowing; ?>"><span class="glyphicon glyphicon-move"></span> Kelola Drowing</a></li>        
             <li class="divider"></li>
-            <li class="pr-drower"><a href="./?<?php echo $link_drowing_hasil; ?>"><span class="glyphicon glyphicon-resize-full"></span> Lihat Hasil Drowing</a></li>             
+            <li class="pr-drower"><a href="./?<?php echo $link_drowing_hasil; ?>"><span class="glyphicon glyphicon-fullscreen"></span> Lihat Hasil Drowing</a></li>             
           </ul>
         </li>        
       </ul>

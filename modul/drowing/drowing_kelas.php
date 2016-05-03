@@ -7,14 +7,17 @@
 <div class="container">
     <!-- Heading Row -->
     <div class="row row-centered">
-        <h1>Kelola Drowing > Kelas</h1>
+        <h1 class="page-header text-center text-primary">
+        <span class="pull-right"> <span class="glyphicon glyphicon-move"></span></span>
+        Kelola Drowing<small> Pilih kelas untuk dikelola</small>
+        </h1>        
         <div class="col-md-12">
             <table id="contoh3" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                     <tr>
                         <th>Kelas</th>
                         <th>Jumlah</th>
-                        <th>Opsi</th>
+                        <th>Kelola Drowing Secara</th>
                     </tr>
                 </thead>
                <tbody>                 
