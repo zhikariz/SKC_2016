@@ -95,27 +95,30 @@
       include "modul/enkripsi/function.php";
 
       // Base Url
-      $base_uri             = "http://localhost/solocup2/";
+      $base_uri               = "http://localhost/solocup2/";
 
       // Modul View
-      $link_overall         = paramEncrypt("uri=view/overall"); // default page
-      $link_count_peserta   = paramEncrypt("uri=view/count_perkelas"); // Jumlah Peserta Per Kelas
-      $link_count_kontingen = paramEncrypt("uri=view/count_perkontingen"); // Jumlah Peserta Per Kontingen
-      $link_info_event      = paramEncrypt("uri=view/info_event"); // Informasi Peserta event
+      $link_overall           = paramEncrypt("uri=view/overall"); // default page
+      $link_count_peserta     = paramEncrypt("uri=view/count_perkelas"); // Jumlah Peserta Per Kelas
+      $link_count_kontingen   = paramEncrypt("uri=view/count_perkontingen"); // Jumlah Peserta Per Kontingen
+      $link_info_event        = paramEncrypt("uri=view/info_event"); // Informasi Peserta event
 
       // Modul kontingen
       $link_manage_kontingen   = paramEncrypt("uri=kontingen/kontingen_view"); // Jumlah Peserta Per Kontingen    
       $link_search_kontingen   = paramEncrypt("uri=kontingen/kontingen_search"); // Jumlah Peserta Per Kontingen    
 
       // Modul Kelas
-      $link_manage_kelas    = paramEncrypt("uri=kelas/kelas_view"); // Jumlah Peserta Per Kontingen
+      $link_manage_kelas      = paramEncrypt("uri=kelas/kelas_view"); // Jumlah Peserta Per Kontingen
 
       // Modul User
-      $link_manage_user    = paramEncrypt("uri=user/user_view"); // Jumlah Peserta Per Kontingen
+      $link_manage_user       = paramEncrypt("uri=user/user_view"); // Jumlah Peserta Per Kontingen
+
+      // Modul Perguruan
+      $link_manage_perguruan  = paramEncrypt("uri=perguruan/perguruan_view"); // Jumlah Peserta Per Kontingen      
 
       // Modul Drowing
-      $link_drowing         = paramEncrypt("uri=drowing/drowing_kelas"); // Drowing Per kelas > Manage
-      $link_drowing_hasil    = paramEncrypt("uri=drowing/drowing_hasil"); // Drowing yang sudah jadi
+      $link_drowing           = paramEncrypt("uri=drowing/drowing_kelas"); // Drowing Per kelas > Manage
+      $link_drowing_hasil     = paramEncrypt("uri=drowing/drowing_hasil"); // Drowing yang sudah jadi
 
       // Navigation Bar
       include("modul/view/navbar.php");

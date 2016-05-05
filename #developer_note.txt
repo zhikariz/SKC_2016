@@ -177,7 +177,9 @@ DB Explanation Backup
 [8] Data Lama + Kolom baru di kontingen_all
 [9] DB Baru Clean + SET Kelas 70 SOLOCUP 
 [8v2] DB Baru Filled(terisi) + Updated Column Peserta (Untuk Sampling):
+[8v3] DB Baru Filled(terisi) + update terbaru sampai perguruan_all column terisi data solocup 2016: *
 [10] DB Baru Clean + Updated Column Peserta + SET Kelas 70 SOLOCUP 
+[11] DB Baru Clean + Perguruan_all column (Not Include 70 Kelas SOLOCUP 2016)
 
 ...
 [1] kelas_all - 70 Newest Kelas from Helmi SKC
@@ -395,6 +397,21 @@ DATABASE EDIT
 --------------
 	#Added Feature 	:
 		> Pretty Button - Tidak rusak susunan setelah print preview
+
+05 / 5 / 2016 Kamis
+	# Added Perguruan Auto Complete
+	# Edit Drowing Everywhere
+	# No Auto Print
+	# Teks tidak terpurus disaat print
+	# Setelah Edit langsung redirect ke halaman tabel drowing
+	# Tambah Logo Event
+	# Tambahan Halaman Informasi Event
+	# Tambahan 
+	# Tambah Manage Admin
+	# Perbaiki tampilan dan icon
+	# Fixed Jumlah Peserta Putra & Putri
+	# Tambahan Event Info All in one config
+	# Database Updated
 
 
 

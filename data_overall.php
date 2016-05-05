@@ -9,16 +9,18 @@ $columns = array(
 	'nama',
 	'tgl_lahir',
 	'berat_badan',
-	'perguruan',
+	'isi_perguruan',
 	'isi_kelas', // kelas
 	);
 
 //lakukan query data dari 3 table dengan inner join
-	$query 		= $datatable->get_custom("SELECT peserta.*, kelas_all.*, kontingen_all.* 
+	$query 		= $datatable->get_custom("SELECT peserta.*, kelas_all.*, kontingen_all.*, perguruan_all.isi_perguruan
 											FROM peserta INNER JOIN kelas_all
 											ON kelas_all.id_kelas=peserta.id_kelas
 											INNER JOIN kontingen_all
 											ON kontingen_all.id_kontingen=peserta.id_kontingen
+											INNER JOIN perguruan_all
+											ON peserta.perguruan=perguruan_all.id_perguruan
 											",$columns);
 
 	//buat inisialisasi array data
@@ -33,7 +35,7 @@ $columns = array(
 		$ResultData[] = $value->nama;
 		$ResultData[] = $value->tgl_lahir;
 		$ResultData[] = $value->berat_badan." Kg";
-		$ResultData[] = $value->perguruan;							
+		$ResultData[] = $value->isi_perguruan;							
 		$ResultData[] = $value->isi_kelas; //kelas
 
 		//bisa juga pake logic misal jika value tertentu maka outputnya

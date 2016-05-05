@@ -15,11 +15,13 @@
 	  $kont_val_conv[$val->id_kontingen]  = $val->isi_kontingen;
 	}
 
-	$query 		= $db->custom_query("SELECT peserta.*,kelas_all.isi_kelas, kontingen_all.*
+	$query 		= $db->custom_query("SELECT peserta.*,kelas_all.isi_kelas, kontingen_all.*, perguruan_all.isi_perguruan
 											FROM peserta INNER JOIN kontingen_all 
 											ON peserta.id_kontingen=kontingen_all.id_kontingen 
 											INNER JOIN kelas_all
 											ON kelas_all.id_kelas=peserta.id_kelas
+											INNER JOIN perguruan_all
+											ON peserta.perguruan=perguruan_all.id_perguruan
 											WHERE peserta.id_kontingen='$cari'
 											ORDER BY peserta.nama ASC
 											");
@@ -250,7 +252,7 @@
 							echo "
 									</td>
 									<td>".$value->berat_badan."</td>
-									<td>".$value->perguruan."</td>
+									<td>".$value->isi_perguruan."</td>
 									<td>".$value->jk."</td>
 									<td>".$value->isi_kelas."
 										<span class='pull-right hide-print'>

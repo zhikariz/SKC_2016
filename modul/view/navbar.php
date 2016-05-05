@@ -39,9 +39,11 @@
           <ul class="dropdown-menu"> 
             <li class="pr-admin"><a href="./?<?php echo $link_manage_user; ?>"><span class="glyphicon glyphicon-user"></span> Manage User</a></li>
             <li class="pr-admin divider"></li>
-            <li class="pr-admin"><a href="./?<?php echo $link_manage_kontingen; ?>"><span class="glyphicon glyphicon-globe"> </span> Manage kontingen</a></li> 
+            <li class="pr-admin"><a href="./?<?php echo $link_manage_kontingen; ?>"><span class="glyphicon glyphicon-globe"> </span> Manage Kontingen</a></li> 
             <li class="pr-admin divider"></li>
-            <li class="pr-user"><a href="./?<?php echo $link_manage_kelas; ?>"><span class="glyphicon glyphicon-folder-open"> </span> Manage Kelas</a></li>            
+            <li class="pr-user"><a href="./?<?php echo $link_manage_kelas; ?>"><span class="glyphicon glyphicon-folder-open"> </span> Manage Kelas</a></li>
+            <li class="divider pr-admin"></li>
+            <li class="pr-admin"><a href="./?<?php echo $link_manage_perguruan; ?>"><span class="glyphicon glyphicon-flag"> </span> Manage Perguruan</a></li>                        
           </ul>
         </li>      
         <li class="dropdown">

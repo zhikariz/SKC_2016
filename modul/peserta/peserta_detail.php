@@ -13,7 +13,6 @@ $q 	    = $peserta->fetch_single_row($table,$col,$val);
   $Nama			      = $q->nama;
   $Tanggal_Lahir	= $q->tgl_lahir;
   $Waktu_Input    = $q->waktu_input;
-  $Perguruan		  = $q->perguruan;
   $Berat_Badan	  = $q->berat_badan;
   $JK             = $q->jk;
   $Input_By       = $q->input_by;
@@ -54,9 +53,21 @@ $q 	    = $peserta->fetch_single_row($table,$col,$val);
   }
   // -- END KONVERSI
 
+// Konversi id_perguruan > isi dansebaliknya
+  $konv_val_perguruan   = array();
+  $perg_id          = $db->fetch_all("perguruan_all");
+  foreach ($perg_id as $val) {
+    // Buat Array dengan id=isi perguruan dan value id perguruan, untuk konversi saat POST
+    $konv_val_perguruan[$val->isi_perguruan] = $val->id_perguruan;
+
+    // Buat Array dengan id=idperguruan perguruan dan value isi, untuk konversi saat POST
+    $konv_id_perguruan[$val->id_perguruan]  = $val->isi_perguruan;
+  }    
+
   //Tampilkan kelas dan Kontingen
   $Kelas          = $kelas_val_conv[$q->id_kelas];
   $Kontingen      = $kont_val_conv[$q->id_kontingen];
+  $Perguruan      = $konv_id_perguruan[$q->perguruan];
 ?>
 
 <div class="container">
