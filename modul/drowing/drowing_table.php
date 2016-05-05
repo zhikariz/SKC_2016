@@ -9,6 +9,8 @@
     }
     // echo $list_peserta;
 
+    $edit_link   = paramEncrypt("uri=drowing/drowing_test_edit&id_drowing=".$id_drowing_get."&id_kelas=".$id_kelas);
+
     $arr_peserta = unserialize($list_peserta);
 
     // Buat Array dengan id=isi kontingen dan value id kontingen, untuk konversi saat POST
@@ -37,7 +39,10 @@
 <div class="container">
     <!-- Heading Row -->
     <div class="row row-centered">
-        <h1> <a href="#" onclick="history.back()" class="link"><span class="glyphicon glyphicon-chevron-left"></span></a> Drowing <br><small><?php echo $kelas_val_conv[$id_kelas]; ?></small></h1>
+        <h1> <a href="#" onclick="history.back()" class="link"><span class="glyphicon glyphicon-chevron-left"></span></a> Drowing <br><small><?php echo $kelas_val_conv[$id_kelas]; ?>
+        <br>
+        <a title="Edit Drowing" href="./?<?php echo $edit_link; ?>" class=" btn btn-warning"><span class="glyphicon glyphicon-pencil"></span> Edit Drowing ini</a>
+        </small></h1>
         
         <?php
         // Pengeluaran Array Unserialize

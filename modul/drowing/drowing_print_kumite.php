@@ -22,9 +22,16 @@
 	<div class="row">
 		<span class="hide-print">
 			<br><br>
-			<h3 class="text-center">NOTE: Hasil print optimal menggunakan Chome Versi 49 keatas.</h3>
+      <h2 class="text-center">NOTE: Hasil print optimal menggunakan Chome Versi 49 keatas.
+        <br><br>
+        <small>
+        <?php echo $kelas; ?> 
+        <br> Pool : <?php echo $pool_get; ?>
+        </small>
+      </h2> 
 			<a href="#" onclick="history.back()" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-chevron-left"></span>  Kembali</a>
-			<a href="#" onclick="print()" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-print"></span>  Print</a>
+      <?php echo $edit_link; ?>
+			<a href="#" onclick="print()" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-print"></span>  Print</a>      
 		</span>
 	</div>
 <table border="0" cellpadding="0" cellspacing="0" width="2015" class="xl8714518" style="border-collapse:collapse;table-layout:fixed;width:1513pt">
@@ -134,7 +141,7 @@
   <td class="xl6614518">&nbsp;</td>
   <td class="xl6614518">&nbsp;</td>
   <td class="xl6614518">&nbsp;</td>
-  <td colspan="4" rowspan="2" class="xl8614518" style="font:bold 2.2em arial;"><?php echo $kelas; ?></td>
+  <td colspan="4" rowspan="2" class="xl8614518" style="font:bold 3em arial;"><?php echo $kelas; ?></td>
   <td class="xl6614518">&nbsp;</td>
   <td class="xl6614518">&nbsp;</td>
   <td class="xl6614518">&nbsp;</td>

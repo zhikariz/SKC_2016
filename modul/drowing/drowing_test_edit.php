@@ -205,7 +205,7 @@
 		$val = $id_drowing_get;
 		$table = 'drowing';
 		$masukan = $db->update($table,$dat,$id,$val);
-		echo "<meta http-equiv='refresh' content='0;url=./?".paramEncrypt("uri=drowing/drowing_hasil")."' />";
+		echo "<meta http-equiv='refresh' content='0;url=./?".paramEncrypt("uri=drowing/drowing_table&id_drowing=".$id_drowing_get)."' />";
 
 	} // CLose if($submit);
 

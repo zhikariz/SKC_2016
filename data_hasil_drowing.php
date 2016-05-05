@@ -11,7 +11,7 @@ $columns = array(
 //lakukan query data dari 3 table dengan inner join
 	$query = $datatable->get_custom("SELECT drowing.*, kelas_all.*
 									FROM drowing INNER JOIN kelas_all 
-									ON kelas_all.id_kelas=drowing.id_kelas"
+									ON kelas_all.id_kelas=drowing.id_kelas"															
 									,$columns); // Kalo dikasih GROUP BY, Lag
 									// WHERE kelas_all.isi LIKE 'Kumite%'	
 

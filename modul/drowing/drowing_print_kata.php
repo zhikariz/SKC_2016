@@ -6,8 +6,9 @@
 		${kontingen_ke_.$i} = substr(${kontingen_ke_.$i},0,24); //22 CharMax
 
 		${nama_ke_.$i} = ucwords(strtolower(${nama_ke_.$i})); 	// Ubah jadi lower lalu title Case
-		${kontingen_ke_.$i} = ucwords(strtolower(${kontingen_ke_.$i})); 	// Ubah jadi lower lalu title Case		
-	}
+		${kontingen_ke_.$i} = ucwords(strtolower(${kontingen_ke_.$i})); 	// Ubah jadi lower lalu title Case
+
+	} // close for $i
 ?>
 
 <html>
@@ -23,8 +24,15 @@
 	<div class="row">
 		<span class="hide-print">
 			<br><br>
-			<h3 class="text-center">NOTE: Hasil print optimal menggunakan Chome Versi 49 keatas.</h3>
+      <h2 class="text-center">NOTE: Hasil print optimal menggunakan Chome Versi 49 keatas.
+        <br><br>
+        <small>
+        <?php echo $kelas; ?> 
+        <br> Pool : <?php echo $pool_get; ?>
+        </small>
+      </h2> 			
 			<a href="#" onclick="history.back()" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-chevron-left"></span>  Kembali</a>
+      <?php echo $edit_link; ?>
 			<a href="#" onclick="print()" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-print"></span>  Print</a>
 		</span>
 	</div>
@@ -159,7 +167,7 @@
   <td class=xl672673>&nbsp;</td>
   <td class=xl672673>&nbsp;</td>
   <td class=xl672673>&nbsp;</td>
-  <td colspan=6 rowspan=2 class=xl672673 style='font:bold 2.2em arial;'><?php echo $kelas; ?></td>
+  <td colspan=6 rowspan=2 class=xl672673 style='font:bold 3em arial;'><?php echo $kelas; ?></td>
   <td class=xl682673>&nbsp;</td>
   <td class=xl682673>&nbsp;</td>
   <td class=xl692673>&nbsp;</td>

@@ -4,6 +4,7 @@
 
 		require_once ('../../lib/Database.php');
 		require_once ('../../lib/Dtable.php');
+		require_once ('../enkripsi/function.php');
 
 		$db=new Database();
 		$datatable=New Dtable();
@@ -16,7 +17,7 @@
 		}
 
 		set_exception_handler( 'handleException' );
-		//END Koneksi
+		//END Koneksi		
 
 		// Konversi id ke val , peserta, kontingen, kelas
 	    $kont_val_conv    = array();
@@ -104,7 +105,28 @@
       $pool_get         = str_replace("A-", " ", $pool_get);
 		}
 
+	$edit_link  = paramEncrypt("uri=drowing/drowing_test_edit&id_drowing=".$id_drowing_get."&id_kelas=".$id_kelas);
+	$edit_link 	= "<a title='Edit Drowing' href='./?".$edit_link."' class=' btn btn-lg btn-warning'><span class='glyphicon glyphicon-pencil'></span> Edit Drowing ini</a>";
+
     $pecah_kelas        = explode(" ", $kelas);
+
+    $re_kelas   = $pecah_kelas;
+    $rear_kelas = "";    
+    for($d=0; $d<count($re_kelas);$d++)
+    {
+      if($d == 4)
+      {
+        $rear_kelas .= "<br>".$re_kelas[$d]." ";
+      }
+      else
+      {
+        $rear_kelas .= $re_kelas[$d]." ";
+      }
+    } // close for $d
+
+    // $kelas sudah dipecah bila lebih dari karakter akan di enter
+    $kelas = $rear_kelas;     
+
     if( in_array("Kata", $pecah_kelas))
     {
       include "drowing_print_kata.php";
