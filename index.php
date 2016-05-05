@@ -134,6 +134,12 @@
       }
     ?>
     
+    <hr>
+    <div class="container">
+      <div align="center">
+        <img src="assets/image/event_logo.png" alt="Event Logo" class="img-responsive">
+      </div>
+    </div>
     <div id="footer">
       <div class="container">
         <br>
