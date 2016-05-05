@@ -182,7 +182,7 @@
 <div class="container">
     <!-- Heading Row -->
     <div class="row row-centered">
-        <h1><span class="label label-danger"><?php echo "Kontingen ".$kont_val_conv[$cari]; ?></span</span></h1>     
+        <h1 class="text-primary"><span class="glyphicon glyphicon-globe pull-right"></span><?php echo "Kontingen ".$kont_val_conv[$cari]; ?></h1>     
         <h4 class="page-header text-right">Official : <?php echo $nama_of; ?> - <strong><?php echo $kontak_of; ?></strong></h4> 
         <div class="col-md-12">
         <p class="text-left">

@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><?php echo $glob_event_name; ?></a>
+      <a class="navbar-brand" href="./?<?php echo $link_info_event; ?>"><?php echo $glob_event_name; ?></a>
     </div>
     <!-- <p class="navbar-text visible-lg">SOLOCUP 2016</p> -->
 
@@ -45,8 +45,10 @@
           </ul>
         </li>      
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-success"><?php echo $_SESSION['nama']; ?></span> <b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-success"><?php echo ucwords($_SESSION['status']); ?></span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
+            <li><a href="#"><span class="glyphicon glyphicon-user"> </span> <?php echo $_SESSION['nama']; ?></a></li>
+            <li class="divider"></li>
             <li><a href="./login/logout.php"><span class="glyphicon glyphicon-log-out"> </span> Logout</a></li>
             <!-- <li class="divider"></li> -->
             <!-- <li><a href="#">Petunjuk</a></li> -->
