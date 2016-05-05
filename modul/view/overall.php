@@ -92,7 +92,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label" for="perguruan">Asal Perguruan</label>  
             <div class="col-md-6">
-            <input id="perguruan" name="perguruan" type="text" placeholder="Perguruan Asal" class="form-control input-md" required="">
+            <input id="perguruan_pilih" name="perguruan" type="text" placeholder="Perguruan Asal" class="form-control input-md" required="">
               
             </div>
           </div>
@@ -200,16 +200,21 @@
   {
 
     // Buat Array dengan id=isi kelas/kontingen dan value id kelas/kontingen, untuk konversi saat POST
-    $kelas_id_conv    = array();
-    $kont_id_conv    = array();
+    $kelas_id_conv        = array();
+    $kont_id_conv         = array();
+    $konv_val_perguruan   = array();
 
     $kelas_id         = $db->fetch_all("kelas_all");
     $kont_id          = $db->fetch_all("kontingen_all");
+    $perg_id          = $db->fetch_all("perguruan_all");
     foreach($kelas_id as $val){
       $kelas_id_conv[$val->isi_kelas] = $val->id_kelas;
     }
     foreach ($kont_id as $val) {
       $kont_id_conv[$val->isi_kontingen] = $val->id_kontingen;     
+    }
+    foreach ($perg_id as $val) {
+      $konv_val_perguruan[$val->isi_perguruan] = $val->id_perguruan;
     }
 
     // Proses Input data Peserta
@@ -227,11 +232,11 @@
 
     $val_psrta  = array(
                         'nama'          => htmlentities($_POST[nama]),
-                        'id_kontingen'     => $kont_id_conv[$_POST[kontingen]],                        
+                        'id_kontingen'  => $kont_id_conv[$_POST[kontingen]],                        
                         'berat_badan'   => $_POST[berat], 
                         'tgl_lahir'     => $_POST[tgl_lahir],
                         'waktu_input'   => date('Y-m-d h:m:s'),
-                        'perguruan'     => $_POST[perguruan],
+                        'perguruan'     => $konv_val_perguruan[$_POST[perguruan]],
                         'jk'            => $_POST[jk],
                         'id_kelas'      => $kelas_id_conv[$_POST[kelas_pilih]],
                         'info_beregu'   => $info_beregu,
@@ -245,8 +250,9 @@
     <!-- let's begin the script || JS Data Table Easy Config -->
     <script type="text/javascript">
      // Kelas Data Autocomplete
-     var kelas_data = [];
-     var kontingen_data = [];
+     var kelas_data       = [];
+     var kontingen_data   = [];
+     var perguruan_data   = [];
 
     <?php 
       include_once "lib/config.php";
@@ -255,35 +261,41 @@
       $exec       = $kelas_sel->custom_query($kelas_q);
       foreach ($exec as $kelas_nama) {
         $kelas_n = $kelas_nama->isi_kelas;
+        echo "kelas_data.push('".$kelas_n."');";
+      } // close foreach($exec)       
     ?>
-      kelas_data.push('<?php echo $kelas_n; ?>');
-    <?php
-        // echo $kelas_n;
-      } // close foreach($exec)
-    ?>
-
      $('#kelas_pilih').typeahead({        
         local: kelas_data
       });
 
       // kontingen Data Autocomplete
     <?php 
-      include_once "lib/config.php";
       $kontingen_sel  = new Database;
       $kontingen_q    = "SELECT * FROM kontingen_all";
-      $exec       = $kontingen_sel->custom_query($kontingen_q);
+      $exec           = $kontingen_sel->custom_query($kontingen_q);
+
       foreach ($exec as $kontingen_nama) {
         $kontingen_n = $kontingen_nama->isi_kontingen;
+        echo "kontingen_data.push('".$kontingen_n."');";
+      } // close foreach($exec))
     ?>
-      kontingen_data.push('<?php echo $kontingen_n; ?>');
-    <?php
-        // echo $kelas_n;
-      } // close foreach($exec)
-    ?>
-
      $('#kontingen_pilih').typeahead({        
         local: kontingen_data
-      });     
+      });
+
+    // Perguruan Data Auto Complete / Lengkapan script ada diatas sebelum S_POST
+    <?php 
+      $perguruan_sel  = new Database;
+      $perguruan_q    = "SELECT * FROM perguruan_all";    
+      $exec           = $perguruan_sel->custom_query($perguruan_q);
+      foreach ($exec as $perguruan_isi) {        
+        $perguruan_n  = $perguruan_isi->isi_perguruan;
+        echo "perguruan_data.push('".$perguruan_n."');";
+      }
+    ?>
+     $('#perguruan_pilih').typeahead({        
+        local: perguruan_data
+      });    
 
       // Datepicker BS 3
       $('#tgl_lahir').datetimepicker({
