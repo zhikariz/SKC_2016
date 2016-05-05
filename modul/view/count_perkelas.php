@@ -58,34 +58,36 @@
 <div class="container">
     <!-- Heading Row -->
     <div class="row row-centered">
-            <div class="row row-centered">
-              <h1 class="page-header text-center text-primary">
-              <span class="pull-right"> <span class="glyphicon glyphicon-folder-open"></span></span>
-              Jumlah Peserta<small> Tiap Kelas</small>
-              </h1>
-              Jumlah Pertandingan : <strong><?php echo $count_semua; ?></strong> <br>
-              Detail : <?php echo " Jumlah Perorangan : $count_perorangan // Jumlah Regu (Kata Beregu) : $count_beregu"; ?>              
-              <br>              
-              Kelas yang kosong :
-              <?php 
-                foreach ($q_empty_kelas as $keyKelas) {
-                  echo "<strong>".$keyKelas->isi_kelas."</strong>, ";
-                }
-              ?>
-          <br>             
+      <h1 class="page-header text-center text-primary">
+        <span class="pull-right"> <span class="glyphicon glyphicon-folder-open"></span></span>
+          Jumlah Peserta<small> Tiap Kelas</small>
+      </h1>
+      
+        Jumlah Pertandingan : <strong><?php echo $count_semua; ?></strong> <br>
+        Detail : <?php echo " Jumlah Perorangan : $count_perorangan // Jumlah Regu (Kata Beregu) : $count_beregu"; ?>              
+      
+        <br>              
+      
+        Kelas yang kosong :
+        <?php 
+          foreach ($q_empty_kelas as $keyKelas) {
+            echo "<strong>".$keyKelas->isi_kelas."</strong>, ";
+          }
+        ?>
+        <br>             
         <br>
-        <div class="col-md-12">
-            <table id="perkelas3" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
-                        <th>Kelas</th>
-                        <th>Jumlah</th>
-                    </tr>
-                </thead>
-               <tbody>                
-               </tbody>
-            </table>
-        </div> <!-- col-md-12 -->
+      <div class="col-md-12">
+          <table id="perkelas3" class="table table-striped table-bordered" cellspacing="0" width="100%">
+              <thead>
+                  <tr>
+                      <th>Kelas</th>
+                      <th>Jumlah</th>
+                  </tr>
+              </thead>
+             <tbody>                
+             </tbody>
+          </table>
+      </div> <!-- col-md-12 -->
     </div> <!-- row row-centered -->
 </div> <!-- container -->
 
