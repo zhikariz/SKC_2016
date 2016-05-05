@@ -19,8 +19,9 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lihat Detail<b class="caret"></b></a>
           <ul class="dropdown-menu">
+            <li><a href="./?<?php echo $link_info_event; ?>"><span class="glyphicon glyphicon-info-sign"> </span> Informasi Event</a></li>
+            <li class="divider"></li>            
             <li><a href="./?<?php echo $link_count_peserta; ?>"><span class="glyphicon glyphicon-folder-open"> </span> Jumlah Per Kelas</a></li>
-            <li class="divider"></li>
             <li><a href="./?<?php echo $link_count_kontingen; ?>"><span class="glyphicon glyphicon-globe"> </span> Jumlah Per Kontingen</a></li>            
           </ul>
         </li>

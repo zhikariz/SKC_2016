@@ -11,7 +11,12 @@
           <a href="#" data-toggle="modal" data-target=".modal-peserta-add" title="Tambah Data" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-plus"></span>  </a>    
         </h1>            
         <div class="col-md-12">
-          <?php include "jml_peserta.php"; ?>
+          <?php 
+            include "jml_peserta.php"; 
+            // $variable diambil dari jml_peserta.php
+            echo "<strong>Jumlah Seluruh Peserta</strong>: ".$jml_peserta;
+            echo "<br> Putra : ".$jml_peserta_cwo." // Putri : ".$jml_peserta_cwe." <br>";            
+          ?>
         </div>
 
         <div class="col-md-12">

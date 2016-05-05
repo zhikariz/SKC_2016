@@ -19,13 +19,13 @@ $columns = array(
 	foreach ($query	as $value) 
 	{
 		//Query Perorangan dan Beregu
-		$perorangan 		= $db->custom_query("SELECT DISTINCT peserta.nama, kelas_all.isi_kelas FROM peserta 
+		$perorangan 		= $db->custom_query("SELECT DISTINCT peserta.nama FROM peserta 
 												INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas 
 												WHERE kelas_all.isi_kelas NOT LIKE '%Kata Beregu%'
 												AND peserta.id_kontingen='$value->id_kontingen'
 												");
 
-		$perorangan_cwo		= $db->custom_query("SELECT DISTINCT peserta.jk, peserta.nama, kelas_all.isi_kelas 
+		$perorangan_cwo		= $db->custom_query("SELECT DISTINCT peserta.nama 
 												FROM peserta INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas 
 												WHERE peserta.jk='Putra' AND kelas_all.isi_kelas NOT LIKE '%Kata Beregu%'
 												AND peserta.id_kontingen='$value->id_kontingen'
@@ -81,7 +81,7 @@ $columns = array(
 													WHERE kelas_all.isi_kelas NOT LIKE '%Kata Beregu%' 
 													AND peserta.id_kontingen='$value->id_kontingen'
 													AND peserta.nama ='$nama_at'");
-				$cari_nama_cwo 	= $db->custom_query("SELECT DISTINCT peserta.jk, peserta.nama FROM peserta 
+				$cari_nama_cwo 	= $db->custom_query("SELECT DISTINCT peserta.nama FROM peserta 
 													INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas 
 													WHERE kelas_all.isi_kelas NOT LIKE '%Kata Beregu%'
 													AND peserta.id_kontingen='$value->id_kontingen' 
@@ -106,10 +106,10 @@ $columns = array(
 		}
 
 		$jml_beregu 		*= 3; // Tiap Regu ada 3 orang, maka dikali 3
-		$jml_beregu_cwo 	*= 3; // Regu yang J.Kelamain = cowo
+		$jml_beregu 		-= count($nama_sama_diberegu);
 
-		$jml_perorangan 	-= count($nama_sama_diberegu);
-		$jml_perorangan_cwo -= count($nama_sama_diberegu_cwo);
+		$jml_beregu_cwo 	*= 3; // Regu yang J.Kelamain = cowo
+		$jml_beregu_cwo 	-= count($nama_sama_diberegu_cwo);
 
 		// Jumlah Peserta
 		$jml_peserta 		= $jml_perorangan 		+ $jml_beregu;

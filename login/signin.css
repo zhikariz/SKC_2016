@@ -86,3 +86,6 @@ html .login-wrap:after {
 body {
   margin-top: 100px;
 }
+small {
+  font-size: 0.5em;
+}

@@ -1,8 +1,8 @@
 <?php
 
 	//Query Perorangan dan Beregu
-	$perorangan 		= $db->custom_query("SELECT DISTINCT peserta.nama, kelas_all.isi_kelas FROM peserta INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas WHERE kelas_all.isi_kelas NOT LIKE '%Kata Beregu%'");
-	$perorangan_cwo		= $db->custom_query("SELECT DISTINCT peserta.jk, peserta.nama, kelas_all.isi_kelas FROM peserta INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas WHERE peserta.jk='Putra' AND kelas_all.isi_kelas NOT LIKE '%Kata Beregu%'");
+	$perorangan 		= $db->custom_query("SELECT DISTINCT peserta.nama FROM peserta INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas WHERE kelas_all.isi_kelas NOT LIKE '%Kata Beregu%'");
+	$perorangan_cwo		= $db->custom_query("SELECT DISTINCT peserta.nama FROM peserta INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas WHERE peserta.jk='Putra' AND kelas_all.isi_kelas NOT LIKE '%Kata Beregu%'");
 
 	$beregu 			= $db->custom_query("SELECT peserta.info_beregu, kelas_all.isi_kelas FROM peserta INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas WHERE kelas_all.isi_kelas LIKE '%Kata Beregu%'");
 
@@ -42,7 +42,7 @@
 			$nama_at 		= $namavalue[nama];
 			$nama_at 		= addslashes($nama_at);	// Hindari error SQL
 			$cari_nama 		= $db->custom_query("SELECT DISTINCT peserta.nama FROM peserta INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas WHERE kelas_all.isi_kelas NOT LIKE '%Kata Beregu%' AND peserta.nama ='$nama_at'");
-			$cari_nama_cwo 	= $db->custom_query("SELECT DISTINCT peserta.jk, peserta.nama FROM peserta INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas WHERE kelas_all.isi_kelas NOT LIKE '%Kata Beregu%' AND peserta.nama ='$nama_at' AND peserta.jk='Putra'");
+			$cari_nama_cwo 	= $db->custom_query("SELECT DISTINCT peserta.nama FROM peserta INNER JOIN kelas_all ON peserta.id_kelas=kelas_all.id_kelas WHERE kelas_all.isi_kelas NOT LIKE '%Kata Beregu%' AND peserta.nama ='$nama_at' AND peserta.jk='Putra'");
 
 			//Masukkan Ke array -> Beregu All J.Kelamin
 			foreach ($cari_nama as $carikey) 				
@@ -62,17 +62,15 @@
 	}
 
 	$jml_beregu 		*= 3; // Tiap Regu ada 3 orang, maka dikali 3
-	$jml_beregu_cwo 	*= 3; // Regu yang J.Kelamain = cowo
+	$jml_beregu 		-= count($nama_sama_diberegu);
 
-	$jml_perorangan 	-= count($nama_sama_diberegu);
-	$jml_perorangan_cwo -= count($nama_sama_diberegu_cwo);
+	$jml_beregu_cwo 	*= 3; // Regu yang J.Kelamain = cowo
+	$jml_beregu_cwo 	-= count($nama_sama_diberegu_cwo);
 
 	// Jumlah Peserta
 	$jml_peserta 		= $jml_perorangan 		+ $jml_beregu;
 	$jml_peserta_cwo 	= $jml_perorangan_cwo 	+ $jml_beregu_cwo;
 	$jml_peserta_cwe 	= $jml_peserta 			- $jml_peserta_cwo;
 
-	echo "<strong>Jumlah Seluruh Peserta</strong>: ".$jml_peserta;
-	echo "<br> Putra : ".$jml_peserta_cwo." // Putri : ".$jml_peserta_cwe." <br>";
 
 ?>

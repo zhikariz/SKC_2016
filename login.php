@@ -1,20 +1,27 @@
 <!DOCTYPE html>
+<?php
+error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED );
+
+// koneksi all in one
+include "lib/aio_config.php";
+include "eventinfo.php";
+?>
 <html >
   <head>
     <meta charset="UTF-8">
-    <title>Login | Sistem Informasi Pertandingan Solocup 2016</title>
+    <title>Login | Sistem Informasi Pertandingan <?php echo $glob_event_name; ?></title>
         <link rel="stylesheet" href="./login/signin.css">
   </head>
   <body>
     <div class="login-wrap">
-  <h2>Sistem Informasi Pertandingan</h2>
+  <h2><?php echo $glob_event_name; ?> <br><small>Sistem Informasi Persiapan Pertandingan</small></h2>
   
   <!-- form login -->
   <div class="form">
   <form name='myform' method="post" action="login.php" enctype="multipart/form-data">
     <input type="text" placeholder="Username Login" name="user" />
     <input type="password" placeholder="Password" name="password" />
-    <input type="submit" name="submit" value="Sign in" />
+    <input type="submit" name="submit" value="Login" />
     </form>
     </div>
   
@@ -25,10 +32,6 @@
 </html>
 
 <?php
-error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED );
-
-// koneksi all in one
-include "lib/aio_config.php";
 
 //mengamil data dari input
     $user=$_POST['user'];

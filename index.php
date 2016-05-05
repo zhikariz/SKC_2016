@@ -101,6 +101,7 @@
       $link_overall         = paramEncrypt("uri=view/overall"); // default page
       $link_count_peserta   = paramEncrypt("uri=view/count_perkelas"); // Jumlah Peserta Per Kelas
       $link_count_kontingen = paramEncrypt("uri=view/count_perkontingen"); // Jumlah Peserta Per Kontingen
+      $link_info_event      = paramEncrypt("uri=view/info_event"); // Informasi Peserta event
 
       // Modul kontingen
       $link_manage_kontingen   = paramEncrypt("uri=kontingen/kontingen_view"); // Jumlah Peserta Per Kontingen    
