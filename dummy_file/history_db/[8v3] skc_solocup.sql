@@ -21,7 +21,14 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
+-- DROP Any Existed Table
+DROP TABLE IF EXISTS `admin`;
+DROP TABLE IF EXISTS `peserta`;
+DROP TABLE IF EXISTS `kelas_all`;
+DROP TABLE IF EXISTS `kontingen_all`;
+DROP TABLE IF EXISTS `perguruan_all`;
+DROP TABLE IF EXISTS `drowing`;
+DROP TABLE IF EXISTS `syst_info`;
 --
 -- Table structure for table `admin`
 --
@@ -1645,7 +1652,7 @@ CREATE TABLE IF NOT EXISTS `syst_info` (
 --
 
 INSERT INTO `syst_info` (`syst_id`, `syst_name`, `syst_help`, `event_name`, `event_date`, `event_notes`) VALUES
-(1, 'Sistem Informasi Pertandingan Karate', '<p class="lead page-header">\n Cara Export Semua Data ke Excel\n</p>\n<br>\n<ol type="1">\n  <li>Buka <code>http://localhost/phpmyadmin</code> dari Server</li>\n  <li>Pilih database event (skc_solocup)</li>\n <li>Klik tab SQL</li>\n <li>Paste Code dibawah ini: <br>\n  <pre>\n <code>  \n  SELECT peserta.nama AS "Nama Peserta", \n kontingen_all.isi_kontingen AS "Kontingen", \n  peserta.tgl_lahir AS "Tgl Lahir", \n  peserta.berat_badan AS "Berat (Kg)", \n perguruan_all.isi_perguruan AS "Perguruan", \n  kelas_all.isi_kelas AS "Kelas", \n  peserta.jk AS "Jenis Kelamin"     \n  FROM peserta \n INNER JOIN kelas_all\n  ON kelas_all.id_kelas=peserta.id_kelas\n  INNER JOIN kontingen_all\n  ON kontingen_all.id_kontingen=peserta.id_kontingen\n  INNER JOIN perguruan_all\n  ON perguruan_all.id_perguruan=peserta.perguruan\n </code>\n </pre>    \n  Lalu klik <kbd>Go</kbd>\n <br>\n  </li>\n <li>Setelah keluar hasilnya, pada bagian Query Result Operation (Operasi hasil kueri) -> Klik Export</li>\n <li>Pilihan Export :\n  <pre>\n <code>  \n  Export Method   : Custom - display all possible options\n Rows      : Dump all rows\n Output      : Save output to a file\n Format      : OpenDocument Spreadsheet\n  Format Specifix Options : Replace Null with = Null\n            Put Columns Name in the first Row (Beri Ceklist)\n  </code>\n </pre>                        \n  Lalu Klik <kbd>Go</kbd>\n <br>\n  </li>\n <li>Akan Ter-download sebuah dokumen .ods, buka dengan MS Excel 2013</li>\n</ol>', 'SOLOCUP 2016', '11 - 14 April 2016', NULL);
+(1, 'Sistem Informasi Pertandingan Karate', '<div id="penting">\n<p class="lead page-header text-center">\n # Penggunaan Sistem <br>\n <strong>! PENTING</strong> : Pastikan Data awal terisi <br>\n <ul type="square">\n   <li>Perguruan</li>\n   <li>Kontingen</li>\n   <li>Kelas</li>\n </ul>\n <strong>! ERROR</strong> : Jika data awal belum terisi mungkin akan terjadi error sistem \n</p>\n</div>\n<hr>\n\n<div id="export-excel">\n<p class="lead page-header text-center">\n # Cara Export Semua Data ke Excel\n</p>\n<br>\n<ol type="1">\n  <li>Buka <code>http://localhost/phpmyadmin</code> dari Server</li>\n  <li>Pilih database event (misal: skc_solocup)</li>\n <li>Klik tab SQL</li>\n <li>Paste Code dibawah ini: <br>\n  <pre>\n <code>  \n  SELECT peserta.nama AS "Nama Peserta", \n kontingen_all.isi_kontingen AS "Kontingen", \n  peserta.tgl_lahir AS "Tgl Lahir", \n  peserta.berat_badan AS "Berat (Kg)", \n perguruan_all.isi_perguruan AS "Perguruan", \n  kelas_all.isi_kelas AS "Kelas", \n  peserta.jk AS "Jenis Kelamin"     \n  FROM peserta \n INNER JOIN kelas_all\n  ON kelas_all.id_kelas=peserta.id_kelas\n  INNER JOIN kontingen_all\n  ON kontingen_all.id_kontingen=peserta.id_kontingen\n  INNER JOIN perguruan_all\n  ON perguruan_all.id_perguruan=peserta.perguruan\n </code>\n </pre>    \n  Lalu klik <kbd>Go</kbd>\n <br>\n  </li>\n <li>Setelah keluar hasilnya, pada bagian Query Result Operation (Operasi hasil kueri) -> Klik Export</li>\n <li>Pilihan Export :\n  <pre>\n <code>  \n  Export Method   : Custom - display all possible options\n Rows      : Dump all rows\n Output      : Save output to a file\n Format      : OpenDocument Spreadsheet\n  Format Specifix Options : Replace Null with = Null\n            Put Columns Name in the first Row (Beri Ceklist)\n  </code>\n </pre>                        \n  Lalu Klik <kbd>Go</kbd>\n <br>\n  </li>\n <li>Akan Ter-download sebuah dokumen .ods, buka dengan MS Excel 2013</li>\n</ol>\n</div>', 'SOLOCUP 2016', '11 - 14 April 2016', NULL);
 
 --
 -- Indexes for dumped tables
