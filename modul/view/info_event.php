@@ -8,24 +8,24 @@
 
   $kelas            = new Database;
 
-  $q_kumite     = $kelas->custom_query("SELECT COUNT(peserta.id_peserta) AS Jml, kelas_all.* 
+  $q_kumite               = $kelas->custom_query("SELECT COUNT(peserta.id_peserta) AS Jml, kelas_all.* 
                                             FROM peserta INNER JOIN kelas_all 
                                             ON peserta.id_kelas=kelas_all.id_kelas 
                                             WHERE kelas_all.isi_kelas LIKE '%Kumite%'
                                             GROUP BY peserta.id_kelas");
 
-  $q_kata_perorangan     = $kelas->custom_query("SELECT COUNT(peserta.id_peserta) AS Jml, kelas_all.* 
+  $q_kata_perorangan      = $kelas->custom_query("SELECT COUNT(peserta.id_peserta) AS Jml, kelas_all.* 
                                             FROM peserta INNER JOIN kelas_all 
                                             ON peserta.id_kelas=kelas_all.id_kelas 
                                             WHERE kelas_all.isi_kelas LIKE '%Kata Perorangan%'
                                             GROUP BY peserta.id_kelas");
 
-  $q_kata_beregu         = $kelas->custom_query("SELECT COUNT(peserta.id_peserta) AS Jml, COUNT(peserta.id_peserta) AS Jml_Regu, kelas_all.* 
+  $q_kata_beregu          = $kelas->custom_query("SELECT COUNT(peserta.id_peserta) AS Jml, COUNT(peserta.id_peserta) AS Jml_Regu, kelas_all.* 
                                             FROM peserta INNER JOIN kelas_all 
                                             ON peserta.id_kelas=kelas_all.id_kelas 
                                             WHERE kelas_all.isi_kelas LIKE '%Kata Beregu%'
                                             GROUP BY peserta.id_kelas");
-  $q_id_kelas       = $kelas->custom_query("SELECT DISTINCT id_kelas FROM peserta");
+  $q_id_kelas             = $kelas->custom_query("SELECT DISTINCT id_kelas FROM peserta");  
 
   foreach ($q_kumite as $kumite) {
     $count_kumite += $kumite->Jml;
@@ -54,10 +54,17 @@
     }
   }
   $id_kelas_all   = implode(",", $arr_id_kelas);  
-  $id_kelas_all   = "(".$id_kelas_all.")";
+  if( empty($id_kelas_all) )
+  {
+    $id_kelas_all   = "(1)";
+  }
+  else
+  {
+    $id_kelas_all   = "(".$id_kelas_all.")";
+  }  
 
   $q_empty_kelas       = "SELECT isi_kelas FROM kelas_all WHERE id_kelas NOT IN ".$id_kelas_all;
-  $q_empty_kelas       = $kelas->custom_query($q_empty_kelas);  
+  $q_empty_kelas       = $kelas->custom_query($q_empty_kelas);    
 ?>
 <div class="container">
     <!-- Heading Row -->

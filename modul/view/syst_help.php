@@ -8,7 +8,7 @@
         <div class="col-md-8 col-md-offset-2">
           <table class="table table-responsive table-bordered">
             <tr class="bg-primary">
-              <td colspan="2"><strong>Cara Export Database ke Excel</strong></td>
+              <td colspan="2"><strong>Pusat Bantuan Sistem</strong></td>
             </tr>
             <tr>
             <tr>
