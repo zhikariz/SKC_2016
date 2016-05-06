@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2016 at 04:10 PM
+-- Generation Time: May 06, 2016 at 02:41 AM
 -- Server version: 5.6.25
 -- PHP Version: 5.5.27
 
@@ -172,7 +172,7 @@ CREATE TABLE IF NOT EXISTS `kontingen_all` (
 INSERT INTO `kontingen_all` (`id_kontingen`, `isi_kontingen`, `nama_official`, `kontak_official`) VALUES
 (1, 'PERSATUAN KARATE NEGERI SABAH', 'ISKHANDAR BIN DAMIS', '01116181455'),
 (2, 'FORKI KABUPATEN SIAK', 'MURSENO', '081268411619'),
-(3, 'BKC JOGJA', ' ', ' '),
+(3, 'BKC JOGJA', '-', '-'),
 (4, 'SMP 1 SEMARANG', ' ', ' '),
 (5, 'BKC JATIM', ' ', ' '),
 (6, 'SD SANTO FRANSISKUS', ' ', ' '),
@@ -263,7 +263,7 @@ INSERT INTO `kontingen_all` (`id_kontingen`, `isi_kontingen`, `nama_official`, `
 CREATE TABLE IF NOT EXISTS `perguruan_all` (
   `id_perguruan` int(5) NOT NULL,
   `isi_perguruan` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `perguruan_all`
@@ -1625,6 +1625,28 @@ INSERT INTO `peserta` (`id_peserta`, `nama`, `id_kontingen`, `berat_badan`, `tgl
 (1337, 'ZULFA AL-HAFIDZ', '15', 56, '2001-01-14', '2016-04-14 03:04:49', '21', 'Putra', '55', 'a:3:{i:1;a:2:{s:4:"nama";s:0:"";s:9:"tgl_lahir";s:0:"";}i:2;a:2:{s:4:"nama";s:0:"";s:9:"tgl_lahir";s:0:"";}i:3;a:2:{s:4:"nama";s:0:"";s:9:"tgl_lahir";s:0:"";}}', 'User Frontdesk'),
 (1338, 'ABDUL AZIZ', '90', 58, '2016-04-14', '2016-04-14 04:04:30', '1', 'Putra', '57', 'a:3:{i:1;a:2:{s:4:"nama";s:0:"";s:9:"tgl_lahir";s:0:"";}i:2;a:2:{s:4:"nama";s:0:"";s:9:"tgl_lahir";s:0:"";}i:3;a:2:{s:4:"nama";s:0:"";s:9:"tgl_lahir";s:0:"";}}', 'Admin Full Control');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `syst_info`
+--
+
+CREATE TABLE IF NOT EXISTS `syst_info` (
+  `syst_id` int(11) NOT NULL,
+  `syst_name` text NOT NULL,
+  `syst_help` text,
+  `event_name` text NOT NULL,
+  `event_date` text NOT NULL,
+  `event_notes` text
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `syst_info`
+--
+
+INSERT INTO `syst_info` (`syst_id`, `syst_name`, `syst_help`, `event_name`, `event_date`, `event_notes`) VALUES
+(1, 'Sistem Informasi Pertandingan Karate', '<p class="lead page-header">\n Cara Export Semua Data ke Excel\n</p>\n<br>\n<ol type="1">\n  <li>Buka <code>http://localhost/phpmyadmin</code> dari Server</li>\n  <li>Pilih database event (skc_solocup)</li>\n <li>Klik tab SQL</li>\n <li>Paste Code dibawah ini: <br>\n  <pre>\n <code>  \n  SELECT peserta.nama AS "Nama Peserta", \n kontingen_all.isi_kontingen AS "Kontingen", \n  peserta.tgl_lahir AS "Tgl Lahir", \n  peserta.berat_badan AS "Berat (Kg)", \n perguruan_all.isi_perguruan AS "Perguruan", \n  kelas_all.isi_kelas AS "Kelas", \n  peserta.jk AS "Jenis Kelamin"     \n  FROM peserta \n INNER JOIN kelas_all\n  ON kelas_all.id_kelas=peserta.id_kelas\n  INNER JOIN kontingen_all\n  ON kontingen_all.id_kontingen=peserta.id_kontingen\n  INNER JOIN perguruan_all\n  ON perguruan_all.id_perguruan=peserta.perguruan\n </code>\n </pre>    \n  Lalu klik <kbd>Go</kbd>\n <br>\n  </li>\n <li>Setelah keluar hasilnya, pada bagian Query Result Operation (Operasi hasil kueri) -> Klik Export</li>\n <li>Pilihan Export :\n  <pre>\n <code>  \n  Export Method   : Custom - display all possible options\n Rows      : Dump all rows\n Output      : Save output to a file\n Format      : OpenDocument Spreadsheet\n  Format Specifix Options : Replace Null with = Null\n            Put Columns Name in the first Row (Beri Ceklist)\n  </code>\n </pre>                        \n  Lalu Klik <kbd>Go</kbd>\n <br>\n  </li>\n <li>Akan Ter-download sebuah dokumen .ods, buka dengan MS Excel 2013</li>\n</ol>', 'SOLOCUP 2016', '11 - 14 April 2016', NULL);
+
 --
 -- Indexes for dumped tables
 --
@@ -1667,6 +1689,12 @@ ALTER TABLE `peserta`
   ADD PRIMARY KEY (`id_peserta`);
 
 --
+-- Indexes for table `syst_info`
+--
+ALTER TABLE `syst_info`
+  ADD PRIMARY KEY (`syst_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -1694,12 +1722,17 @@ ALTER TABLE `kontingen_all`
 -- AUTO_INCREMENT for table `perguruan_all`
 --
 ALTER TABLE `perguruan_all`
-  MODIFY `id_perguruan` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
+  MODIFY `id_perguruan` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `peserta`
 --
 ALTER TABLE `peserta`
   MODIFY `id_peserta` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1339;
+--
+-- AUTO_INCREMENT for table `syst_info`
+--
+ALTER TABLE `syst_info`
+  MODIFY `syst_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

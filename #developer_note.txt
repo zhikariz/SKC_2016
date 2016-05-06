@@ -177,7 +177,7 @@ DB Explanation Backup
 [8] Data Lama + Kolom baru di kontingen_all
 [9] DB Baru Clean + SET Kelas 70 SOLOCUP 
 [8v2] DB Baru Filled(terisi) + Updated Column Peserta (Untuk Sampling):
-[8v3] DB Baru Filled(terisi) + update terbaru sampai perguruan_all column terisi data solocup 2016: *
+[8v3] DB Baru Filled(terisi) + update terbaru sampai syst_info column terisi data solocup 2016: *
 [10] DB Baru Clean + Updated Column Peserta + SET Kelas 70 SOLOCUP 
 [11] DB Baru Clean + Perguruan_all column (Not Include 70 Kelas SOLOCUP 2016)
 
