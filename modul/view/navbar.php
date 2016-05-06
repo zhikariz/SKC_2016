@@ -53,6 +53,8 @@
           <ul class="dropdown-menu">
             <li><a href="#"><span class="glyphicon glyphicon-user"> </span> <?php echo $_SESSION['nama']; ?></a></li>
             <li class="divider"></li>
+            <li><a href="./?<?php echo $link_system_help; ?>"><span class="glyphicon glyphicon-question-sign"> </span> Petunjuk / Bantuan Sistem</a></li>
+            <li class="divider"></li>            
             <li><a href="./login/logout.php"><span class="glyphicon glyphicon-log-out"> </span> Logout</a></li>
             <!-- <li class="divider"></li> -->
             <!-- <li><a href="#">Petunjuk</a></li> -->
