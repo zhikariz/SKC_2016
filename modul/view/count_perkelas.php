@@ -49,7 +49,14 @@
     }
   }
   $id_kelas_all   = implode(",", $arr_id_kelas);  
-  $id_kelas_all   = "(".$id_kelas_all.")";
+  if( empty($id_kelas_all) )
+  {
+    $id_kelas_all   = "(1)";
+  }
+  else
+  {
+    $id_kelas_all   = "(".$id_kelas_all.")";
+  } 
 
   $q_empty_kelas       = "SELECT isi_kelas FROM kelas_all WHERE id_kelas NOT IN ".$id_kelas_all;
   $q_empty_kelas       = $kelas->custom_query($q_empty_kelas);
