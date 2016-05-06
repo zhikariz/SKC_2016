@@ -93,6 +93,9 @@
               <td colspan="2">-</td>
             </tr>
 
+            <tr class="bg-info">
+              <td colspan="2"><strong>Untuk Export Database ke Excel 2013</strong>, Silahkan menuju halaman <a href="./?<?php echo $link_system_help; ?>">Bantuan Sistem</a></td>
+            </tr>
             <tr class="bg-primary">
               <td colspan="2"><strong>Informasi Jumlah Peserta</strong></td>
             </tr>
@@ -150,7 +153,7 @@
                   </ul>
                 </p>
               </td>
-            </tr>
+            </tr>            
             <!-- divider -->
             <tr>
               <td colspan="2">-</td>
@@ -165,7 +168,8 @@
                  <li>Nama sama yang diinputkan tidak sama persis, typo, dsb. (Contoh : Bangkit Sanyoto & Bangkit Sanyot)</li>
                 </ul>
               </td>
-            </tr>            
+            </tr>
+            <!-- divider -->                      
           </table>
         </div>
     </div>
