@@ -62,14 +62,12 @@ $kontak = $q->kontak_official;
 <?php
 if(isset($_POST[submit])){
   $table_up = "kontingen_all";
-    $isi = str_replace('"', '``', $_POST[isi]);
-    $isi = str_replace("'", "`", $isi);
     $nama = $_POST[nama];
     $kontak = $_POST[kontak];  
     $data_up  = array(
-                      'isi_kontingen'    => $isi,
-                      'nama_official'    => $nama,
-                      'kontak_official'  => $kontak
+                      'isi_kontingen'    => $kontingen->repl_petik($_POST[isi]),
+                      'nama_official'    => $kontingen->repl_petik($nama),
+                      'kontak_official'  => $kontingen->repl_petik($kontak)
                       );
   $prim_col = "id_kontingen";
   // $id didefinisikan diatas;

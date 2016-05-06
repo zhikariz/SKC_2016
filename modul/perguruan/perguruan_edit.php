@@ -46,9 +46,9 @@ $isi	      = $q->isi_perguruan;
 
 <?php
 if(isset($_POST[submit])){
-	$table_up	= "perguruan_all";
+	$table_up	= "perguruan_all"; 
 	$data_up	= array(
-                        'isi_perguruan'          => $_POST[isi]
+                        'isi_perguruan'          => $perguruan->repl_petik($_POST[isi])
                          );
 	$prim_col	= "id_perguruan";
 	// $id didefinisikan diatas;

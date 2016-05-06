@@ -283,6 +283,14 @@ class Database {
     public function __destruct() {
     $this->pdo = null;
     }
+
+    // Custom function replace Petik
+    function repl_petik($inp)
+    {
+        $isi           = str_replace('"', '``', $inp);
+        $isi           = str_replace("'", "`", $isi);
+        return $isi;
+    }    
 }  
 
 ?>

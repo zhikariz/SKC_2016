@@ -108,13 +108,18 @@
       $link_search_kontingen   = paramEncrypt("uri=kontingen/kontingen_search"); // Jumlah Peserta Per Kontingen    
 
       // Modul Kelas
-      $link_manage_kelas      = paramEncrypt("uri=kelas/kelas_view"); // Jumlah Peserta Per Kontingen
+      $link_manage_kelas      = paramEncrypt("uri=kelas/kelas_view"); // Manajemen Kelas
 
       // Modul User
-      $link_manage_user       = paramEncrypt("uri=user/user_view"); // Jumlah Peserta Per Kontingen
+      $link_manage_user       = paramEncrypt("uri=user/user_view"); // Manajemen User
 
       // Modul Perguruan
-      $link_manage_perguruan  = paramEncrypt("uri=perguruan/perguruan_view"); // Jumlah Peserta Per Kontingen      
+      $link_manage_perguruan  = paramEncrypt("uri=perguruan/perguruan_view"); // Manajemen Perguruan      
+
+      // Modul Event Info & Help
+      $link_manage_event      = paramEncrypt("uri=event/event_view"); // Manajemen Event
+      $link_manage_event_edit = paramEncrypt("uri=event/event_edit"); // Manajemen Event
+      $link_system_help       = paramEncrypt("uri=view/syst_help"); // Manajemen Event
 
       // Modul Drowing
       $link_drowing           = paramEncrypt("uri=drowing/drowing_kelas"); // Drowing Per kelas > Manage
@@ -122,7 +127,11 @@
 
       // Navigation Bar
       include("modul/view/navbar.php");
-      
+      ?>
+      <div class="container-fluid">
+        
+      </div>      
+      <?php 
       // Dinamic Page            
       $uriget = decode($_SERVER['REQUEST_URI']);            
       $uri    = $uriget[uri];
@@ -146,7 +155,12 @@
     <div id="footer">
       <div class="container">
         <br>
-        <p class="text-muted">&copy; 2016 <?php echo $glob_system_name ?>. <br>
+        <p class="text-muted">&copy; 2016 <?php echo $glob_system_name ?>. 
+        <span class="pull-right">Navigasi Sistem : 
+          <a href="./?<?php echo $link_info_event ?>">Pusat Informasi</a> -
+          <a href="./?<?php echo $link_system_help ?>">Bantuan</a>
+        </span>
+        <br>
           <small>Create By : 
                   <a href="https://github.com/axquired24">AxQuired24 (Albert S)</a> - 
                   <a href="https://github.com/tanyakenapa10">Bangkit S</a> - 

@@ -61,10 +61,10 @@
 
   if($_POST[submit])
   {
-    $perguruan      = new Database;
+    $perguruan      = new Database;  
     $table          = 'perguruan_all';
     $perguruan_isi  = array(
-                    'isi_perguruan'=>$_POST[isi_perguruan]
+                    'isi_perguruan'=>$perguruan->repl_petik($_POST[isi_perguruan])
                      );
 
     $exec           = $perguruan->insert($table,$perguruan_isi);

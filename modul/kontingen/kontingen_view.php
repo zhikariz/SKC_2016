@@ -47,7 +47,7 @@
           <div class="form-group row">
             <label class="col-md-4 control-label" for="kontak">Nama Official</label>  
             <div class="col-md-4">
-            <input id="nama" name="nama" type="text" placeholder="Nama Official yang dapat dihubungi" class="form-control input-md" required="">
+            <input id="nama" name="nama" type="text" placeholder="Nama Official yang dapat dihubungi" class="form-control input-md" required="" value="-">
               
             </div>
           </div>
@@ -55,7 +55,7 @@
           <div class="form-group row">
             <label class="col-md-4 control-label" for="kontak">Kontak Official</label>  
             <div class="col-md-4">
-            <input id="kontak" name="kontak" type="text" placeholder="Kontak Official yang dapat dihubungi" class="form-control input-md" required="">
+            <input id="kontak" name="kontak" type="text" placeholder="Kontak Official yang dapat dihubungi" class="form-control input-md" required="" value="-">
               
             </div>
           </div>
@@ -81,14 +81,12 @@
   {
     $kontingen     = new Database;    
     $table         = 'kontingen_all';
-    $isi           = str_replace('"', '``', $_POST[isi_kontingen]);
-    $isi           = str_replace("'", "`", $isi);
     $nama          = $_POST[nama];
     $kontak        = $_POST[kontak];
     $kontingen_isi = array(
-                          'isi_kontingen'          => $isi,
-                          'nama_official'          => $nama,
-                          'kontak_official'        => $kontak             
+                          'isi_kontingen'          => $kontingen->repl_petik($_POST[isi_kontingen]),
+                          'nama_official'          => $kontingen->repl_petik($nama),
+                          'kontak_official'        => $kontingen->repl_petik($kontak)
                             );
     $exec          = $kontingen->insert($table,$kontingen_isi);
   } 
