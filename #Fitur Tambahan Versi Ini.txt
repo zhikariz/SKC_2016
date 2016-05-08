@@ -8,6 +8,29 @@ Requirement
 	> Require PHP 5.5 Or Xampp 3.2.1 Or Newer
 
 ...........................................................................................................
+Fitur Tambahan Versi 1.8
+SKC Sistem 2016
+.................
+	db_backup
+	# dummy_file/history_db[8v3] skc_sql (Untuk Sampling):
+		Data Sample dengan Struktur DB Terbaru 
+		Bisa Import tanpa harus hapus DB, Langsung Otomatis Replace Data
+		Masih Pake Data Kelas Lama (Bukan 70 Kelas Baru)	
+	# [11] skc_sql : 
+		Struktur Data Kosong Terbaru
+		Bisa Import tanpa harus hapus DB, Langsung Otomatis Replace Data
+
+	# Tambahan Form "Kata Beregu" Hanya keluar jika kelas yang dipilih Kata Beregu
+	# Edit Drowing bisa dimana saja, Print Preview dulu (tidak langsung pop up print)
+	# Tambahan Menu Informasi Sistem & Bantuan Sistem
+	# Tambahan Logo Event dan dapat melakukan penggantian Logo
+	# Tambahan Manajemen Event (Editing nama event dan informasi waktu event)
+	# Perguruan Input AutoComplete (+ Manage Perguruan)
+	# Manajemen User dan Admin
+	# Bebas input dengan tanda petik / tanda lain di semua data (Error teratasi)
+	# Bug lama Teratasi (Kelas Pertandingan Terpotong saat print, error saat data peserta kosong)
+
+...........................................................................................................
 Fitur Tambahan Versi 1.7
 SKC Solocup 2016
 .................

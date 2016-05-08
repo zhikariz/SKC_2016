@@ -4,8 +4,7 @@ SISTEM INFOMRASI PERTANDINGAN *v1.2*
 Step :
 ------
 1. Import The Newest Database : db_backup/[bigger_number]skc_solocup.sql
-  * [6] Full Data
-  * [7] Clean Data - Hanya Struktur DB
+  * [11] Clean Data - Hanya Struktur DB
 2. Edit the Config files (lib/aio_config.php)
   * Default :
   * username : root
@@ -16,8 +15,8 @@ Step :
 
 #### Preview
 ------------
-![SKC Solocup 2016 System](https://raw.githubusercontent.com/axquired24/SKC_2016/master/preview/frontpage.jpg "Front Page")
-![SKC Solocup 2016 Drowing System](https://raw.githubusercontent.com/axquired24/SKC_2016/master/preview/drowingpage.jpg "Drowing Page")
+![SKC Solocup 2016 System](https://raw.githubusercontent.com/axquired24/SKC_2016/master/assets/image/preview/frontpage.jpg "Front Page")
+![SKC Solocup 2016 Drowing System](https://raw.githubusercontent.com/axquired24/SKC_2016/master/assets/image/preview/drowingpage.jpg "Drowing Page")
 
 #### Fitur :
 ------------

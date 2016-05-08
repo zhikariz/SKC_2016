@@ -36,12 +36,16 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> Manage <b class="caret"></b></a>
-          <ul class="dropdown-menu"> 
+          <ul class="dropdown-menu">
+            <li class="pr-admin"><a href="./?<?php echo $link_manage_event; ?>"><span class="glyphicon glyphicon-facetime-video"></span> Manage Event</a></li>
+            <li class="pr-admin divider"></li>           
             <li class="pr-admin"><a href="./?<?php echo $link_manage_user; ?>"><span class="glyphicon glyphicon-user"></span> Manage User</a></li>
             <li class="pr-admin divider"></li>
-            <li class="pr-admin"><a href="./?<?php echo $link_manage_kontingen; ?>"><span class="glyphicon glyphicon-globe"> </span> Manage kontingen</a></li> 
+            <li class="pr-admin"><a href="./?<?php echo $link_manage_kontingen; ?>"><span class="glyphicon glyphicon-globe"> </span> Manage Kontingen</a></li> 
             <li class="pr-admin divider"></li>
-            <li class="pr-user"><a href="./?<?php echo $link_manage_kelas; ?>"><span class="glyphicon glyphicon-folder-open"> </span> Manage Kelas</a></li>            
+            <li class="pr-user"><a href="./?<?php echo $link_manage_kelas; ?>"><span class="glyphicon glyphicon-folder-open"> </span> Manage Kelas</a></li>
+            <li class="divider pr-admin"></li>
+            <li class="pr-admin"><a href="./?<?php echo $link_manage_perguruan; ?>"><span class="glyphicon glyphicon-flag"> </span> Manage Perguruan</a></li>                        
           </ul>
         </li>      
         <li class="dropdown">
@@ -49,6 +53,8 @@
           <ul class="dropdown-menu">
             <li><a href="#"><span class="glyphicon glyphicon-user"> </span> <?php echo $_SESSION['nama']; ?></a></li>
             <li class="divider"></li>
+            <li><a href="./?<?php echo $link_system_help; ?>"><span class="glyphicon glyphicon-question-sign"> </span> Petunjuk / Bantuan Sistem</a></li>
+            <li class="divider"></li>            
             <li><a href="./login/logout.php"><span class="glyphicon glyphicon-log-out"> </span> Logout</a></li>
             <!-- <li class="divider"></li> -->
             <!-- <li><a href="#">Petunjuk</a></li> -->

@@ -48,7 +48,7 @@ $isi	= $q->isi_kelas;
 if(isset($_POST[submit])){
 	$table_up	= "kelas_all";
 	$data_up	= array(
-                        'isi_kelas'          => $_POST[isi]
+                        'isi_kelas'          => $kelas->repl_petik($_POST[isi])
                          );
 	$prim_col	= "id_kelas";
 	// $id didefinisikan diatas;
