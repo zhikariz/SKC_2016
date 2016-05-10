@@ -413,6 +413,13 @@ DATABASE EDIT
 	# Tambahan Event Info All in one config
 	# Database Updated
 
+10 / 05 / 2016 Selasa
+	# -- Bugs --- #
+	 # Manage Kontingen Navbar User  				(OK)
+	 # Edit Drowing in print preview     			(OK)
+	 # Add admin in admin     						(OK)
+	 # User edit data & !delete data in overall   	(OK)
+
 
 
 

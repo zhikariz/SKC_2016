@@ -53,8 +53,8 @@ $columns = array(
 						);
 		$ResultData[] = "
 			<div class='btn-group hide-print'>
-				<a title='Ubah Data' href='./?".$crud_uri[edit]."' class='link pr-admin btn btn-xs btn-default'> <span class='glyphicon glyphicon-pencil'></span> </a>
-				<a title='Hapus Data' onclick=confirmHapus('./?".$crud_uri[delete]."') href='#' class='link pr-admin btn btn-xs btn-danger'> <span class='glyphicon glyphicon-trash'></span> </a>
+				<a title='Ubah Data' href='./?".$crud_uri[edit]."' class='pr-user btn btn-xs btn-default'> <span class='glyphicon glyphicon-pencil'></span> </a>
+				<a title='Hapus Data' onclick=confirmHapus('./?".$crud_uri[delete]."') href='#' class='pr-admin btn btn-xs btn-danger'> <span class='glyphicon glyphicon-trash'></span> </a>
 				<a title='Detail Data' href='./?".$crud_uri[detail]."' class='link btn btn-xs btn-success'> <span class='glyphicon glyphicon-list-alt'></span> </a>
 			</div>
 		";
@@ -69,3 +69,5 @@ $columns = array(
 $datatable->set_data($data);
 //create our json
 $datatable->create_data();
+
+?>
