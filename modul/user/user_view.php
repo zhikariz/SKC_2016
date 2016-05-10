@@ -4,7 +4,8 @@
     <div class="row row-centered">
         <h1 class="page-header text-center text-primary">
         <span class="pull-right"> <span class="glyphicon glyphicon-user"></span></span>
-        Manage User <small> <?php echo $glob_event_name; ?></small>
+        Manage User <small> <?php echo $glob_event_name; ?></small> 
+        <a href="#" data-toggle="modal" data-target=".modal-admin-add" title="Tambah User" class="btn btn-danger"><span class="glyphicon glyphicon-plus"></span>  </a>
         </h1>        
         <div class="col-md-12">
             <table id="user_view" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -57,7 +58,7 @@
           <div class="form-group row">
             <label class="col-md-4 control-label" for="isi_kelas">Nama Admin</label>  
             <div class="col-md-4">
-            <input name="nama" type="text" placeholder="Nama Admin (dan Status)" class="form-control input-md" required="">
+            <input name="nama" type="text" placeholder="Nama Admin" class="form-control input-md" required="">
               
             </div>
           </div>

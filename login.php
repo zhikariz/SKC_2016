@@ -9,12 +9,12 @@ include "eventinfo.php";
 <html >
   <head>
     <meta charset="UTF-8">
-    <title>Login | Sistem Informasi Pertandingan <?php echo $glob_event_name; ?></title>
+    <title>Login | <?php echo $glob_event_name." :: ".$glob_system_name; ?></title>
         <link rel="stylesheet" href="./login/signin.css">
   </head>
   <body>
     <div class="login-wrap">
-  <h2><?php echo $glob_event_name; ?> <br><small>Sistem Informasi Persiapan Pertandingan</small></h2>
+  <h2><?php echo $glob_event_name; ?> <br><small><?php echo $glob_system_name; ?></small></h2>
   
   <!-- form login -->
   <div class="form">

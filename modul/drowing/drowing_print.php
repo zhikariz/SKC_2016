@@ -105,8 +105,8 @@
       $pool_get         = str_replace("A-", " ", $pool_get);
 		}
 
-	$edit_link  = paramEncrypt("uri=drowing/drowing_test_edit&id_drowing=".$id_drowing_get."&id_kelas=".$id_kelas);
-	$edit_link 	= "<a title='Edit Drowing' href='./?".$edit_link."' class=' btn btn-lg btn-warning'><span class='glyphicon glyphicon-pencil'></span> Edit Drowing ini</a>";
+	$edit_link  = paramEncrypt("uri=drowing/drowing_test_edit&id_drowing=".$id_drowing."&id_kelas=".$id_kelas);
+	$edit_link 	= "<a title='Edit Drowing' href='../../?".$edit_link."' class=' btn btn-lg btn-warning'><span class='glyphicon glyphicon-pencil'></span> Edit Drowing ini</a>";
 
     $pecah_kelas        = explode(" ", $kelas);
 

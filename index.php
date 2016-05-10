@@ -18,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Sistem Informasi Pertandingan :: SOLOCUP 2016</title>
+    <title><?php echo $glob_event_name." :: ".$glob_system_name; ?></title>
 
 
     <!-- Bootstrap -->
@@ -88,6 +88,24 @@
         }); // Close ready function
 
     </script>
+
+    <style>
+      <?php 
+      if ($_SESSION['status'] != "admin")
+      {
+        echo "
+          .pr-admin
+          {
+            visibility: hidden
+          }
+          .pr-user
+          {
+            visibility: visible
+          } ";
+        }
+       ?>
+      }
+    </style>
 
     <?php
       
