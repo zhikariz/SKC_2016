@@ -35,7 +35,7 @@ $columns = array(
 	$ResultData[] = $value->Jumlah;
 
 	// Link view
-	$view = paramEncrypt("uri=drowing/drowing_test2&id_kelas=".$value->id_kelas);
+	$view = paramEncrypt("uri=drowing/drowing_test_urut&id_kelas=".$value->id_kelas);
 	$view_acak = paramEncrypt("uri=drowing/drowing_test&id_kelas=".$value->id_kelas);
 	$crud_uri = array(
 						"view" 				=> $view,						
