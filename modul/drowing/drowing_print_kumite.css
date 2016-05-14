@@ -1,23 +1,4 @@
-
-/*cmedia queries print */
-@media print {
-  body {
-    padding: 0;
-    margin : 0;
-  }
-
-  .hide-print {
-    display: none;
-    visibility: hidden;     
-  }
-}
-
-@page {
-	margin-left: 0.3in;
-	margin-right: 0.3in;
-	margin-top: 0.75in;
-	margin-bottom: 0.1in;
-}
+@import "drowing_media_print.css";
 
 .xl6514518
 	{padding:0px;

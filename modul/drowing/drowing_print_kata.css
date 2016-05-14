@@ -1,22 +1,5 @@
-/*cmedia queries print */
-@media print {
-  body {
-    padding: 0;
-    margin : 0;
-  }
+@import "drowing_media_print.css";
 
-  .hide-print {
-    display: none;
-    visibility: hidden;     
-  }
-}
-
-@page {
-	margin-left: 0.3in;
-	margin-right: 0.3in;
-	margin-top: 0.75in;
-	margin-bottom: 0.1in;
-}
 .xl632673
 	{padding-top:1px;
 	padding-right:1px;
