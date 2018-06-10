@@ -15,7 +15,7 @@ include "eventinfo.php";
   <body>
     <div class="login-wrap">
   <h2><?php echo $glob_event_name; ?> <br><small><?php echo $glob_system_name; ?></small></h2>
-  
+
   <!-- form login -->
   <div class="form">
   <form name='myform' method="post" action="login.php" enctype="multipart/form-data">
@@ -24,7 +24,7 @@ include "eventinfo.php";
     <input type="submit" name="submit" value="Login" />
     </form>
     </div>
-  
+
 </div>
     <script src='./assets/js/jquery-1.12.0.min.js'></script>
     <script src="./login/index.js"></script>
@@ -41,9 +41,9 @@ include "eventinfo.php";
 //mengechek database untuk login
 if($submit){
         $sql = "select * from admin where user='$user' and password='$password'";
-        $query= mysql_query($sql);
-        $result = mysql_fetch_array($query);
-        if($result !=""){
+        $query= mysqli_query($koneksi_login,$sql);
+        $result = mysqli_fetch_array($query);
+        if($result !=null){
             //berhasil login
             session_start();
             $_SESSION['user']=$result['user'];

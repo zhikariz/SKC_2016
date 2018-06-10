@@ -1,10 +1,10 @@
 <?php
 require_once('lib/aio_config.php');
-require_once ('lib/Database.php');
-require_once ('lib/Dtable.php');
+require_once('lib/Database.php');
+require_once('lib/DTable.php');
 
 $db=new Database();
-$datatable=New Dtable();
+$datatable=New DTable();
 
 if(!function_exists('handleException'))
 {
